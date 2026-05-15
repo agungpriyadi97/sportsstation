@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>btn_whatsApp</name>
+   <tag></tag>
+   <elementGuidId>ec41967e-e354-4b62-bb47-5a5b1d673068</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>CSS</key>
+         <value>div.el-dialog__body-action-item</value>
+      </entry>
+      <entry>
+         <key>BASIC</key>
+         <value>//*[(text() = ' 
+              Whatsapp
+            ' or . = ' 
+              Whatsapp
+            ')]</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='page-view']/div/div/div[2]/div/div/div[2]/div[2]/section/div</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorCollection>
+      <entry>
+         <key>SMART_LOCATOR</key>
+         <value>section >> internal:has-text=&quot;Whatsapp&quot;i >> div</value>
+      </entry>
+   </smartLocatorCollection>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>div</value>
+      <webElementGuid>d52f1d04-3137-49f2-a0ac-64ce228b1d45</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>el-dialog__body-action-item</value>
+      <webElementGuid>2ddaeb8f-4f9a-459f-86db-00cdcc5a3c07</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value> 
+              Whatsapp
+            </value>
+      <webElementGuid>64bd471d-433d-463a-ba75-266b243dbaf8</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;page-view&quot;)/div[1]/div[@class=&quot;gt-layout page-layout_pc&quot;]/div[@class=&quot;digibox-register-container page-view__child&quot;]/div[@class=&quot;el-dialog__wrapper verification_dialog sp-dialog&quot;]/div[@class=&quot;el-dialog&quot;]/div[@class=&quot;el-dialog__body&quot;]/div[@class=&quot;el-dialog__body-action&quot;]/section[@class=&quot;el-container&quot;]/div[@class=&quot;el-dialog__body-action-item&quot;]</value>
+      <webElementGuid>9442f9c7-0418-4fbd-839a-8935ce7694b1</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='page-view']/div/div/div[2]/div/div/div[2]/div[2]/section/div</value>
+      <webElementGuid>47a85caf-10ea-409b-8218-bb27e87ea7bc</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Verification Method'])[1]/following::div[3]</value>
+      <webElementGuid>6b603ef9-3f73-4a2d-bdaa-4d1106f03163</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Term &amp; Conditions'])[1]/following::div[7]</value>
+      <webElementGuid>a05fec93-d1e0-48dd-ba44-8aad859e8f0a</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Cancel'])[1]/preceding::div[6]</value>
+      <webElementGuid>93cd3e88-c968-4b08-86fd-c1762baf18d9</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Sign In with MAPCLUB'])[1]/preceding::div[6]</value>
+      <webElementGuid>2947ca2e-796e-4147-9373-b8227b9e626b</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//div[2]/div[2]/section/div</value>
+      <webElementGuid>48a6c527-4602-46d8-9452-f901f3dfd516</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//div[(text() = ' 
+              Whatsapp
+            ' or . = ' 
+              Whatsapp
+            ')]</value>
+      <webElementGuid>c7f14d4f-b55b-43d0-adfe-c607323670a0</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

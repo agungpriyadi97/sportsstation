@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>radio_addNewAddes</name>
+   <tag></tag>
+   <elementGuidId>ffd5117d-82c4-41e8-948b-3290c65fd427</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='el-collapse-head-5778']/div/div/label/span/span</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value>#el-collapse-head-5778 > div.gt-address_list-item__content > div.item-left > label.el-radio.gt-radio > span.el-radio__input > span.el-radio__inner</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>span</value>
+      <webElementGuid>ee414a42-3148-4a8e-a190-5b1f9557dfce</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>el-radio__inner</value>
+      <webElementGuid>6555c108-d4f5-4694-9219-87b0355e16a6</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;el-collapse-head-5778&quot;)/div[@class=&quot;gt-address_list-item__content&quot;]/div[@class=&quot;item-left&quot;]/label[@class=&quot;el-radio gt-radio&quot;]/span[@class=&quot;el-radio__input&quot;]/span[@class=&quot;el-radio__inner&quot;]</value>
+      <webElementGuid>b102dc74-5bc8-40da-9f82-5a8c59b12d79</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='el-collapse-head-5778']/div/div/label/span/span</value>
+      <webElementGuid>3d1e93b8-acc4-4c77-ab37-e39d5c973767</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//div/div/div/div/label/span/span</value>
+      <webElementGuid>e092cf9e-f168-4d05-a238-22e1e8202ec9</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

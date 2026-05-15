@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Ensure user cant accses some feature without logged in</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>b64e015a-5e0e-41de-8dc7-c80ce2f7ff38</testCaseGuid>
+</TestCaseEntity>

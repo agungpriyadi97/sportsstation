@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Ensure product price on PDP matches cart price</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>4500d326-6b9c-4f8f-8d8a-dee1ed22284c</testCaseGuid>
+</TestCaseEntity>

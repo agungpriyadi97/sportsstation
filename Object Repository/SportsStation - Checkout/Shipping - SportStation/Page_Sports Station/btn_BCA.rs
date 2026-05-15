@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>btn_BCA</name>
+   <tag></tag>
+   <elementGuidId>448de58c-24c5-4ce1-9cdd-0dd0bc063006</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>CSS</key>
+         <value>div.sp-payment-methods__third-item.m-item > #pay > span.el-radio__input.is-checked > span.el-radio__inner</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>(//label[@id='pay']/span/span)[4]</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>span</value>
+      <webElementGuid>241e3e6c-57e0-491a-9855-9600b6e8f8e9</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>el-radio__inner</value>
+      <webElementGuid>f9a6200c-08be-4cdc-8af1-2a22c2e8f0ff</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;page-view&quot;)/div[1]/div[@class=&quot;gt-layout page-layout_pc&quot;]/div[@class=&quot;page-view__child&quot;]/section[@class=&quot;page-checkout ss-page-checkout&quot;]/div[@class=&quot;left&quot;]/section[@class=&quot;page-checkout_payment&quot;]/section[1]/div[@class=&quot;sp-payment-methods&quot;]/div[@class=&quot;sp-payment-methods__item&quot;]/div[@class=&quot;sp-payment-methods__item-children&quot;]/div[@class=&quot;children-item children-item-focus&quot;]/div[@class=&quot;sp-payment-methods__item-third&quot;]/div[@class=&quot;sp-payment-methods__third-item m-item&quot;]/label[@id=&quot;pay&quot;]/span[@class=&quot;el-radio__input is-checked&quot;]/span[@class=&quot;el-radio__inner&quot;]</value>
+      <webElementGuid>33d5d118-a7e7-4254-b212-ca48e7c6d4c0</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>(//label[@id='pay']/span/span)[4]</value>
+      <webElementGuid>7f8d49fe-91b8-469b-98ee-1cc9bc6c4492</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//div[2]/label/span/span</value>
+      <webElementGuid>2542cdf2-654a-452f-87ed-1d983ae5c482</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

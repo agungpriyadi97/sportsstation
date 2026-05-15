@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>txt_Product Detail</name>
+   <tag></tag>
+   <elementGuidId>a7ee1bab-655d-42b2-9e0d-89fb1d6d7021</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>CSS</key>
+         <value>div.left</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='page-view']/div/div/section/section/section/section/div/div[2]/div/section/section/ul/li/div/div/section/div</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>div</value>
+      <webElementGuid>2074ef48-b46e-4d0e-9468-41480ae047da</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>left</value>
+      <webElementGuid>8086aaf0-7d0c-44d8-a0c4-ea7dde8e60ec</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>   Airwalk Elwin Women's Skate Shoes - Blue 0888-AIWUK251209GGRE036     </value>
+      <webElementGuid>b3c719f0-a42d-4464-90bb-0f1f1c1983c6</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;page-view&quot;)/div[1]/div[@class=&quot;gt-layout page-layout_pc&quot;]/section[@class=&quot;page-shop-cart page-view__child&quot;]/section[@class=&quot;gt-page-shop-cart&quot;]/section[@class=&quot;gt-page_shopcart&quot;]/section[@class=&quot;page-shopCart_container&quot;]/div[@class=&quot;page-shopCart_container_left&quot;]/div[@class=&quot;gt-skeleton&quot;]/div[1]/section[1]/section[@class=&quot;sp-shopcart__product&quot;]/ul[@class=&quot;shopcart-product__list&quot;]/li[@class=&quot;shopcart-product__list__item&quot;]/div[1]/div[@class=&quot;page-shopcart_sku&quot;]/section[@class=&quot;page-shopcart_sku_container&quot;]/div[@class=&quot;left&quot;]</value>
+      <webElementGuid>f936ea12-d60a-4ebc-bb78-eee4b784952e</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='page-view']/div/div/section/section/section/section/div/div[2]/div/section/section/ul/li/div/div/section/div</value>
+      <webElementGuid>4f13ea14-524d-46e4-a500-0c2dbe45b9f0</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='All Products'])[1]/following::div[3]</value>
+      <webElementGuid>386837db-f08c-427a-9177-c355b6273ee9</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Free Gift Rp 5.000'])[1]/following::div[6]</value>
+      <webElementGuid>b3a995aa-6bd7-4f44-82d8-37b63ddae018</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Order Summary'])[1]/preceding::div[10]</value>
+      <webElementGuid>714bb192-90bd-42a1-89ae-26dddc63def2</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='(1 items)'])[1]/preceding::div[10]</value>
+      <webElementGuid>dc431ae4-7e62-4461-8c7b-66e5759d0031</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//li/div/div/section/div</value>
+      <webElementGuid>60407e5b-6f27-4f4e-89ce-dc78369f10cf</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//div[(text() = concat(&quot;   Airwalk Elwin Women&quot; , &quot;'&quot; , &quot;s Skate Shoes - Blue 0888-AIWUK251209GGRE036     &quot;) or . = concat(&quot;   Airwalk Elwin Women&quot; , &quot;'&quot; , &quot;s Skate Shoes - Blue 0888-AIWUK251209GGRE036     &quot;))]</value>
+      <webElementGuid>1897b590-ab97-4f4b-9554-88a8bf9cbdc2</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

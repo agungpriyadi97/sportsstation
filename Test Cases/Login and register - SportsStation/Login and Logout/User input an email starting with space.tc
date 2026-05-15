@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>User input an email starting with space</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>f1df22de-9b8c-48d3-975f-619c7d6474fb</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>btn_sendOtpEmail</name>
+   <tag></tag>
+   <elementGuidId>eca2cc71-4bc5-4802-bd9c-665d32ed4981</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//button[@type='button']</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value>button.el-button.gt-verify-btn.el-button--default.el-button--medium.gt-button</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorCollection>
+      <entry>
+         <key>SMART_LOCATOR</key>
+         <value>internal:role=button[name=&quot;Send&quot;i]</value>
+      </entry>
+   </smartLocatorCollection>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>button</value>
+      <webElementGuid>6d363a4c-e5dd-444c-a365-c0a355c27dbb</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>type</name>
+      <type>Main</type>
+      <value>button</value>
+      <webElementGuid>c2cf5747-1b4c-44bc-a416-9c931c868abe</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>el-button gt-verify-btn el-button--default el-button--medium gt-button</value>
+      <webElementGuid>f970ea49-f687-4bf5-81cd-e8f659e833e9</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>
+  Send
+</value>
+      <webElementGuid>71bde615-4777-4505-aa6e-6578b4e778b5</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;page-view&quot;)/div[1]/div[@class=&quot;gt-layout page-layout_pc&quot;]/div[@class=&quot;signup-container page-view__child&quot;]/section[@class=&quot;register-page-index&quot;]/div[@class=&quot;register-page-index__right&quot;]/div[@class=&quot;signup-section&quot;]/form[@class=&quot;el-form gt-simple-form el-form--label-top&quot;]/div[@class=&quot;el-form-item gt-form-item is-error is-required el-form-item--medium verification-code&quot;]/div[@class=&quot;el-form-item__content&quot;]/div[@class=&quot;width_fill el-input el-input--medium el-input-group el-input-group--append el-input--suffix gt-input gt-radius-undefined gt-border-undefined gt-borderColor-undefined gt-verify-input&quot;]/div[@class=&quot;el-input-group__append&quot;]/button[@class=&quot;el-button gt-verify-btn el-button--default el-button--medium gt-button&quot;]</value>
+      <webElementGuid>d38ad3d1-5a63-4aac-bea1-9af4af7f07ce</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:attributes</name>
+      <type>Main</type>
+      <value>//button[@type='button']</value>
+      <webElementGuid>503aba5d-0d7f-4ab7-aed7-8c8f773b1ae9</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='page-view']/div/div/div[2]/section/div[2]/div[2]/form/div[2]/div/div/div/button</value>
+      <webElementGuid>d6ebba85-98d5-4085-b3ea-300088a2633f</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Sign in with MAPCLUB'])[1]/following::button[1]</value>
+      <webElementGuid>47ac52da-0c4a-484b-a898-9a9f41b65a54</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Please enter validation code'])[1]/preceding::button[1]</value>
+      <webElementGuid>e5bedcae-6c08-4873-8308-6953f9ceae1a</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//form/div[2]/div/div/div/button</value>
+      <webElementGuid>2e3b49ea-3bc7-46a1-9d9e-fd6d520f3ca3</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//button[@type = 'button' and (text() = '
+  Send
+' or . = '
+  Send
+')]</value>
+      <webElementGuid>3f8ce7c4-c9cc-41a7-ac31-4d7d3e8af7e3</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

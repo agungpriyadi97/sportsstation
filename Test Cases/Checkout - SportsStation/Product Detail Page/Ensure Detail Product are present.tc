@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Ensure Detail Product are present</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>a7152c42-0f5b-4612-99cd-0c4abd6dbc40</testCaseGuid>
+</TestCaseEntity>

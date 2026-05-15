@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Ensure term condition button is displayed,clickable, and goes to the page</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>c1e7e8f0-beb3-4548-815b-9060dc7ab819</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>btn_closeSignWithMapClub</name>
+   <tag></tag>
+   <elementGuidId>19c31d26-4e3f-4ef3-95af-3ed986c26182</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='page-view']/div/div/div[2]/div/div/div/button/i</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value>i.el-dialog__close.el-icon.el-icon-close</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorCollection>
+      <entry>
+         <key>SMART_LOCATOR</key>
+         <value>internal:role=button[name=&quot;Close&quot;i]</value>
+      </entry>
+   </smartLocatorCollection>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>i</value>
+      <webElementGuid>31054327-d68e-4dfd-bf51-82692247d9c7</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>el-dialog__close el-icon el-icon-close</value>
+      <webElementGuid>ee1c1999-a92a-4759-a1cf-4d3bd8f23633</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;page-view&quot;)/div[1]/div[@class=&quot;gt-layout page-layout_pc&quot;]/div[@class=&quot;digibox-login-container page-view__child&quot;]/div[@class=&quot;el-dialog__wrapper sp-dialog&quot;]/div[@class=&quot;el-dialog&quot;]/div[@class=&quot;el-dialog__header&quot;]/button[@class=&quot;el-dialog__headerbtn&quot;]/i[@class=&quot;el-dialog__close el-icon el-icon-close&quot;]</value>
+      <webElementGuid>e194c3fe-2b90-4a55-84de-ba35f9e9ea4f</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='page-view']/div/div/div[2]/div/div/div/button/i</value>
+      <webElementGuid>f4fbe9e9-bd7d-426b-8b84-b57f57b6ff0b</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//button/i</value>
+      <webElementGuid>13f6c227-4516-4ab3-9e3b-03707a5a0bdc</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

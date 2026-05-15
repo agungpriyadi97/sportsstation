@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>txt_harga-cart</name>
+   <tag></tag>
+   <elementGuidId>7b4b3332-6d0c-445d-8943-7c1e6b2cbf50</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>CSS</key>
+         <value>div.price > p</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='page-view']/div/div/section/section/section/section/div/div[2]/div/section/section/ul/li/div/div/section/div[3]/p</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>p</value>
+      <webElementGuid>5987b139-9f2d-4445-9d1f-de236a6f1fb5</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>Rp 20.000</value>
+      <webElementGuid>4b414de4-da8c-43b7-a736-c1ecf6fb01fb</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;page-view&quot;)/div[1]/div[@class=&quot;gt-layout page-layout_pc&quot;]/section[@class=&quot;page-shop-cart page-view__child&quot;]/section[@class=&quot;gt-page-shop-cart&quot;]/section[@class=&quot;gt-page_shopcart&quot;]/section[@class=&quot;page-shopCart_container&quot;]/div[@class=&quot;page-shopCart_container_left&quot;]/div[@class=&quot;gt-skeleton&quot;]/div[1]/section[1]/section[@class=&quot;sp-shopcart__product&quot;]/ul[@class=&quot;shopcart-product__list&quot;]/li[@class=&quot;shopcart-product__list__item&quot;]/div[1]/div[@class=&quot;page-shopcart_sku&quot;]/section[@class=&quot;page-shopcart_sku_container&quot;]/div[@class=&quot;price&quot;]/p[1]</value>
+      <webElementGuid>97fd3e72-acbe-42f5-8606-e32f3967b774</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='page-view']/div/div/section/section/section/section/div/div[2]/div/section/section/ul/li/div/div/section/div[3]/p</value>
+      <webElementGuid>15ba6eef-caa5-46a1-aa1f-976a2257833a</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='All Products'])[1]/following::p[3]</value>
+      <webElementGuid>de898bcf-147a-4590-8a6d-eb3150065b5c</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Free Gift Rp 5.000'])[1]/following::p[4]</value>
+      <webElementGuid>0285e6dd-c3b2-4ae2-a080-4cdf35e052ab</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Order Summary'])[1]/preceding::p[1]</value>
+      <webElementGuid>1589a2bc-6010-4048-9f05-63ba9a456dd4</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='(1 items)'])[1]/preceding::p[1]</value>
+      <webElementGuid>b932c9dd-1a03-4a80-a4ed-83d62e2e12b4</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//div[3]/p</value>
+      <webElementGuid>281ed93a-fa3a-4d6e-a08b-1f69c135c576</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//p[(text() = 'Rp 20.000' or . = 'Rp 20.000')]</value>
+      <webElementGuid>deededcd-b244-4f22-8b11-058c484308f8</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

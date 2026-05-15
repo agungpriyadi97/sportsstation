@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Ensure i dont have an account button is displayed,clickable and goes to page</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>53b4d4b9-67c9-43de-a708-815fee4bd4ac</testCaseGuid>
+</TestCaseEntity>

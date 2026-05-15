@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Ensure user cant input Phone number with alphabet</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>d304d6d4-8862-4bd5-bb10-1ba2631c549c</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Ensure resend is displayed,clickable, and send a new otp code</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>5e0f6874-909c-4fb1-a05c-e346fd8fba4c</testCaseGuid>
+</TestCaseEntity>

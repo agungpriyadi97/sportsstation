@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>btn_CreditCard</name>
+   <tag></tag>
+   <elementGuidId>2bf56529-61d6-4d6e-950c-8b46c3fc48c9</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>CSS</key>
+         <value>div.sp-payment-methods__second-item.m-item</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='page-view']/div/div/div[2]/section/div/section[2]/section/div/div[2]/div[2]/div/div</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>div</value>
+      <webElementGuid>03b9fefa-00da-40a7-9cc6-081951a29095</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>sp-payment-methods__second-item m-item</value>
+      <webElementGuid>c3726e88-3995-4df7-98b1-3b7dcbdbcbae</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value> Credit Card</value>
+      <webElementGuid>936d1853-6c59-4108-b2be-4e7bfd536760</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;page-view&quot;)/div[1]/div[@class=&quot;gt-layout page-layout_pc&quot;]/div[@class=&quot;page-view__child&quot;]/section[@class=&quot;page-checkout ss-page-checkout&quot;]/div[@class=&quot;left&quot;]/section[@class=&quot;page-checkout_payment&quot;]/section[1]/div[@class=&quot;sp-payment-methods&quot;]/div[@class=&quot;sp-payment-methods__item&quot;]/div[@class=&quot;sp-payment-methods__item-children&quot;]/div[@class=&quot;children-item&quot;]/div[@class=&quot;sp-payment-methods__second-item m-item&quot;]</value>
+      <webElementGuid>2e734878-cc53-4083-863e-67774238919f</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='page-view']/div/div/div[2]/section/div/section[2]/section/div/div[2]/div[2]/div/div</value>
+      <webElementGuid>e1df57ff-fd3c-44ef-a083-6327ae20f006</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='midtrans'])[1]/following::div[3]</value>
+      <webElementGuid>3be9fb64-f88c-4a3f-954a-fc074fd13b2d</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Doku : Virtual Account/Credit'])[1]/following::div[8]</value>
+      <webElementGuid>b33251b6-a0e8-40c1-ade2-b939195aef2b</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Gpay : Qris'])[1]/preceding::div[8]</value>
+      <webElementGuid>1f29a1d8-94cd-4d7c-9fa8-fe027e766a84</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Billing address same as shipping'])[1]/preceding::div[11]</value>
+      <webElementGuid>643b3c32-4b8f-49a4-9edf-9e8ed62ced29</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//section/div/div[2]/div[2]/div/div</value>
+      <webElementGuid>badf6d13-55f0-4d53-bcb1-61277bcf0ea8</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//div[(text() = ' Credit Card' or . = ' Credit Card')]</value>
+      <webElementGuid>e2d8ea6c-1ed4-4270-b243-c3a8e3ae5a8b</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

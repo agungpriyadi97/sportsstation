@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>1.End-to-End Checkout - Sports Station</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>cf056600-acc7-46ba-b0e1-dd576f97eff3</testCaseGuid>
+</TestCaseEntity>

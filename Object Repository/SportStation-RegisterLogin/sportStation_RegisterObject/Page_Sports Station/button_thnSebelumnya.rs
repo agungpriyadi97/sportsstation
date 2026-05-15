@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>button_thnSebelumnya</name>
+   <tag></tag>
+   <elementGuidId>09ceebf8-c8f1-4dd4-955b-87fe4b4651f2</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>CSS</key>
+         <value>button.el-picker-panel__icon-btn.el-date-picker__prev-btn.el-icon-d-arrow-left</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>(//button[@type='button'])[6]</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>CSS</selectorMethod>
+   <smartLocatorCollection>
+      <entry>
+         <key>SMART_LOCATOR</key>
+         <value>internal:label=&quot;Previous Year&quot;i</value>
+      </entry>
+   </smartLocatorCollection>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>button</value>
+      <webElementGuid>60ddc1ca-34b3-4021-b2b9-58e1e85b65db</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>type</name>
+      <type>Main</type>
+      <value>button</value>
+      <webElementGuid>ac003642-b256-49ab-a63a-0fd6837f1b6c</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>aria-label</name>
+      <type>Main</type>
+      <value>Previous Year</value>
+      <webElementGuid>3d764c42-df6b-4be8-839a-5dabf789b3f1</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>el-picker-panel__icon-btn el-date-picker__prev-btn el-icon-d-arrow-left</value>
+      <webElementGuid>aaf7922c-e28e-43dd-b9fc-8c4c10a1dabc</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>/html[1]/body[1]/div[@class=&quot;el-picker-panel el-date-picker el-popper date-of-birth__popper&quot;]/div[@class=&quot;el-picker-panel__body-wrapper&quot;]/div[@class=&quot;el-picker-panel__body&quot;]/div[@class=&quot;el-date-picker__header el-date-picker__header--bordered&quot;]/button[@class=&quot;el-picker-panel__icon-btn el-date-picker__prev-btn el-icon-d-arrow-left&quot;]</value>
+      <webElementGuid>1c3e7cd6-7a21-4488-8c53-ac916174b024</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:attributes</name>
+      <type>Main</type>
+      <value>(//button[@type='button'])[6]</value>
+      <webElementGuid>d812190f-01de-4e4d-a312-b1a3be3438fb</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//div[4]/div/div/div/button</value>
+      <webElementGuid>7386cd5c-c0c9-4187-a662-1e27286d1f30</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//button[@type = 'button']</value>
+      <webElementGuid>006bc492-b923-4f7f-8c3f-bc3dd26720f4</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Ensure user can add porduct for free gift</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>e9404ee6-6ca7-4fef-9038-0959dd1c7b10</testCaseGuid>
+</TestCaseEntity>

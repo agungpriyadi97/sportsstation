@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Ensure lastName textfield is displayed,clickable, and accepts user input</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>bc3169bc-a3cf-4905-93ba-2d0aa3bdf34b</testCaseGuid>
+</TestCaseEntity>
