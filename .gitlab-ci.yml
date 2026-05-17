@@ -1,0 +1,13 @@
+stages:
+  - test
+
+jalanin_katalon_kre:
+  stage: test
+  image: katalonstudio/katalon:latest
+  script:
+    - katalonc.sh -noSplash -runMode=console -projectPath="$(pwd)" -retry=0 -testSuitePath="Test Suites/Login and Logout" -browserType="Chrome" -apiKey=$KATALON_API_KEY
+  artifacts:
+    when: always
+    paths:
+      - Reports/
+    expire_in: 1 week
