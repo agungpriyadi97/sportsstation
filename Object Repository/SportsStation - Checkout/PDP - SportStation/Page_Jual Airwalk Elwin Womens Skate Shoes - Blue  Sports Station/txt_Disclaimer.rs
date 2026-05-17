@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>txt_Disclaimer</name>
+   <tag></tag>
+   <elementGuidId>21093cd9-1a86-4644-b52d-78185599587f</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>(//div[@value='0'])[2]</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value></value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>div</value>
+      <webElementGuid>26071309-0447-40d5-96aa-92b7b05701a2</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>el-tabs el-tabs--top gt-tabs</value>
+      <webElementGuid>c8adc339-9359-40e9-af5b-3cb83ed32206</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>value</name>
+      <type>Main</type>
+      <value>0</value>
+      <webElementGuid>101c3830-4243-454d-aa01-5472c077db16</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>Disclaimer            </value>
+      <webElementGuid>48d0cca1-5ebb-4cc4-9c47-cad4d8525446</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;page-view&quot;)/div[1]/div[@class=&quot;gt-layout page-layout_pc&quot;]/div[@class=&quot;page-view__child&quot;]/section[@class=&quot;page-pdp page-pdp&quot;]/div[@class=&quot;description&quot;]/div[@class=&quot;el-tabs el-tabs--top gt-tabs&quot;]</value>
+      <webElementGuid>dcd43813-5ff2-44b5-b2e0-7796167be06f</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:attributes</name>
+      <type>Main</type>
+      <value>(//div[@value='0'])[2]</value>
+      <webElementGuid>00804073-4ccd-47ae-9b32-d3007909db42</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='page-view']/div/div/div[2]/section/div[3]/div[2]</value>
+      <webElementGuid>2d48eb2f-3363-4e35-b226-82c676402a41</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Description'])[1]/following::div[6]</value>
+      <webElementGuid>7c54e749-9188-43ae-8df8-b19caa378971</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='More Products'])[1]/following::div[15]</value>
+      <webElementGuid>40d407e8-465a-43eb-9edc-a1575d4141e1</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='About'])[1]/preceding::div[23]</value>
+      <webElementGuid>1d699a8c-6490-443d-a3ab-26fe43c8dc0b</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//section/div[3]/div[2]</value>
+      <webElementGuid>a4e9d9de-067e-474f-8f03-01338840af70</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//div[(text() = 'Disclaimer            ' or . = 'Disclaimer            ')]</value>
+      <webElementGuid>85eb0fef-ffc2-45f3-b2f6-2df2cd8c6147</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

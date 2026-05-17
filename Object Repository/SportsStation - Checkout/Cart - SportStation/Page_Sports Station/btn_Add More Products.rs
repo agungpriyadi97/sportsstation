@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>btn_Add More Products</name>
+   <tag></tag>
+   <elementGuidId>d851075f-f82c-470f-8548-feeac987c976</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='page-view']/div/div/section/section/section/section/div/div/div/div/p[2]</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value>p.shop-more__bar-link</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>p</value>
+      <webElementGuid>de73ccd9-2557-44db-a3ea-3b7aeea46bcc</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>shop-more__bar-link</value>
+      <webElementGuid>1af57370-5e1f-4557-83f7-c8716bb31405</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>+ Add More Products</value>
+      <webElementGuid>4cf91d67-d86b-4c57-bd18-bb8009c4a6d5</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;page-view&quot;)/div[1]/div[@class=&quot;gt-layout page-layout_pc&quot;]/section[@class=&quot;page-shop-cart page-view__child&quot;]/section[@class=&quot;gt-page-shop-cart&quot;]/section[@class=&quot;gt-page_shopcart&quot;]/section[@class=&quot;page-shopCart_container&quot;]/div[@class=&quot;page-shopCart_container_left&quot;]/div[@class=&quot;shop-more__cart&quot;]/div[@class=&quot;shop-more&quot;]/div[@class=&quot;shop-more__bar&quot;]/p[@class=&quot;shop-more__bar-link&quot;]</value>
+      <webElementGuid>062aeeb4-f07a-45ad-977d-e1764c7fec62</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='page-view']/div/div/section/section/section/section/div/div/div/div/p[2]</value>
+      <webElementGuid>cf4a63df-76ab-415d-9502-f163c7e98f64</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Free Gift Rp 5.000'])[1]/following::p[1]</value>
+      <webElementGuid>f460c153-1706-4850-b4e9-8d17e2d02429</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Rp 20.000'])[1]/following::p[1]</value>
+      <webElementGuid>460c5e83-4c4b-4590-b1c9-fcb83b6ccd5e</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='All Products'])[1]/preceding::p[1]</value>
+      <webElementGuid>f9514468-41e6-42f6-92e4-69577623d4d7</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Order Summary'])[1]/preceding::p[4]</value>
+      <webElementGuid>f2d08e1e-cda7-428b-86a9-c4fb439f609a</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>//*/text()[normalize-space(.)='+ Add More Products']/parent::*</value>
+      <webElementGuid>90632e87-760d-4600-9dd0-43bd830dd60a</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//p[2]</value>
+      <webElementGuid>f87d7d84-31c7-4ee0-a93a-807506f37177</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//p[(text() = '+ Add More Products' or . = '+ Add More Products')]</value>
+      <webElementGuid>01f82796-3255-4ad7-884e-619c66297090</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

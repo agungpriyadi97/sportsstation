@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Ensure SignIn is displayed,clickable, and goes to homepage</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>e3529893-e5a8-4813-84a1-f1d0dd6ea2db</testCaseGuid>
+</TestCaseEntity>

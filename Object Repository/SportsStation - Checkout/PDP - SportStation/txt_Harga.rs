@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>txt_Harga</name>
+   <tag></tag>
+   <elementGuidId>902680b6-ffe4-4cd9-9e0b-3480616f53a4</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>CSS</key>
+         <value>span.current-price</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='page-view']/div/div/div[2]/section/section/div/div[2]/div[2]/div/div/span</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>span</value>
+      <webElementGuid>eb3c4125-a576-4ae7-ad5a-314731968ac1</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>current-price</value>
+      <webElementGuid>d071790e-0473-4829-889b-403884f87cdf</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>Rp 20.000</value>
+      <webElementGuid>fbd4ab2e-f63a-44a4-b2d3-4719336ceaa3</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;page-view&quot;)/div[1]/div[@class=&quot;gt-layout page-layout_pc&quot;]/div[@class=&quot;page-view__child&quot;]/section[@class=&quot;page-pdp page-pdp&quot;]/section[@class=&quot;page-pdp_content&quot;]/div[@class=&quot;page-pdp_content__main&quot;]/div[@class=&quot;right&quot;]/div[@class=&quot;mobile-price_item&quot;]/div[@class=&quot;pdp-price&quot;]/div[1]/span[@class=&quot;current-price&quot;]</value>
+      <webElementGuid>e35409e3-9162-49e4-a0d5-401de148b6ab</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='page-view']/div/div/div[2]/section/section/div/div[2]/div[2]/div/div/span</value>
+      <webElementGuid>132036da-3486-45e8-bc14-3973c4cbeb8b</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Airwalk'])[2]/following::span[2]</value>
+      <webElementGuid>db107ecd-4266-4606-a456-7635fabc1c0e</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Period:'])[1]/preceding::span[1]</value>
+      <webElementGuid>a474f203-b7d8-494f-8ab9-9ec1c895a02a</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>//*/text()[normalize-space(.)='Rp 20.000']/parent::*</value>
+      <webElementGuid>b31588e6-c1a7-43cd-9304-5fcc74dbb746</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//div/div[2]/div[2]/div/div/span</value>
+      <webElementGuid>80d05960-be5b-4267-8c59-10b98b7beff7</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//span[(text() = 'Rp 20.000' or . = 'Rp 20.000')]</value>
+      <webElementGuid>8903ce3f-431f-4b19-9bf1-3bf47e472bd7</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

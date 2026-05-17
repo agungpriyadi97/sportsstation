@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>verif_accesWithEmail</name>
+   <tag></tag>
+   <elementGuidId>a8fba701-10b5-42d6-806d-2d48515c3108</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='page-view']/div/div/div[2]/div/div/form/div/div</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value>div.el-form-item__content</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorCollection>
+      <entry>
+         <key>SMART_LOCATOR</key>
+         <value>div >> internal:has-text=/^Email$/ >> div >> nth=0</value>
+      </entry>
+   </smartLocatorCollection>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>div</value>
+      <webElementGuid>ff1101b4-bfb1-41ac-aa02-aef309ce73aa</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>el-form-item__content</value>
+      <webElementGuid>4d5ce9a6-4940-4352-9942-f51961641a0c</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;page-view&quot;)/div[1]/div[@class=&quot;gt-layout page-layout_pc&quot;]/div[@class=&quot;gt-trackorder-page page-view__child&quot;]/div[@class=&quot;sp-track-order&quot;]/div[@class=&quot;sp-track-order-wrapper&quot;]/form[@class=&quot;el-form&quot;]/div[@class=&quot;el-form-item gt-form-item is-required el-form-item--medium&quot;]/div[@class=&quot;el-form-item__content&quot;]</value>
+      <webElementGuid>59eda655-8731-4e22-bbec-b193f96b7dde</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='page-view']/div/div/div[2]/div/div/form/div/div</value>
+      <webElementGuid>cdd81c80-cc33-478a-8f55-816b9ccef22e</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Email'])[1]/following::div[1]</value>
+      <webElementGuid>320cdcf8-b5e7-4084-8b66-18ee4599b0e8</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Track Your Order'])[1]/following::div[3]</value>
+      <webElementGuid>4987906d-2f70-48d3-a2bd-a04e41093bed</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Verification Code'])[1]/preceding::div[2]</value>
+      <webElementGuid>0482a8f1-9f46-49ad-a1c3-8f1f89b113ee</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//form/div/div</value>
+      <webElementGuid>b1b51555-f8e2-4adc-8d62-8494112e3bb2</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

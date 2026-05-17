@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Ensure signin with Mapclub button is displayed,clickable, and goes to the page</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>90f57e36-751a-4f4d-a359-4aaccd8ce201</testCaseGuid>
+</TestCaseEntity>

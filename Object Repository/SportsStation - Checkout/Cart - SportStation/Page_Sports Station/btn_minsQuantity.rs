@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>btn_minsQuantity</name>
+   <tag></tag>
+   <elementGuidId>cdf279ae-5196-4e02-97d2-b0754a87f9dc</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>CSS</key>
+         <value>span.el-input-number__decrease.is-disabled</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='page-view']/div/div/section/section/section/section/div/div[2]/div/section/section/ul/li/div/div/section/div[2]/section/div/span</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>span</value>
+      <webElementGuid>9ebc4495-2d95-4664-a343-4b31c9bae1cd</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>role</name>
+      <type>Main</type>
+      <value>button</value>
+      <webElementGuid>235a624a-5891-4da8-ba70-182583ae8f24</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>el-input-number__decrease is-disabled</value>
+      <webElementGuid>459bf045-fc7e-4d84-b2c7-9bbb998fe17e</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;page-view&quot;)/div[1]/div[@class=&quot;gt-layout page-layout_pc&quot;]/section[@class=&quot;page-shop-cart page-view__child&quot;]/section[@class=&quot;gt-page-shop-cart&quot;]/section[@class=&quot;gt-page_shopcart&quot;]/section[@class=&quot;page-shopCart_container&quot;]/div[@class=&quot;page-shopCart_container_left&quot;]/div[@class=&quot;gt-skeleton&quot;]/div[1]/section[1]/section[@class=&quot;sp-shopcart__product&quot;]/ul[@class=&quot;shopcart-product__list&quot;]/li[@class=&quot;shopcart-product__list__item&quot;]/div[1]/div[@class=&quot;page-shopcart_sku&quot;]/section[@class=&quot;page-shopcart_sku_container&quot;]/div[@class=&quot;number&quot;]/section[1]/div[@class=&quot;gt-input_number gt-input el-input-number el-input-number--small&quot;]/span[@class=&quot;el-input-number__decrease is-disabled&quot;]</value>
+      <webElementGuid>26d106ee-86b5-4f66-b8c0-9d9aaa4e2b58</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='page-view']/div/div/section/section/section/section/div/div[2]/div/section/section/ul/li/div/div/section/div[2]/section/div/span</value>
+      <webElementGuid>528a245c-ca0d-46a1-aa6e-8d381069b23b</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='All Products'])[1]/following::span[3]</value>
+      <webElementGuid>3498262b-88a4-42d3-8111-5826779a3641</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Free Gift Rp 5.000'])[1]/following::span[6]</value>
+      <webElementGuid>82f24913-7140-4997-9fd9-11cc0d88e235</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Order Summary'])[1]/preceding::span[2]</value>
+      <webElementGuid>7c9fc958-149c-4d90-9024-a8137cf3730a</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='(1 items)'])[1]/preceding::span[3]</value>
+      <webElementGuid>457d2aa9-16bc-4e4d-9ed1-4782cf1e60e2</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//div[2]/section/div/span</value>
+      <webElementGuid>3f82f056-8100-40fe-a7c0-500e1a66d22b</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

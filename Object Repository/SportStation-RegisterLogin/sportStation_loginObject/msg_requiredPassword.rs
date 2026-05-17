@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>msg_requiredPassword</name>
+   <tag></tag>
+   <elementGuidId>2feae645-8052-4af0-9724-dc17adab45b6</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='page-view']/div/div/div[2]/section/div[2]/form/div[2]/div/div[2]</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value></value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorCollection>
+      <entry>
+         <key>SMART_LOCATOR</key>
+         <value>internal:text=&quot;Required&quot;i >> nth=1</value>
+      </entry>
+   </smartLocatorCollection>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>div</value>
+      <webElementGuid>dd370272-d99c-493c-a6a3-0cec76c2bab4</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>el-form-item__error</value>
+      <webElementGuid>ff194f46-6bfe-4b76-a699-687979587289</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>
+          Required
+        </value>
+      <webElementGuid>55aa6588-c6a1-40f2-9468-787a6b938b60</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;page-view&quot;)/div[1]/div[@class=&quot;gt-layout page-layout_pc&quot;]/div[@class=&quot;digibox-login-container page-view__child&quot;]/section[@class=&quot;login-page-index&quot;]/div[@class=&quot;login-page-index__right&quot;]/form[@class=&quot;el-form gt-simple-form el-form--label-top&quot;]/div[@class=&quot;el-form-item gt-form-item is-error is-required el-form-item--medium&quot;]/div[@class=&quot;el-form-item__content&quot;]/div[@class=&quot;el-form-item__error&quot;]</value>
+      <webElementGuid>66c0fd5b-d49e-4c5e-b8c1-5dcd346cae46</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='page-view']/div/div/div[2]/section/div[2]/form/div[2]/div/div[2]</value>
+      <webElementGuid>dd5a1c31-7745-496d-ac54-7baa69e70eb4</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Required'])[1]/following::div[4]</value>
+      <webElementGuid>e0f6e046-0ce5-43a0-bb66-84e8e6f876f2</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Please enter correct name or password.'])[1]/following::div[8]</value>
+      <webElementGuid>aba74ec9-ee0e-464f-b01e-7b09d45d9e23</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Forgot passwords?'])[1]/preceding::div[1]</value>
+      <webElementGuid>9b122d7b-8b59-4f1d-8f3e-d928616696e9</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Sign In'])[3]/preceding::div[2]</value>
+      <webElementGuid>08af4b80-3d0b-4bb8-a421-99c7d4d2f7ce</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//form/div[2]/div/div[2]</value>
+      <webElementGuid>910eea12-dea4-49b6-ba1c-46c7d5f8e86f</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//div[(text() = '
+          Required
+        ' or . = '
+          Required
+        ')]</value>
+      <webElementGuid>a535f857-1b4c-40c9-ac43-f83a02a5dbbd</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

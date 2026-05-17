@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Ensure user can input valid shipping information</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>68b33e5d-1ed9-4c2b-bb16-53c3432f9d68</testCaseGuid>
+</TestCaseEntity>

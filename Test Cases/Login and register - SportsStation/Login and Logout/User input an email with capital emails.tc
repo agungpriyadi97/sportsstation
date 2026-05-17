@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>User input an email with capital emails</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>6ea9dc82-09c8-4ce8-af66-7b63dfabee33</testCaseGuid>
+</TestCaseEntity>

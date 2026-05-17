@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Ensure user cheked the data policy</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>ce08ee14-fa36-4a57-aeb7-bfc717fc4585</testCaseGuid>
+</TestCaseEntity>

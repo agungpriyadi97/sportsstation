@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>btn_yes</name>
+   <tag></tag>
+   <elementGuidId>50990875-a1f8-452c-93ec-df0729106fca</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>CSS</key>
+         <value>button.el-button.el-button--default.el-button--small.el-button--primary.gt-button.gt-message-box__button.el-button--primary</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>(//button[@type='button'])[6]</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>button</value>
+      <webElementGuid>59e53cdb-6824-48d3-ade6-4e3378146d68</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>type</name>
+      <type>Main</type>
+      <value>button</value>
+      <webElementGuid>18fb88ad-e564-428a-b589-9cc05a8957f3</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>el-button el-button--default el-button--small el-button--primary gt-button gt-message-box__button el-button--primary</value>
+      <webElementGuid>c1b877a9-5bfc-4343-9f11-d366d7c5aceb</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>
+          Yes
+        </value>
+      <webElementGuid>91bae8da-8612-40f4-bf42-0c18e545793c</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>/html[1]/body[@class=&quot;el-popup-parent--hidden&quot;]/div[@class=&quot;el-message-box__wrapper&quot;]/div[@class=&quot;el-message-box gt-message-box&quot;]/div[@class=&quot;el-message-box__btns&quot;]/button[@class=&quot;el-button el-button--default el-button--small el-button--primary gt-button gt-message-box__button el-button--primary&quot;]</value>
+      <webElementGuid>f0e92bcb-94f4-4cfb-9dd2-d1344a0a1a11</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:attributes</name>
+      <type>Main</type>
+      <value>(//button[@type='button'])[6]</value>
+      <webElementGuid>fc050805-f6ce-4131-a68c-22fe7fbfc2ba</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='No'])[1]/following::button[1]</value>
+      <webElementGuid>faa5e3e9-ba13-4f10-8ff4-c079018867ee</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='`'])[1]/following::button[3]</value>
+      <webElementGuid>339e90ed-1281-47b6-b404-93d65e59bca1</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//button[2]</value>
+      <webElementGuid>f4f626f7-0cd5-4be6-aa24-1617b9b16eeb</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//button[@type = 'button' and (text() = '
+          Yes
+        ' or . = '
+          Yes
+        ')]</value>
+      <webElementGuid>71688f6c-08b3-40f9-b394-c066856d272a</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

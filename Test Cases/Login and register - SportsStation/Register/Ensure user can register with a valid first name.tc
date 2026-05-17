@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Ensure user can register with a valid first name</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>ce9de975-4069-4c23-bd9f-706c37b3a0f8</testCaseGuid>
+</TestCaseEntity>

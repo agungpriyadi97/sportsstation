@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>btn_acceptAllCookies</name>
+   <tag></tag>
+   <elementGuidId>b9756113-cc81-4146-9221-490332507401</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='nuxt-app']/div[6]/div[2]/button</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value>button.cookie-consent__button</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorCollection>
+      <entry>
+         <key>SMART_LOCATOR</key>
+         <value>internal:role=button[name=&quot;Accept All Cookies&quot;i]</value>
+      </entry>
+   </smartLocatorCollection>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>button</value>
+      <webElementGuid>1dc35f8d-9b84-456d-906b-c116f9ecbd8d</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>cookie-consent__button</value>
+      <webElementGuid>c1db7dc4-9cbd-4b21-ab88-9329ad00315b</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>
+        Accept All Cookies
+      </value>
+      <webElementGuid>a4bc2350-3674-4bee-b91d-d5e15edaef41</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;nuxt-app&quot;)/div[@class=&quot;cookie-consent&quot;]/div[@class=&quot;cookie-consent__wrapper&quot;]/button[@class=&quot;cookie-consent__button&quot;]</value>
+      <webElementGuid>fcb1e0d5-da8b-4d66-a008-2e771a1c5376</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='nuxt-app']/div[6]/div[2]/button</value>
+      <webElementGuid>25718ebc-e5c6-4f82-835f-c10116f505a9</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Learn more'])[1]/following::button[1]</value>
+      <webElementGuid>a799bc18-f17d-4b0d-8f7f-d130f21c91a2</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>//*/text()[normalize-space(.)='Accept All Cookies']/parent::*</value>
+      <webElementGuid>8770dc53-644a-4bae-be6f-a9efe19c682b</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//div[6]/div[2]/button</value>
+      <webElementGuid>54a174d1-ec0a-4076-bddd-c0e30b2052c9</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//button[(text() = '
+        Accept All Cookies
+      ' or . = '
+        Accept All Cookies
+      ')]</value>
+      <webElementGuid>da86f2e8-49f5-4a94-b494-456daf19646d</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>btn_Mandiri Bill Payment</name>
+   <tag></tag>
+   <elementGuidId>f42afd7a-56e2-40ee-9704-1126896ce00c</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>CSS</key>
+         <value></value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>(//label[@id='pay']/span[2]/div/span)[4]</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>span</value>
+      <webElementGuid>2f9ac5d6-7473-462a-8244-0eb0c636c57d</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>sp-payment-methods__item-name</value>
+      <webElementGuid>e6210b8a-f54c-47b3-a896-b18a2977b225</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>Mandiri Bill Payment</value>
+      <webElementGuid>581b7af5-a533-4e6f-9fb5-991d502e95ed</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;page-view&quot;)/div[1]/div[@class=&quot;gt-layout page-layout_pc&quot;]/div[@class=&quot;page-view__child&quot;]/section[@class=&quot;page-checkout ss-page-checkout&quot;]/div[@class=&quot;left&quot;]/section[@class=&quot;page-checkout_payment&quot;]/section[1]/div[@class=&quot;sp-payment-methods&quot;]/div[@class=&quot;sp-payment-methods__item&quot;]/div[@class=&quot;sp-payment-methods__item-children&quot;]/div[@class=&quot;children-item children-item-focus&quot;]/div[@class=&quot;sp-payment-methods__item-third&quot;]/div[@class=&quot;sp-payment-methods__third-item m-item&quot;]/label[@id=&quot;pay&quot;]/span[@class=&quot;el-radio__label&quot;]/div[@class=&quot;sp-payment-methods__item-c&quot;]/span[@class=&quot;sp-payment-methods__item-name&quot;]</value>
+      <webElementGuid>8f39fb44-bf86-4412-ba82-f9e71add593f</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>(//label[@id='pay']/span[2]/div/span)[4]</value>
+      <webElementGuid>033a1488-71c4-4041-a00a-04b2f79f8ace</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='BCA'])[1]/following::span[4]</value>
+      <webElementGuid>05eeb0ac-ce65-4bc6-a3d4-a47c9ede1179</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='midtrans'])[1]/following::span[8]</value>
+      <webElementGuid>64eb3184-6477-4e7e-99c8-982290b6a222</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Gpay : Qris'])[1]/preceding::span[3]</value>
+      <webElementGuid>55d53fa5-5ab9-40c2-85c8-3c1f4413e1bc</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Billing address same as shipping'])[1]/preceding::span[7]</value>
+      <webElementGuid>b0b99ac6-a814-4e24-ab65-1b05c69d365c</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>//*/text()[normalize-space(.)='Mandiri Bill Payment']/parent::*</value>
+      <webElementGuid>f2573a51-5fb7-4be6-ab4b-be813f3b243b</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//div[2]/label/span[2]/div/span</value>
+      <webElementGuid>36a55f1c-2ec5-4474-acd1-464e70809ec0</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//span[(text() = 'Mandiri Bill Payment' or . = 'Mandiri Bill Payment')]</value>
+      <webElementGuid>2fa38693-537a-49eb-94a2-17aa3fcfc056</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

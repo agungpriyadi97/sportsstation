@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Ensure cart updates when item quantity increased</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>d10122e6-4fbb-4233-b614-545e184a9081</testCaseGuid>
+</TestCaseEntity>

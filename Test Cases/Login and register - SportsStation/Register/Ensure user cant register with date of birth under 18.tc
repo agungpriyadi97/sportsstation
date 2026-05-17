@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Ensure user cant register with date of birth under 18</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>dc91b642-fb45-4f15-964b-c2c49fea1085</testCaseGuid>
+</TestCaseEntity>

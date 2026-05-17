@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Ensure cart continues to shipping page successfully</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>58a2b3cf-2edf-478c-94eb-f351d98154fe</testCaseGuid>
+</TestCaseEntity>

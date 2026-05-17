@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>btn_close</name>
+   <tag></tag>
+   <elementGuidId>effa8948-d932-4f97-8f3e-dadd37e5a53c</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[5]/div/div/button/i</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value>div.el-dialog__wrapper.more-products__dialog.sp-dialog > div.el-dialog > div.el-dialog__header > button.el-dialog__headerbtn > i.el-dialog__close.el-icon.el-icon-close</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>i</value>
+      <webElementGuid>570c812f-050c-4bb6-9309-2934f5792846</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>el-dialog__close el-icon el-icon-close</value>
+      <webElementGuid>46947b70-034c-4aa9-9616-66fed84c8b6b</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>/html[1]/body[@class=&quot;el-popup-parent--hidden&quot;]/div[@class=&quot;el-dialog__wrapper more-products__dialog sp-dialog&quot;]/div[@class=&quot;el-dialog&quot;]/div[@class=&quot;el-dialog__header&quot;]/button[@class=&quot;el-dialog__headerbtn&quot;]/i[@class=&quot;el-dialog__close el-icon el-icon-close&quot;]</value>
+      <webElementGuid>c2256338-637c-4d82-a1aa-ff712020879e</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//div[5]/div/div/button/i</value>
+      <webElementGuid>f41e2771-dcc0-4078-a1c7-8c17a78adf09</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

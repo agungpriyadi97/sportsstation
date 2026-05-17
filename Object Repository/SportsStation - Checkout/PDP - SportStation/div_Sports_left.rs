@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>div_Sports_left</name>
+   <tag></tag>
+   <elementGuidId>e80ee942-7bbf-45de-857d-be4bddc7505c</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>CSS</key>
+         <value>div.left</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='page-view']/div/div/div[2]/section/section/div/div</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>div</value>
+      <webElementGuid>6731dce6-3569-49dd-9d45-ca8b9b37148a</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>left</value>
+      <webElementGuid>76502477-fc9a-4c94-ab40-b23becfc1e3d</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;page-view&quot;)/div[1]/div[@class=&quot;gt-layout page-layout_pc&quot;]/div[@class=&quot;page-view__child&quot;]/section[@class=&quot;page-pdp page-pdp&quot;]/section[@class=&quot;page-pdp_content&quot;]/div[@class=&quot;page-pdp_content__main&quot;]/div[@class=&quot;left&quot;]</value>
+      <webElementGuid>dbf706c2-25ae-4f4d-bec9-bd38bf858908</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='page-view']/div/div/div[2]/section/section/div/div</value>
+      <webElementGuid>fa862e5c-8bb9-44bb-8421-74a8111a4ef3</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Sports'])[1]/following::div[2]</value>
+      <webElementGuid>47d396c9-4084-490b-97ab-b4d248c85166</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Airwalk'])[2]/preceding::div[15]</value>
+      <webElementGuid>1525cf86-7250-433e-803c-ef493e37afe6</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//section/section/div/div</value>
+      <webElementGuid>16def3a7-9575-4644-b3c7-9bf878bf47d4</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

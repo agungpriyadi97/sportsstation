@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Ensure user cannot checkout with empty cart</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>15f5e813-066c-4fa8-a8b4-d551e88804cb</testCaseGuid>
+</TestCaseEntity>

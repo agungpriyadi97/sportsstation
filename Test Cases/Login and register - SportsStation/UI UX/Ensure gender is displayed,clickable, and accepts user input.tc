@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Ensure gender is displayed,clickable, and accepts user input</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>1f44db8d-760a-43b0-8ad1-31ff9c7b9a92</testCaseGuid>
+</TestCaseEntity>

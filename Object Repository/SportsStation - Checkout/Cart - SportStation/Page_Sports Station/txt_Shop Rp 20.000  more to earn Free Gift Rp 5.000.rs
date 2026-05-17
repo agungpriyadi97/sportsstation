@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>txt_Shop Rp 20.000  more to earn Free Gift Rp 5.000</name>
+   <tag></tag>
+   <elementGuidId>9fa7d1a8-3d6e-46e7-a091-264e76fb6cfd</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='page-view']/div/div/section/section/section/section/div/div/div/div/p/span</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value>p.shop-more__bar-desc > span</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>span</value>
+      <webElementGuid>08a6aecc-8054-4e9f-aee0-f3c1bf08ccb9</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>Shop Rp 20.000  more to earn Free Gift Rp 5.000</value>
+      <webElementGuid>e640e3c8-5a65-4c26-a141-b6a508df753d</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;page-view&quot;)/div[1]/div[@class=&quot;gt-layout page-layout_pc&quot;]/section[@class=&quot;page-shop-cart page-view__child&quot;]/section[@class=&quot;gt-page-shop-cart&quot;]/section[@class=&quot;gt-page_shopcart&quot;]/section[@class=&quot;page-shopCart_container&quot;]/div[@class=&quot;page-shopCart_container_left&quot;]/div[@class=&quot;shop-more__cart&quot;]/div[@class=&quot;shop-more&quot;]/div[@class=&quot;shop-more__bar&quot;]/p[@class=&quot;shop-more__bar-desc&quot;]/span[1]</value>
+      <webElementGuid>bb25aa76-79b0-4063-b4e7-e793c5f8ebe8</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='page-view']/div/div/section/section/section/section/div/div/div/div/p/span</value>
+      <webElementGuid>f64f7cba-0209-4a72-b061-227de0653dfe</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Shopping Cart'])[1]/following::span[1]</value>
+      <webElementGuid>bf2a3582-6391-460f-91b6-53039c9296ca</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Free Shipping!'])[2]/following::span[2]</value>
+      <webElementGuid>32252bf1-edde-4a09-ba39-3d3408913e56</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>//*/text()[normalize-space(.)='Shop']/parent::*</value>
+      <webElementGuid>126bc3b6-2ee7-49d7-96bc-946bcefac5f5</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//p/span</value>
+      <webElementGuid>97aa39b7-12f8-47c2-bcf9-ecb1b25567dc</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//span[(text() = 'Shop Rp 20.000  more to earn Free Gift Rp 5.000' or . = 'Shop Rp 20.000  more to earn Free Gift Rp 5.000')]</value>
+      <webElementGuid>afda0611-a418-40ff-a26c-07a534b93fc8</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

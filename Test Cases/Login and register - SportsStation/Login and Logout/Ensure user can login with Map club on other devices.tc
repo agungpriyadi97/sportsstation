@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Ensure user can login with Map club on other devices</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>28e66aa1-3e2a-418c-9687-d838cf2f2abc</testCaseGuid>
+</TestCaseEntity>

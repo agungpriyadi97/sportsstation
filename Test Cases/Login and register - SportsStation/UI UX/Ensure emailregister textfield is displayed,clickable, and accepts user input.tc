@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Ensure emailregister textfield is displayed,clickable, and accepts user input</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>e5cb285d-00e6-4310-8cc0-3285250b6998</testCaseGuid>
+</TestCaseEntity>

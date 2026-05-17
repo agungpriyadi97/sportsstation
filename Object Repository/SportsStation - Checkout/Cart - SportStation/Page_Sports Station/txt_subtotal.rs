@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>txt_subtotal</name>
+   <tag></tag>
+   <elementGuidId>19d19b07-e3b4-40c3-a550-4a0093c20556</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>CSS</key>
+         <value>ul.price-detail > li</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//label[text()='Subtotal']/following-sibling::span</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>li</value>
+      <webElementGuid>9681e241-1956-4932-9601-91fb95ed3b03</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>Subtotal Rp 40.000</value>
+      <webElementGuid>7b66df3d-3d6a-4a86-acfa-844023c48e0b</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;page-view&quot;)/div[1]/div[@class=&quot;gt-layout page-layout_pc&quot;]/section[@class=&quot;page-shop-cart page-view__child&quot;]/section[@class=&quot;gt-page-shop-cart&quot;]/section[@class=&quot;gt-page_shopcart&quot;]/section[@class=&quot;page-shopCart_container&quot;]/div[@class=&quot;page-shopCart_container_right&quot;]/div[@class=&quot;gt-skeleton&quot;]/div[@class=&quot;page-shopCart_container_right_content&quot;]/ul[@class=&quot;price-detail&quot;]/li[1]</value>
+      <webElementGuid>8ca5dcf1-a77a-4447-923f-fc43e8c99f32</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='page-view']/div/div/section/section/section/section/div[2]/div/div/ul/li</value>
+      <webElementGuid>c86da229-aa74-4154-af00-a58edcbec61d</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='(2 items)'])[1]/following::li[1]</value>
+      <webElementGuid>f0f0abcc-d4ba-41c2-bc8b-6532561bf183</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Order Summary'])[1]/following::li[1]</value>
+      <webElementGuid>9ff2f02d-176e-4044-beaf-19442e88ce3c</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//section/div[2]/div/div/ul/li</value>
+      <webElementGuid>01c8f4ed-ccf7-4908-ab20-d0ddaf06ebae</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//li[(text() = 'Subtotal Rp 40.000' or . = 'Subtotal Rp 40.000')]</value>
+      <webElementGuid>2eecf22b-cb45-4f88-bc93-ec7993043d45</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

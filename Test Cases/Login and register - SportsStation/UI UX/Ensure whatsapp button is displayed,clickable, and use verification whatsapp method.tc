@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Ensure whatsapp button is displayed,clickable, and use verification whatsapp method</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>cb4187e5-453d-4b5a-a347-3367e2d010b8</testCaseGuid>
+</TestCaseEntity>

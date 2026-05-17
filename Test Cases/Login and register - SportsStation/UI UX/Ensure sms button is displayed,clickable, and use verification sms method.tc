@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Ensure sms button is displayed,clickable, and use verification sms method</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>445ca643-4430-41f6-9f4c-ef2dadda9e56</testCaseGuid>
+</TestCaseEntity>

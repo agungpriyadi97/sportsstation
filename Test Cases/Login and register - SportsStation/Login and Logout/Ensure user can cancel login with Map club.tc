@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Ensure user can cancel login with Map club</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>745b1a85-ba81-409c-9149-2f235ec5e795</testCaseGuid>
+</TestCaseEntity>

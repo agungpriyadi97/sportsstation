@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>btn_privacyPolicy</name>
+   <tag></tag>
+   <elementGuidId>eecd139f-7fae-4231-8bc7-ebbfcefeea5a</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>CSS</key>
+         <value>span.el-checkbox__inner</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='page-view']/div/div/div[2]/section/div[2]/div[3]/div/div/label/span/span</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorCollection>
+      <entry>
+         <key>SMART_LOCATOR</key>
+         <value>.el-checkbox__inner >> nth=0</value>
+      </entry>
+   </smartLocatorCollection>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>span</value>
+      <webElementGuid>eab0e140-b7cc-4045-9a76-4318bc27fd70</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>el-checkbox__inner</value>
+      <webElementGuid>7be6c887-dc9c-4f79-bac6-b4433ad9a851</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;page-view&quot;)/div[1]/div[@class=&quot;gt-layout page-layout_pc&quot;]/div[@class=&quot;signup-container page-view__child&quot;]/section[@class=&quot;register-page-index&quot;]/div[@class=&quot;register-page-index__right&quot;]/div[3]/div[@class=&quot;consent&quot;]/div[@class=&quot;consent__content&quot;]/label[@class=&quot;el-checkbox checkbox gt-checkbox&quot;]/span[@class=&quot;el-checkbox__input&quot;]/span[@class=&quot;el-checkbox__inner&quot;]</value>
+      <webElementGuid>c78e72ea-3f89-4037-8849-f26abc6f1629</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='page-view']/div/div/div[2]/section/div[2]/div[3]/div/div/label/span/span</value>
+      <webElementGuid>55b03b63-b86f-43a4-9e90-80c0b15a4b0d</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//label/span/span</value>
+      <webElementGuid>26a55fbf-eb6e-4354-9a2b-c5715009f3be</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>
