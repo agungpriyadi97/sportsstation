@@ -30,7 +30,7 @@ katalon_speedwork_test:
       # --- DYNAMIC PATH RESOLUTION ---
       if [ -z "$TEST_PATH" ]; then
         echo "Running default Speedwork Regression Collection..."
-        export FINAL_PATH="Test Suites/Regression/Regression_sportstation"
+        export FINAL_PATH="Test Suites/Regression/Regression_sportstation_Test"
         export ARG_TYPE="-testSuiteCollectionPath"
       else
         echo "Running custom test: $TEST_PATH"
