@@ -8,7 +8,7 @@ stages:
 variables:
   CONTINUE_ON_FAILURE: "true"
 
-katalon_speedwork_test:
+katalon_Sportstation_test:
   stage: test
   tags:
     - infra
@@ -17,19 +17,12 @@ katalon_speedwork_test:
     - if: $CI_PIPELINE_SOURCE == "schedule"
     - if: $CI_PIPELINE_SOURCE == "web"
   
-  before_script:
-    # Force apt to ignore the unverified Edge repository so it doesn't return exit code 1
-    - apt-get update -o Acquire::AllowInsecureRepositories=true -o Doomsday::Ignore=true -y || true
-    # Install FFmpeg cleanly from standard Ubuntu repos
-    - apt-get install -y --allow-unauthenticated ffmpeg
-    - ffmpeg -version
-
   script:
     - curl ifconfig.me
     - |
       # --- DYNAMIC PATH RESOLUTION ---
       if [ -z "$TEST_PATH" ]; then
-        echo "Running default Speedwork Regression Collection..."
+        echo "Running default Sportsstation Regression Collection..."
         export FINAL_PATH="Test Suites/Regression/Regression_sportstation_Test"
         export ARG_TYPE="-testSuiteCollectionPath"
       else
