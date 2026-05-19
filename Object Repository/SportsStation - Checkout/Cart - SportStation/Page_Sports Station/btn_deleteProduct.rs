@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>btn_deleteProduct</name>
+   <tag></tag>
+   <elementGuidId>cb4dd549-0e3d-4d61-ad9c-b9f908697773</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>CSS</key>
+         <value>i.iconfont.icon-delete.color</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='page-view']/div/div/section/section/section/section/div/div[2]/div/section/section/ul/li/div/div/section/div/div/div/i</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>i</value>
+      <webElementGuid>8f070aed-9882-486b-9533-5e2c11da5c92</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>iconfont icon-delete color</value>
+      <webElementGuid>1244bdee-4dbb-4449-a2fd-648e9e6af0d7</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;page-view&quot;)/div[1]/div[@class=&quot;gt-layout page-layout_pc&quot;]/section[@class=&quot;page-shop-cart page-view__child&quot;]/section[@class=&quot;gt-page-shop-cart&quot;]/section[@class=&quot;gt-page_shopcart&quot;]/section[@class=&quot;page-shopCart_container&quot;]/div[@class=&quot;page-shopCart_container_left&quot;]/div[@class=&quot;gt-skeleton&quot;]/div[1]/section[1]/section[@class=&quot;sp-shopcart__product&quot;]/ul[@class=&quot;shopcart-product__list&quot;]/li[@class=&quot;shopcart-product__list__item&quot;]/div[1]/div[@class=&quot;page-shopcart_sku&quot;]/section[@class=&quot;page-shopcart_sku_container&quot;]/div[@class=&quot;left&quot;]/div[@class=&quot;sku-left-info&quot;]/div[@class=&quot;attrs-left&quot;]/i[@class=&quot;iconfont icon-delete color&quot;]</value>
+      <webElementGuid>2f4e2bcb-3a02-493f-a8ed-4ae0d85bc3ec</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='page-view']/div/div/section/section/section/section/div/div[2]/div/section/section/ul/li/div/div/section/div/div/div/i</value>
+      <webElementGuid>e8bbd79a-e98b-4d35-8603-383eeba4f54e</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//section/div/div/div/i</value>
+      <webElementGuid>91780023-f420-4154-a594-7dd71bfe04b3</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

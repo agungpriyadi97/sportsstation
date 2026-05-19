@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>txtField_verifyCode</name>
+   <tag></tag>
+   <elementGuidId>d28cf21e-c61a-4d1f-bd19-9689b9cefd62</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//input[contains(@placeholder, 'verifikasi') or contains(@placeholder, 'OTP') or contains(@placeholder, 'kode') or @maxlength='6']</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value>div.width_fill.el-input.el-input--medium.el-input-group.el-input-group--append.el-input--suffix.gt-input.gt-radius-undefined.gt-border-undefined.gt-borderColor-undefined.gt-verify-input > input.el-input__inner</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorCollection>
+      <entry>
+         <key>SMART_LOCATOR</key>
+         <value>internal:role=textbox[name=&quot;Validation Code&quot;i]</value>
+      </entry>
+   </smartLocatorCollection>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>input</value>
+      <webElementGuid>e28bbb84-034c-4514-a164-1e5574adaf2f</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>type</name>
+      <type>Main</type>
+      <value>text</value>
+      <webElementGuid>21890ea4-15c9-4dde-b97d-1307352a0839</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>autocomplete</name>
+      <type>Main</type>
+      <value>off</value>
+      <webElementGuid>561835c8-f0c8-4ab3-8e58-c6fd7d4ce417</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>placeholder</name>
+      <type>Main</type>
+      <value>Validation Code</value>
+      <webElementGuid>9b0a0f2c-069a-43ea-8164-9cba121ee1e3</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>el-input__inner</value>
+      <webElementGuid>1b382628-2942-4280-8c3f-301550a26f2a</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;page-view&quot;)/div[1]/div[@class=&quot;gt-layout page-layout_pc&quot;]/div[@class=&quot;signup-container page-view__child&quot;]/section[@class=&quot;register-page-index&quot;]/div[@class=&quot;register-page-index__right&quot;]/div[@class=&quot;signup-section&quot;]/form[@class=&quot;el-form gt-simple-form el-form--label-top&quot;]/div[@class=&quot;el-form-item gt-form-item is-required el-form-item--medium verification-code&quot;]/div[@class=&quot;el-form-item__content&quot;]/div[@class=&quot;width_fill el-input el-input--medium el-input-group el-input-group--append el-input--suffix gt-input gt-radius-undefined gt-border-undefined gt-borderColor-undefined gt-verify-input&quot;]/input[@class=&quot;el-input__inner&quot;]</value>
+      <webElementGuid>ff76cdf8-bc5a-4cf7-b39b-6af100826d47</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:attributes</name>
+      <type>Main</type>
+      <value>(//input[@type='text'])[4]</value>
+      <webElementGuid>5d07f8c3-0a84-4c92-9f3e-97c61746943b</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='page-view']/div/div/div[2]/section/div[2]/div[2]/form/div[2]/div/div/input</value>
+      <webElementGuid>a3534ad9-f38a-4f81-8444-5822a41b795f</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//div[2]/div/div/input</value>
+      <webElementGuid>43e6a30a-9caf-49cc-9e59-9b1141a7568a</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//input[@type = 'text' and @placeholder = 'Validation Code']</value>
+      <webElementGuid>ee6433c4-86f9-434d-a933-56fc876d265f</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

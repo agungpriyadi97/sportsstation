@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Ensure firstName textfield is displayed,clickable, and accepts user input</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>9b11d5a4-32f2-47c9-83f3-1f3c92d91a78</testCaseGuid>
+</TestCaseEntity>

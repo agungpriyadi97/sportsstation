@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>txt_quantity</name>
+   <tag></tag>
+   <elementGuidId>1041e796-8ff7-4c67-b5e2-15c56d8358cc</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>CSS</key>
+         <value>i.iconfont.icon-cart</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='page-view']/div/div/div/div[2]/div[2]/div/i</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>i</value>
+      <webElementGuid>8599f6e2-acc5-4f13-a7c9-8d272fb8dbff</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>iconfont icon-cart</value>
+      <webElementGuid>91c9afb1-d78f-40fd-b2a9-5783f151306a</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>
+            1
+          </value>
+      <webElementGuid>a2b5236d-7690-496b-a2da-1d3c0779f922</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;page-view&quot;)/div[1]/div[@class=&quot;gt-layout page-layout_pc&quot;]/div[@class=&quot;gt-header common-header&quot;]/div[@class=&quot;gt-header_container&quot;]/div[@class=&quot;header-right&quot;]/div[@class=&quot;header-wish-cart&quot;]/i[@class=&quot;iconfont icon-cart&quot;]</value>
+      <webElementGuid>be0fe19a-d3ce-4378-a1d1-8d664bc37e90</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='page-view']/div/div/div/div[2]/div[2]/div/i</value>
+      <webElementGuid>e4f31a4c-eaf7-4589-8e0f-0d9858d848d4</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Explore All Products'])[1]/following::i[1]</value>
+      <webElementGuid>18e4c5b3-11a5-472c-912f-6ef2385731a6</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Help'])[1]/following::i[2]</value>
+      <webElementGuid>bfd3a49e-7fde-4c4f-bc55-1a4e6f7b1a6f</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='BRANDS'])[1]/preceding::i[1]</value>
+      <webElementGuid>9094bf82-28f3-4162-a56f-49b4bf157293</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='A-B'])[1]/preceding::i[1]</value>
+      <webElementGuid>85c36183-0c1e-4ad8-83f2-8f9a8e522c17</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//div/i</value>
+      <webElementGuid>06f2b7da-a6fa-4bcd-9b9a-46d548b0dad3</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//i[(text() = '
+            1
+          ' or . = '
+            1
+          ')]</value>
+      <webElementGuid>0a222b9e-c022-40fa-8bae-fadebe03d8dc</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

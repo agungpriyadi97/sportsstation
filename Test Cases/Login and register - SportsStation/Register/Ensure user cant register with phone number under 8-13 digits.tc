@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Ensure user cant register with phone number under 8-13 digits</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>b7473fbe-2b7b-45ce-bf3b-fb136d735f32</testCaseGuid>
+</TestCaseEntity>

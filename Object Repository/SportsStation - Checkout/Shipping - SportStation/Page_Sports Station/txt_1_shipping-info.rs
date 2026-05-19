@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>txt_1_shipping-info</name>
+   <tag></tag>
+   <elementGuidId>334ae36b-73b1-4f43-ade0-55001b1b0de7</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='page-view']/div/div/div[2]/section/div/section/div</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value>div.sub-title</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>div</value>
+      <webElementGuid>f09913f3-ba6d-40fe-8243-fc9ae74e2152</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>sub-title</value>
+      <webElementGuid>5b130a61-bf5e-4c8d-9a71-c8f4fb503d77</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>1. Ship To</value>
+      <webElementGuid>83e8c585-bb32-41b3-ba58-f244eae8cc74</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;page-view&quot;)/div[1]/div[@class=&quot;gt-layout page-layout_pc&quot;]/div[@class=&quot;page-view__child&quot;]/section[@class=&quot;page-checkout ss-page-checkout&quot;]/div[@class=&quot;left&quot;]/section[@class=&quot;page-checkout_address&quot;]/div[@class=&quot;sub-title&quot;]</value>
+      <webElementGuid>dd147161-bd62-48ed-9bb6-0c9f36bdc1f7</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='page-view']/div/div/div[2]/section/div/section/div</value>
+      <webElementGuid>af8810cf-855c-47ea-949d-743c76156710</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Checkout'])[1]/following::div[1]</value>
+      <webElementGuid>8e6387dd-b90d-468f-9e13-6572a0357907</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Free Shipping!'])[2]/following::div[3]</value>
+      <webElementGuid>95f9df63-c915-4577-9e6a-beb6b33af66c</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Shipping Address'])[1]/preceding::div[1]</value>
+      <webElementGuid>32ed172d-c477-467e-bec9-51f5ec8357fd</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Change'])[1]/preceding::div[1]</value>
+      <webElementGuid>bfc51ea7-ef5f-4b26-af27-417bb5db1700</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//section/div/section/div</value>
+      <webElementGuid>8cd13c1b-7918-46bd-82ac-1e5293c711aa</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//div[(text() = '1. Ship To' or . = '1. Ship To')]</value>
+      <webElementGuid>9a6fee5f-2880-4d6c-9155-ee722a46f68b</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

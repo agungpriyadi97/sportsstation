@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Ensure that user cant register with number that already registered in MAP CLUB</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>3ebc48bb-153b-4050-bffb-3ea500567686</testCaseGuid>
+</TestCaseEntity>

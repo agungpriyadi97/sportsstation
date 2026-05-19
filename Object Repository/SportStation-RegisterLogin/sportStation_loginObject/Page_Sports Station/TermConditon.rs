@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>TermConditon</name>
+   <tag></tag>
+   <elementGuidId>7f0d4360-25b1-4083-a829-b1595463c993</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>CSS</key>
+         <value>div.iframe-block-wrap > div</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='page-view']/div/div/div[2]/section/div/div/section/div/div/section/div/div</value>
+      </entry>
+      <entry>
+         <key>BASIC</key>
+         <value>id(&quot;page-view&quot;)/div[1]/div[@class=&quot;gt-layout page-layout_pc&quot;]/div[@class=&quot;gt-plp-page page-view__child&quot;]/section[@class=&quot;sp-landing-page&quot;]/div[@class=&quot;sp-landingpage-collection&quot;]/div[@class=&quot;sp-row&quot;]/section[@class=&quot;row-box&quot;]/div[@class=&quot;sp-row-wrapper&quot;]/div[1]/section[@class=&quot;sp-landing-textblock text-block&quot;]/div[@class=&quot;iframe-block-wrap&quot;]/div[1]</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>CSS</selectorMethod>
+   <smartLocatorCollection>
+      <entry>
+         <key>SMART_LOCATOR</key>
+         <value>.iframe-block-wrap > div</value>
+      </entry>
+   </smartLocatorCollection>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>div</value>
+      <webElementGuid>2732aff0-7496-4471-bc45-647342d07d25</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;page-view&quot;)/div[1]/div[@class=&quot;gt-layout page-layout_pc&quot;]/div[@class=&quot;gt-plp-page page-view__child&quot;]/section[@class=&quot;sp-landing-page&quot;]/div[@class=&quot;sp-landingpage-collection&quot;]/div[@class=&quot;sp-row&quot;]/section[@class=&quot;row-box&quot;]/div[@class=&quot;sp-row-wrapper&quot;]/div[1]/section[@class=&quot;sp-landing-textblock text-block&quot;]/div[@class=&quot;iframe-block-wrap&quot;]/div[1]</value>
+      <webElementGuid>4c05a708-09ae-472e-a95b-2560ec8d76f9</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='page-view']/div/div/div[2]/section/div/div/section/div/div/section/div/div</value>
+      <webElementGuid>36a6e51a-56b5-4ac3-857c-f215169b6a3c</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//section/div/div/section/div/div/section/div/div</value>
+      <webElementGuid>8bcea0df-4e18-41d0-9c61-9029f3a713be</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

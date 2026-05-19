@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>A-verificationOTP</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>a475ab97-954e-4c02-a9cb-5ffd426a2308</testCaseGuid>
+</TestCaseEntity>

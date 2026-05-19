@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>txt_harga-total</name>
+   <tag></tag>
+   <elementGuidId>e9339a10-2289-4250-a7a3-dce51ebfc56a</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='page-view']/div/div/section/section/section/section/div[2]/div/div/ul/li[3]</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value>li.total</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>li</value>
+      <webElementGuid>4328167c-95a0-45ab-b293-de6cf2b58450</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>total</value>
+      <webElementGuid>e829cd0c-afc1-4568-93e1-d4f183668543</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>Total Rp 40.000</value>
+      <webElementGuid>0208bfe0-09a0-458d-be65-a7867bed6ec2</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;page-view&quot;)/div[1]/div[@class=&quot;gt-layout page-layout_pc&quot;]/section[@class=&quot;page-shop-cart page-view__child&quot;]/section[@class=&quot;gt-page-shop-cart&quot;]/section[@class=&quot;gt-page_shopcart&quot;]/section[@class=&quot;page-shopCart_container&quot;]/div[@class=&quot;page-shopCart_container_right&quot;]/div[@class=&quot;gt-skeleton&quot;]/div[@class=&quot;page-shopCart_container_right_content&quot;]/ul[@class=&quot;price-detail&quot;]/li[@class=&quot;total&quot;]</value>
+      <webElementGuid>93d7d22a-4cf4-4211-a9b6-3cfc45047c53</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='page-view']/div/div/section/section/section/section/div[2]/div/div/ul/li[3]</value>
+      <webElementGuid>4e7d0b72-f2a1-48a1-8128-6b989a2846f8</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='-Rp 0'])[1]/following::li[1]</value>
+      <webElementGuid>64d8efa1-0c55-42bf-a4f5-77996ef9a125</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Discount'])[1]/following::li[1]</value>
+      <webElementGuid>c794d8f0-7eb6-4e20-8893-615a7fe58917</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//div[2]/div/div/ul/li[3]</value>
+      <webElementGuid>a5657c22-69ab-4ec3-a148-1f761e013d81</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//li[(text() = 'Total Rp 40.000' or . = 'Total Rp 40.000')]</value>
+      <webElementGuid>941ad9fd-93e1-4559-9b3e-cb4cc6961fd7</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

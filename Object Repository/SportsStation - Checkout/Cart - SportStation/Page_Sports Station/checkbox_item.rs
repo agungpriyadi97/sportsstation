@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>checkbox_item</name>
+   <tag></tag>
+   <elementGuidId>d28bb02f-9b01-423b-b39d-081809450fea</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='page-view']/div/div/section/section/section/section/div/div[2]/div/section/section/ul/li/div/div/section/div/label/span/span</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value>label.el-checkbox.cart-checkbox.is-checked.gt-checkbox > span.el-checkbox__input.is-checked > span.el-checkbox__inner</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>span</value>
+      <webElementGuid>e9888686-006a-4598-9c22-058710a4b4df</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>el-checkbox__inner</value>
+      <webElementGuid>bf114c95-b13d-42fc-bca1-0ad688ea27e0</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;page-view&quot;)/div[1]/div[@class=&quot;gt-layout page-layout_pc&quot;]/section[@class=&quot;page-shop-cart page-view__child&quot;]/section[@class=&quot;gt-page-shop-cart&quot;]/section[@class=&quot;gt-page_shopcart&quot;]/section[@class=&quot;page-shopCart_container&quot;]/div[@class=&quot;page-shopCart_container_left&quot;]/div[@class=&quot;gt-skeleton&quot;]/div[1]/section[1]/section[@class=&quot;sp-shopcart__product&quot;]/ul[@class=&quot;shopcart-product__list&quot;]/li[@class=&quot;shopcart-product__list__item&quot;]/div[1]/div[@class=&quot;page-shopcart_sku&quot;]/section[@class=&quot;page-shopcart_sku_container&quot;]/div[@class=&quot;left&quot;]/label[@class=&quot;el-checkbox cart-checkbox is-checked gt-checkbox&quot;]/span[@class=&quot;el-checkbox__input is-checked&quot;]/span[@class=&quot;el-checkbox__inner&quot;]</value>
+      <webElementGuid>6e0b5573-c5bf-4506-b411-d24f32073a11</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='page-view']/div/div/section/section/section/section/div/div[2]/div/section/section/ul/li/div/div/section/div/label/span/span</value>
+      <webElementGuid>afa2a4b7-2269-4742-b834-8959763ccc12</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//li/div/div/section/div/label/span/span</value>
+      <webElementGuid>de01bf42-7124-4bf5-a795-6bea1ebf9bef</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

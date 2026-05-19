@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Verify eror messege is shown</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>0bcc8272-2fff-42e2-89cc-a4c350b2fecc</testCaseGuid>
+</TestCaseEntity>

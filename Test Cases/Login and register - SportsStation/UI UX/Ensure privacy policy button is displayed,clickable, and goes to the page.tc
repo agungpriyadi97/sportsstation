@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Ensure privacy policy button is displayed,clickable, and goes to the page</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>f856864c-e000-4fb3-8ce9-e6c645174630</testCaseGuid>
+</TestCaseEntity>

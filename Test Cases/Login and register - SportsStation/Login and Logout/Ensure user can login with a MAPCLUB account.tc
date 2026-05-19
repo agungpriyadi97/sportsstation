@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Ensure user can login with a MAPCLUB account</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>0f48a8e5-96d2-41c5-ab93-41a60b51eb7a</testCaseGuid>
+</TestCaseEntity>

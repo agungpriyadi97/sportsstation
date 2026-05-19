@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>txt_Reguler</name>
+   <tag></tag>
+   <elementGuidId>ee71bade-4f56-4907-b2d8-1a20be8ab63d</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>CSS</key>
+         <value></value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='page-view']/div/div/div[2]/section/div/section/section[2]/div[2]/div[2]</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>div</value>
+      <webElementGuid>03965eda-b2ba-4688-a5c8-e8dc8eca8f38</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>sp-shipping-methods__item</value>
+      <webElementGuid>10673527-67fd-486b-bd79-5efe7d9bc871</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value> Regular  Rp 0 </value>
+      <webElementGuid>a223b1b5-4fc4-4aaa-b43d-cf7731647b17</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;page-view&quot;)/div[1]/div[@class=&quot;gt-layout page-layout_pc&quot;]/div[@class=&quot;page-view__child&quot;]/section[@class=&quot;page-checkout ss-page-checkout&quot;]/div[@class=&quot;left&quot;]/section[@class=&quot;page-checkout_address&quot;]/section[@class=&quot;shipping-method&quot;]/div[@class=&quot;page-checkout_shipping sp-shipping-methods&quot;]/div[@class=&quot;sp-shipping-methods__item&quot;]</value>
+      <webElementGuid>54604ec1-fe0a-45fe-b1fb-38c39824f642</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='page-view']/div/div/div[2]/section/div/section/section[2]/div[2]/div[2]</value>
+      <webElementGuid>d2e5c85b-6676-4cfd-bd7a-77d45777b482</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Shipping Method'])[1]/following::div[6]</value>
+      <webElementGuid>bacb4708-eeaf-42ff-9dba-75f05cc6e454</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Cancel'])[2]/following::div[7]</value>
+      <webElementGuid>62fb106a-c752-4629-8ed8-6b0415294382</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Doku : Virtual Account/Credit'])[1]/preceding::div[7]</value>
+      <webElementGuid>a94f0453-113b-4479-9de4-69001e3f3b48</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='midtrans'])[1]/preceding::div[12]</value>
+      <webElementGuid>63d0284d-6d6a-45ac-aea5-ab2e018a7795</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//section[2]/div[2]/div[2]</value>
+      <webElementGuid>5289cfab-7793-486c-ae0d-60d20da07e1c</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//div[(text() = ' Regular  Rp 0 ' or . = ' Regular  Rp 0 ')]</value>
+      <webElementGuid>41c354ee-52c4-4be1-b8b6-a7342c35de3c</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>
