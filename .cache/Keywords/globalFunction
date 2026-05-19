@@ -1,0 +1,26 @@
+{
+  "keywordFileContentHash": "2E2F43432B3FD7F1E81F1062D30340AD",
+  "keywordClasses": [
+    {
+      "name": "globalFunction",
+      "keywordMethods": [
+        {
+          "name": "generateEmail",
+          "parameters": [],
+          "javadoc": ""
+        },
+        {
+          "name": "generatePhone",
+          "parameters": [],
+          "javadoc": ""
+        },
+        {
+          "name": "generateUserData",
+          "parameters": [],
+          "javadoc": ""
+        }
+      ]
+    }
+  ],
+  "javadocParsed": true
+}
