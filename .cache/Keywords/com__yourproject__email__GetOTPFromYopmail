@@ -1,5 +1,5 @@
 {
-  "keywordFileContentHash": "7FE156A4C7880FA09B55A3112F5BBC9F",
+  "keywordFileContentHash": "0EA2F470B47536C548613785B31A3CCE",
   "keywordClasses": [
     {
       "name": "com.yourproject.email.GetOTPFromYopmail",
@@ -33,8 +33,7 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": ""
+          ]
         },
         {
           "name": "getOTP",
@@ -52,11 +51,10 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": ""
+          ]
         }
       ]
     }
   ],
-  "javadocParsed": true
+  "javadocParsed": false
 }

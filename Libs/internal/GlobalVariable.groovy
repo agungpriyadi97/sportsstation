@@ -12,12 +12,12 @@ public class GlobalVariable {
     /**
      * <p></p>
      */
-    public static Object noHp
+    public static Object URL
      
     /**
      * <p></p>
      */
-    public static Object email
+    public static Object username
      
     /**
      * <p></p>
@@ -27,87 +27,62 @@ public class GlobalVariable {
     /**
      * <p></p>
      */
-    public static Object url_loginRegister
+    public static Object RegisteredEmail
      
     /**
      * <p></p>
      */
-    public static Object confrim_password
+    public static Object RegisteredPassword
      
     /**
      * <p></p>
      */
-    public static Object firstName
+    public static Object RegisteredMobile
      
     /**
      * <p></p>
      */
-    public static Object lastName
+    public static Object RegisteredFullName
      
     /**
      * <p></p>
      */
-    public static Object userMongoDB
+    public static Object usernamenonmember
      
     /**
      * <p></p>
      */
-    public static Object passMongoDB
+    public static Object VirtualAccount
      
     /**
      * <p></p>
      */
-    public static Object mongoHost
+    public static Object TotalPrice
      
     /**
      * <p></p>
      */
-    public static Object portMongoDB
+    public static Object PaymentMethod
      
     /**
      * <p></p>
      */
-    public static Object MongoDatabase
+    public static Object OrderNumber
      
     /**
      * <p></p>
      */
-    public static Object MongoCollection
+    public static Object OrderStatus
      
     /**
      * <p></p>
      */
-    public static Object url_Checkout_pdp
+    public static Object nomormembermapclub
      
     /**
      * <p></p>
      */
-    public static Object address
-     
-    /**
-     * <p></p>
-     */
-    public static Object noCreditCard
-     
-    /**
-     * <p></p>
-     */
-    public static Object expireddate
-     
-    /**
-     * <p></p>
-     */
-    public static Object CVV
-     
-    /**
-     * <p></p>
-     */
-    public static Object EmailCO
-     
-    /**
-     * <p></p>
-     */
-    public static Object G_1
+    public static Object passwordmembermapclub
      
 
     static {
@@ -115,26 +90,21 @@ public class GlobalVariable {
             def selectedVariables = TestCaseMain.getGlobalVariables('default')
 			selectedVariables += TestCaseMain.getGlobalVariables(RunConfiguration.getExecutionProfile())
     
-            noHp = selectedVariables['noHp']
-            email = selectedVariables['email']
+            URL = selectedVariables['URL']
+            username = selectedVariables['username']
             password = selectedVariables['password']
-            url_loginRegister = selectedVariables['url_loginRegister']
-            confrim_password = selectedVariables['confrim_password']
-            firstName = selectedVariables['firstName']
-            lastName = selectedVariables['lastName']
-            userMongoDB = selectedVariables['userMongoDB']
-            passMongoDB = selectedVariables['passMongoDB']
-            mongoHost = selectedVariables['mongoHost']
-            portMongoDB = selectedVariables['portMongoDB']
-            MongoDatabase = selectedVariables['MongoDatabase']
-            MongoCollection = selectedVariables['MongoCollection']
-            url_Checkout_pdp = selectedVariables['url_Checkout_pdp']
-            address = selectedVariables['address']
-            noCreditCard = selectedVariables['noCreditCard']
-            expireddate = selectedVariables['expireddate']
-            CVV = selectedVariables['CVV']
-            EmailCO = selectedVariables['EmailCO']
-            G_1 = selectedVariables['G_1']
+            RegisteredEmail = selectedVariables['RegisteredEmail']
+            RegisteredPassword = selectedVariables['RegisteredPassword']
+            RegisteredMobile = selectedVariables['RegisteredMobile']
+            RegisteredFullName = selectedVariables['RegisteredFullName']
+            usernamenonmember = selectedVariables['usernamenonmember']
+            VirtualAccount = selectedVariables['VirtualAccount']
+            TotalPrice = selectedVariables['TotalPrice']
+            PaymentMethod = selectedVariables['PaymentMethod']
+            OrderNumber = selectedVariables['OrderNumber']
+            OrderStatus = selectedVariables['OrderStatus']
+            nomormembermapclub = selectedVariables['nomormembermapclub']
+            passwordmembermapclub = selectedVariables['passwordmembermapclub']
             
         } catch (Exception e) {
             TestCaseMain.logGlobalVariableError(e)

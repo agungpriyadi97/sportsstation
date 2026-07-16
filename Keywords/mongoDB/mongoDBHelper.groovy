@@ -24,7 +24,6 @@ import org.bson.Document
 import com.kms.katalon.core.util.KeywordUtil
 
 import internal.GlobalVariable
-import internal.GlobalVariable
 
 public class mongoDBHelper {
 	@Keyword
