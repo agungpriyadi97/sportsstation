@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>HOLD Positive - Pickup Checkout</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>eb5b19ae-d834-4068-9a6a-29aa79bcfdf7</testCaseGuid>
+</TestCaseEntity>

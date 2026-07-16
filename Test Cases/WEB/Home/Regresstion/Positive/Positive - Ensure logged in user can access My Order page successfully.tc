@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Positif - Pastikan pengguna yang login dapat mengakses halaman My Order dengan sukses</description>
+   <name>Positive - Ensure logged in user can access My Order page successfully</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>beb8e36a-237b-4d2b-8f86-354c41197b61</testCaseGuid>
+</TestCaseEntity>

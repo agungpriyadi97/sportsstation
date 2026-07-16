@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Positif - Pastikan pengguna dapat berhasil menavigasi ke halaman Merek</description>
+   <name>Positive - Ensure user can navigate to Brands page successfully</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>8e4729ed-5c80-4c6b-8101-98c34b6a47d7</testCaseGuid>
+</TestCaseEntity>

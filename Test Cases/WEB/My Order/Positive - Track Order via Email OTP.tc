@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Positive - Track Order via Email OTP</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>d475a3f6-d6c3-47db-b7c7-89d537a3181f</testCaseGuid>
+</TestCaseEntity>

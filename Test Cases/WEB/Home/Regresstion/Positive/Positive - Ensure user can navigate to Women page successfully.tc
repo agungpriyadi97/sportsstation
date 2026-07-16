@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Positif - Pastikan pengguna dapat berhasil menavigasi ke halaman Wanita</description>
+   <name>Positive - Ensure user can navigate to Women page successfully</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>efd9349f-4d85-4420-9bd4-9b7b721ff0ad</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Positive - Check Order Detail</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>9072d8b5-6fa1-42b0-bc83-6aa243ded6ec</testCaseGuid>
+</TestCaseEntity>

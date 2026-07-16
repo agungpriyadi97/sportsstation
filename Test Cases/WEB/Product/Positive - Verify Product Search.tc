@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Positive - Verify Product Search</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>9a1a6869-56b0-4840-a3a1-c23ff8838192</testCaseGuid>
+</TestCaseEntity>

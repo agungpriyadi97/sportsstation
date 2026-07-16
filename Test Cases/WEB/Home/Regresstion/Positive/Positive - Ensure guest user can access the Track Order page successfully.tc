@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Positif - Pastikan pengguna tamu dapat mengakses halaman Lacak Pesanan dengan sukses</description>
+   <name>Positive - Ensure guest user can access the Track Order page successfully</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>b3b4b098-90f7-42b5-876d-548217ac28d2</testCaseGuid>
+</TestCaseEntity>

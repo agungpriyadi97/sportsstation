@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Positif - Pastikan pengguna dapat menavigasi ke halaman Penjualan dengan sukses</description>
+   <name>Positive - Ensure user can navigate to Sale page successfully</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>d222a725-ca2d-4e08-8580-19ba5ff5a54f</testCaseGuid>
+</TestCaseEntity>

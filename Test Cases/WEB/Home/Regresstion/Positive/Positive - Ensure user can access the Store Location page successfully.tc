@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Positif - Pastikan pengguna dapat mengakses halaman Lokasi Toko dengan sukses</description>
+   <name>Positive - Ensure user can access the Store Location page successfully</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>f551b3a6-62a2-4b22-9d6d-c132840ef0c1</testCaseGuid>
+</TestCaseEntity>

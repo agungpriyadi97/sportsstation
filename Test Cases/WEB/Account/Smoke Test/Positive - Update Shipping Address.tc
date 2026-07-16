@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Positive - Update Shipping Address</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>0e4bc71d-2628-4608-a4ff-ad483cdc8969</testCaseGuid>
+</TestCaseEntity>

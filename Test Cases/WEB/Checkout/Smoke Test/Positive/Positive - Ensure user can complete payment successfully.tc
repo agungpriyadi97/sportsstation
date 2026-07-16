@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Positive - Ensure user can complete payment successfully</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>389a2a61-ce1d-4315-a36c-601a3da7147d</testCaseGuid>
+</TestCaseEntity>

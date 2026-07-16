@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Positive - Update Billing Address</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>82e0f81a-5c8b-4adc-82ee-0bcc4b633cd8</testCaseGuid>
+</TestCaseEntity>

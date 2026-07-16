@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Positif - Pastikan pengguna dapat menavigasi ke halaman Olahraga dengan sukses</description>
+   <name>Positive - Ensure user can navigate to Sports page successfully</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>a1136d35-eb10-4195-aeb7-9c47a3ba0363</testCaseGuid>
+</TestCaseEntity>

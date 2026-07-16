@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Positif - Pastikan hasil pencarian berhasil ditampilkan</description>
+   <name>Positive - Ensure search results are displayed successfully</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>7a083acc-ba2f-4cc7-8f2d-63ae3ff15acb</testCaseGuid>
+</TestCaseEntity>

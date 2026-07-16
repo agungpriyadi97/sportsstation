@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Link Remind Me Later tampil</description>
+   <name>Positive - Remind Me popup display</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>b58124c5-ab6b-4b38-927f-31dac1da2514</testCaseGuid>
+</TestCaseEntity>

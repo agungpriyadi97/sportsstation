@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Tombol Link Now tampil</description>
+   <name>Positive - Linking Now popup display</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>d70b3443-9112-4a48-a778-77f443cb6320</testCaseGuid>
+</TestCaseEntity>

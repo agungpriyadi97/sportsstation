@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Positif - Pastikan pengguna dapat mencari produk dengan sukses</description>
+   <name>Positive - Ensure user can search products successfully</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>86acc63f-66da-4cb1-a184-6d33ebddb884</testCaseGuid>
+</TestCaseEntity>

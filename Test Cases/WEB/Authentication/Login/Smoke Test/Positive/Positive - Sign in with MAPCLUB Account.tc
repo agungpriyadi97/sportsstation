@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Positive - Sign in with MAPCLUB Account</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>edfc4e19-137f-4aba-ae93-f3d3554b7765</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>ISSUE Positive - Home Delivery Checkout using MAAS</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>d5f682b0-352f-4d55-9144-c13566a1cd15</testCaseGuid>
+</TestCaseEntity>

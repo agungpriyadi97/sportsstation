@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Positif - Pastikan pengguna dapat berhasil keluar</description>
+   <name>Positive - Ensure user can sign out successfully</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>8caa532e-7c12-47e3-a74a-4f138ca6398f</testCaseGuid>
+</TestCaseEntity>

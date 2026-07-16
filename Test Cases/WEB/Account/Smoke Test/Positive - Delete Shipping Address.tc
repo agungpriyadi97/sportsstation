@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Positive - Delete Shipping Address</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>c4a3ff60-a360-464f-bc52-3c9a338fdae0</testCaseGuid>
+</TestCaseEntity>

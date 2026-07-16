@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Positive - Guest user can access PLP</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>72dff013-46b3-4d0e-9e6d-39c0d5575dc8</testCaseGuid>
+</TestCaseEntity>

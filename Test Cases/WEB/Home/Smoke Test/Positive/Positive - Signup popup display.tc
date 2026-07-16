@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Tombol MAPCLUB Sign Up tampil</description>
+   <name>Positive - Signup popup display</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>94f2b780-63fc-4006-b7b6-1c2760fb06e1</testCaseGuid>
+</TestCaseEntity>

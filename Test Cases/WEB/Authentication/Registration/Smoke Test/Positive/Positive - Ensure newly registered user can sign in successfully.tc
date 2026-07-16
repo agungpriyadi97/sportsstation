@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Positif - Pastikan pengguna yang baru terdaftar dapat berhasil login</description>
+   <name>Positive - Ensure newly registered user can sign in successfully</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>c25dca5b-bd94-4912-98b5-b36475575948</testCaseGuid>
+</TestCaseEntity>

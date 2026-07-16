@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Positive - Verify Product Sorting</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>4825e2d1-b9ea-4a4b-a173-ee4dcce5a60e</testCaseGuid>
+</TestCaseEntity>

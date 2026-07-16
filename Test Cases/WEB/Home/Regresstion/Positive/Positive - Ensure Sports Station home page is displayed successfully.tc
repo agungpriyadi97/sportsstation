@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Positif - Pastikan halaman beranda Sports Station berhasil ditampilkan</description>
+   <name>Positive - Ensure Sports Station home page is displayed successfully</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>f84042c2-c670-44fb-8aae-85cbbfef89cc</testCaseGuid>
+</TestCaseEntity>

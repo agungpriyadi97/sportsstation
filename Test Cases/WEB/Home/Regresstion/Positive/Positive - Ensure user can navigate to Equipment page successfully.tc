@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Positif - Pastikan pengguna dapat menavigasi ke halaman Peralatan dengan sukses</description>
+   <name>Positive - Ensure user can navigate to Equipment page successfully</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>e9510df2-7c18-4f09-95a9-082d7a760245</testCaseGuid>
+</TestCaseEntity>

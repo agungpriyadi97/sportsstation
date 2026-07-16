@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Beli Lagi</description>
+   <name>Positive - Buy Again</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>aa1dda42-fd08-4504-b91a-ef2aa253e24c</testCaseGuid>
+</TestCaseEntity>

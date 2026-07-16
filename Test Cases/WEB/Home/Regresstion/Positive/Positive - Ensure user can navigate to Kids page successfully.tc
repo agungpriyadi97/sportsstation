@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Positif - Pastikan pengguna dapat berhasil menavigasi ke halaman Anak-anak</description>
+   <name>Positive - Ensure user can navigate to Kids page successfully</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>6fa2cf10-6594-4ed2-83c4-9adefd5d7fe4</testCaseGuid>
+</TestCaseEntity>
