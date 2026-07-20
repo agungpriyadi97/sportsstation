@@ -6,11 +6,11 @@
    <elementGuidId>d1fd9147-324f-4db9-83a8-a939e9503dbd</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-      </entry>
-      <entry>
          <key>XPATH</key>
          <value>//input[@placeholder='Email']</value>
+      </entry>
+      <entry>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

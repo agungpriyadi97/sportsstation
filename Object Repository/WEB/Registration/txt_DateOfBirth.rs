@@ -6,12 +6,12 @@
    <elementGuidId>e05881ec-9450-44a2-bebd-a82466f52a20</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//div[contains(@class, 'date-of-birth')]//input</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//input[@placeholder='Date of Birth']</value>
+         <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

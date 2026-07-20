@@ -18,6 +18,13 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 
+// Tambahan import untuk mengatasi masalah Firefox dan Javascript Executor
+import org.openqa.selenium.Keys 
+import com.kms.katalon.core.webui.common.WebUiCommonHelper
+import org.openqa.selenium.WebElement
+import com.kms.katalon.core.webui.driver.DriverFactory
+import org.openqa.selenium.JavascriptExecutor
+
 import internal.GlobalVariable
 
 class RegistrationHelper {
@@ -85,9 +92,16 @@ class RegistrationHelper {
 				findTestObject('WEB/Registration/txt_Email'),
 				20)
 
-		WebUI.setText(
-				findTestObject('WEB/Registration/txt_Email'),
-				data.email)
+		// ---------------------------------------------------------
+		// IMPLEMENTASI JAVASCRIPT EXECUTOR UNTUK MENGATASI BUG FIREFOX
+		// ---------------------------------------------------------
+		WebElement emailField = WebUiCommonHelper.findWebElement(findTestObject('WEB/Registration/txt_Email'), 10)
+		JavascriptExecutor js = (JavascriptExecutor) DriverFactory.getWebDriver()
+		
+		// Set value secara langsung dan trigger event agar Vue.js / ElementUI mendeteksinya
+		js.executeScript("arguments[0].value='${data.email}'; arguments[0].dispatchEvent(new Event('input')); arguments[0].dispatchEvent(new Event('change'));", emailField)
+		WebUI.delay(1)
+		// ---------------------------------------------------------
 
 		WebUI.click(
 				findTestObject('WEB/Registration/btn_SendValidationCode'))
@@ -120,15 +134,29 @@ class RegistrationHelper {
 				findTestObject('WEB/Registration/txt_DateOfBirth'),
 				"04/07/1996")
 
+		// Menutup popup kalender setelah tanggal diisi (Solusi dari isu sebelumnya)
+		WebUI.sendKeys(
+				findTestObject('WEB/Registration/txt_DateOfBirth'), 
+				Keys.chord(Keys.ENTER))
+		
+		WebUI.delay(1)
+
+		// ---------------------------------------------------------
+		// PERBAIKAN: Penanganan animasi dropdown Gender
+		// ---------------------------------------------------------
 		WebUI.click(
 				findTestObject('WEB/Registration/ddl_Gender'))
 
+		// Tunggu opsi Male muncul di layar (menunggu animasi selesai)
+		WebUI.waitForElementVisible(
+				findTestObject('WEB/Registration/opt_Gender', [('gender') : 'Male']), 
+				5)
+				
+		WebUI.delay(1) // Jeda stabilisasi UI
+
 		WebUI.click(
-				findTestObject(
-				'WEB/Registration/opt_Gender',
-				[
-					('gender') : 'Male'
-				]))
+				findTestObject('WEB/Registration/opt_Gender', [('gender') : 'Male']))
+		// ---------------------------------------------------------
 
 		WebUI.scrollToElement(
 				findTestObject('WEB/Registration/chk_DataProtectionPolicy'),
@@ -161,11 +189,6 @@ class RegistrationHelper {
 		WebUI.waitForPageLoad(20)
 
 		WebUI.delay(5)
-
-		// TODO:
-		// Ganti object sesuai aplikasi
-		// Contoh:
-		// WebUI.verifyElementVisible(findTestObject('WEB/Common/icon_Profile'))
 
 		println "====================================="
 		println "REGISTER SUCCESS"

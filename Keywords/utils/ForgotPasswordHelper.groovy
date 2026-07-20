@@ -28,9 +28,17 @@ class ForgotPasswordHelper {
 	@Keyword
 	void openForgotPassword() {
 
+		// Tambahkan FailureHandling.OPTIONAL agar tes tidak gagal jika elemen tidak ditemukan
 		if (!WebUI.verifyElementPresent(
 				findTestObject('WEB/Login/txt_Email'),
-				3)) {
+				3, 
+				FailureHandling.OPTIONAL)) {
+            
+			// Tambahkan wait agar lebih stabil sebelum klik
+			WebUI.waitForElementClickable(
+				findTestObject('WEB/Common/lnk_SignIn'),
+				10,
+				FailureHandling.OPTIONAL)
 
 			WebUI.click(
 				findTestObject('WEB/Common/lnk_SignIn'))
