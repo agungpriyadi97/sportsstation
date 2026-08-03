@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Positive - Link Mapclub account on checkout page</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>34e49fb7-83c5-4e45-a17d-5f81aa33f609</testCaseGuid>
+</TestCaseEntity>

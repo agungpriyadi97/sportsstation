@@ -25,4 +25,18 @@
       <testCaseId>Test Cases/WEB/Checkout/Smoke Test/Positive/Positive - Ensure user can complete payment successfully</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
+   <testCaseLink>
+      <guid>5fb84358-1154-413a-820e-2c748e361dab</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/WEB/Checkout/Smoke Test/Positive/Positive - Buy Again</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>d3aceeb7-0009-41ab-9ebf-72916f262bcf</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/WEB/Checkout/Smoke Test/Positive/Positive - Guest Buy Again</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
 </TestSuiteEntity>

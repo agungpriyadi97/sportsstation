@@ -10,7 +10,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//p[normalize-space()='Account or password is not correct.']</value>
+         <value>//p[normalize-space()='Account or password is not correct..']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

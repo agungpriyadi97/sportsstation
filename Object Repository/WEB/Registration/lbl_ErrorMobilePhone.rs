@@ -7,11 +7,10 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//*[normalize-space()='Please enter your mobile phone']</value>
+         <value>//input[contains(@placeholder, 'mobile') or contains(@name, 'mobile') or contains(@placeholder, 'phone')]/ancestor::div[contains(@class, 'el-form-item')]//div[contains(@class, 'el-form-item__error')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

@@ -1,3 +1,6 @@
+import java.io.File
+import java.util.Arrays
+
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
@@ -27,205 +30,256 @@ import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webui.driver.DriverFactory
 
 
-class AutomationListener {
+class AutomationGTechListener {
 
-private static boolean browserOpenedByListener = false
+    private static boolean browserOpenedByListener = false
 
-@BeforeTestCase
-def beforeTestCase(TestCaseContext testCaseContext) {
+    @BeforeTestCase
+    def beforeTestCase(TestCaseContext testCaseContext) {
 
-	KeywordUtil.logInfo("START TEST CASE : ${testCaseContext.getTestCaseId()}")
+        KeywordUtil.logInfo("================================================")
+        KeywordUtil.logInfo("START TEST CASE : ${testCaseContext.getTestCaseId()}")
+        KeywordUtil.logInfo("================================================")
 
-	boolean isBrowserActive = false
+        boolean isBrowserActive = false
 
-	try {
+        try {
 
-		isBrowserActive = (DriverFactory.getWebDriver() != null)
+            isBrowserActive = (DriverFactory.getWebDriver() != null)
 
-		if(isBrowserActive) {
-			WebUI.getUrl()
-		}
+            if (isBrowserActive) {
+                WebUI.getUrl()
+            }
 
-	} catch(Exception e) {
+        } catch (Exception e) {
 
-		isBrowserActive = false
-		KeywordUtil.logInfo("Browser detected as inactive : ${e.getMessage()}")
-	}
+            isBrowserActive = false
+            KeywordUtil.logInfo("Browser detected as inactive : ${e.getMessage()}")
+        }
 
-	if(!isBrowserActive && !browserOpenedByListener) {
+        if (!isBrowserActive && !browserOpenedByListener) {
 
-		try {
+            try {
 
-			KeywordUtil.logInfo("Opening new browser...")
+                KeywordUtil.logInfo("Opening new browser...")
 
-			WebUI.openBrowser('')
-			WebUI.setViewPortSize(1920, 1080)
+                WebUI.openBrowser('')
+                WebUI.setViewPortSize(1920, 1080)
 
-			if(GlobalVariable.URL == null || GlobalVariable.URL.isEmpty()) {
+                if (GlobalVariable.URL == null || GlobalVariable.URL.trim().isEmpty()) {
 
-				KeywordUtil.markFailed(
-					"GlobalVariable.URL is not set. Please configure it in Profiles."
-				)
+                    KeywordUtil.markFailedAndStop(
+                        "GlobalVariable.URL is not set. Please configure it in Profiles."
+                    )
+                }
 
-				return
-			}
+                WebUI.navigateToUrl(GlobalVariable.URL)
 
-			WebUI.navigateToUrl(GlobalVariable.URL)
+                acceptCookieConsent()
 
-			acceptCookieConsent()
+                browserOpenedByListener = true
 
-			browserOpenedByListener = true
+                def width =
+                    WebUI.executeJavaScript(
+                        "return window.innerWidth",
+                        null
+                    )
 
-			def width =
-				WebUI.executeJavaScript(
-					"return window.innerWidth",
-					null
-				)
+                def height =
+                    WebUI.executeJavaScript(
+                        "return window.innerHeight",
+                        null
+                    )
 
-			def height =
-				WebUI.executeJavaScript(
-					"return window.innerHeight",
-					null
-				)
+                KeywordUtil.logInfo(
+                    "Viewport Size : ${width} x ${height}"
+                )
 
-			KeywordUtil.logInfo(
-				"Viewport Size : ${width} x ${height}"
-			)
+                saveStartPageScreenshot()
 
-			WebUI.takeScreenshot(
-				RunConfiguration.getReportFolder() +
-				"/START_PAGE.png"
-			)
+            } catch (Exception e) {
 
-} catch(Exception e) {
+                KeywordUtil.markFailed(
+                    "Failed to open browser or navigate to URL : ${e.getMessage()}"
+                )
 
-    KeywordUtil.markFailed(
-        "Failed to open browser or navigate to URL : ${e.getMessage()}"
-    )
+                throw e
+            }
 
-    throw e
-}
+        } else if (isBrowserActive) {
 
-	} else if(isBrowserActive) {
+            KeywordUtil.logInfo(
+                "Browser already opened, reusing existing session."
+            )
 
-		KeywordUtil.logInfo(
-			"Browser already opened, reusing existing session."
-		)
+            try {
 
-		try {
+                if (WebUI.getUrl() != GlobalVariable.URL) {
 
-			if(WebUI.getUrl() != GlobalVariable.URL) {
+                    WebUI.navigateToUrl(GlobalVariable.URL)
 
-				WebUI.navigateToUrl(GlobalVariable.URL)
+                    acceptCookieConsent()
+                }
 
-				acceptCookieConsent()
-			}
+            } catch (Exception e) {
 
-		} catch(Exception e) {
+                KeywordUtil.logWarning(
+                    "Could not verify current URL : ${e.getMessage()}"
+                )
+            }
 
-			KeywordUtil.logWarning(
-				"Could not verify current URL : ${e.getMessage()}"
-			)
-		}
+        } else {
 
-	} else {
-
-		KeywordUtil.logInfo(
-			"Browser was opened by listener in a previous test case but is now closed. Reopening..."
-		)
-
-		browserOpenedByListener = false
-
-		beforeTestCase(testCaseContext)
-	}
-}
-
-private void acceptCookieConsent() {
-
-	try {
-
-		boolean cookieVisible =
-			WebUI.verifyElementPresent(
-				findTestObject(
-					'WEB/Common/btn_AcceptAllCookies'
-				),
-				5,
-				FailureHandling.OPTIONAL
-			)
-
-		if(cookieVisible) {
-
-			WebUI.click(
-				findTestObject(
-					'WEB/Common/btn_AcceptAllCookies'
-				)
-			)
-
-			KeywordUtil.logInfo(
-				"Cookie consent accepted"
-			)
-		}
-
-	} catch(Exception e) {
-
-		KeywordUtil.logInfo(
-			"Cookie popup not displayed"
-		)
-	}
-}
-
-@AfterTestCase
-def afterTestCase(TestCaseContext testCaseContext) {
-
-	try {
-
-		if(DriverFactory.getWebDriver() != null) {
-
-			String tcName =
-				testCaseContext.getTestCaseId()
-				.replaceAll("[^a-zA-Z0-9]", "_")
-
-			String screenshotPath =
-				RunConfiguration.getReportFolder() +
-				"/${tcName}_${testCaseContext.getTestCaseStatus()}.png"
-
-			WebUI.takeScreenshot(screenshotPath)
-
-			KeywordUtil.logInfo(
-				"Screenshot saved : ${screenshotPath}"
-			)
-
-			String tcId =
-				testCaseContext.getTestCaseId()
-
-			if(!tcId.contains("Forgot password verification email")) {
-
-				WebUI.closeBrowser()
-
-				browserOpenedByListener = false
-
-			} else {
-
-				KeywordUtil.logInfo(
-					"Browser kept open for this test case."
-				)
-			}
-
-		} else {
-
-			KeywordUtil.logInfo("No browser to close.")
-
-			browserOpenedByListener = false
-		}
-
-	} catch(Exception e) {
-
-		KeywordUtil.markWarning(
-			"Listener Error : ${e.getMessage()}"
-		)
-
-		browserOpenedByListener = false
-	}
-}
-
+            KeywordUtil.logInfo(
+                "Browser was opened by listener in a previous test case but is now closed. Reopening..."
+            )
+
+            browserOpenedByListener = false
+
+            // Membuka ulang browser dengan memanggil sebelumTestCase kembali
+            beforeTestCase(testCaseContext)
+        }
+    }
+
+    private void acceptCookieConsent() {
+
+        try {
+
+            boolean cookieVisible =
+                WebUI.verifyElementPresent(
+                    findTestObject(
+                        'WEB/Common/btn_AcceptAllCookies'
+                    ),
+                    5,
+                    FailureHandling.OPTIONAL
+                )
+
+            if (cookieVisible) {
+
+                WebUI.click(
+                    findTestObject(
+                        'WEB/Common/btn_AcceptAllCookies'
+                    )
+                )
+
+                KeywordUtil.logInfo(
+                    "Cookie consent accepted"
+                )
+            }
+
+        } catch (Exception e) {
+
+            KeywordUtil.logInfo(
+                "Cookie popup not displayed"
+            )
+        }
+    }
+
+    @AfterTestCase
+    def afterTestCase(TestCaseContext testCaseContext) {
+
+        try {
+
+            if (DriverFactory.getWebDriver() != null) {
+
+                // ============================================
+                // Parsing Test Case ID untuk Subfolder Modul
+                // ============================================
+                String rawId = testCaseContext.getTestCaseId()
+                String cleanPath = rawId.replace("Test Cases/", "") 
+                String[] parts = cleanPath.split("/")
+                
+                String modulePath = "Root"
+                String tcName = cleanPath
+                
+                if (parts.length > 1) {
+                    modulePath = String.join("/", Arrays.copyOfRange(parts, 0, parts.length - 1))
+                    tcName = parts[parts.length - 1]
+                }
+
+                tcName = tcName.replaceAll("[^a-zA-Z0-9_\\-]", "_")
+                String status = testCaseContext.getTestCaseStatus()
+
+                // ============================================
+                // Screenshot GitLab Artifact
+                // ============================================
+                String screenshotFolder = RunConfiguration.getProjectDir() + "/Screenshot/" + modulePath
+                new File(screenshotFolder).mkdirs() 
+
+                String artifactScreenshot = screenshotFolder + "/" + tcName + "_" + status + ".png"
+
+                try {
+                    WebUI.takeScreenshot(artifactScreenshot)
+                    KeywordUtil.logInfo("Artifact Screenshot : ${artifactScreenshot}")
+                } catch (Exception ignored) {
+                }
+
+                // ============================================
+                // Screenshot Katalon Report
+                // ============================================
+                String reportFolder = RunConfiguration.getReportFolder()
+                if (reportFolder != null) {
+                    String reportSubFolder = reportFolder + "/Screenshot/" + modulePath
+                    new File(reportSubFolder).mkdirs()
+                    
+                    String reportScreenshot = reportSubFolder + "/" + tcName + "_" + status + ".png"
+
+                    try {
+                        WebUI.takeScreenshot(reportScreenshot)
+                        KeywordUtil.logInfo("Report Screenshot : ${reportScreenshot}")
+                    } catch (Exception ignored) {
+                    }
+                }
+
+                // ============================================
+                // Close Browser
+                // ============================================
+                String tcId = testCaseContext.getTestCaseId()
+
+                if (!tcId.contains("Forgot password verification email")) {
+
+                    WebUI.closeBrowser()
+                    browserOpenedByListener = false
+
+                } else {
+
+                    KeywordUtil.logInfo(
+                        "Browser kept open for this test case."
+                    )
+                }
+
+            } else {
+
+                KeywordUtil.logInfo("No browser to close.")
+                browserOpenedByListener = false
+            }
+
+        } catch (Exception e) {
+
+            KeywordUtil.markWarning(
+                "Listener Error : ${e.getMessage()}"
+            )
+
+            browserOpenedByListener = false
+        }
+    }
+
+    private void saveStartPageScreenshot() {
+        
+        String screenshotFolder = RunConfiguration.getProjectDir() + "/Screenshot"
+        new File(screenshotFolder).mkdirs()
+
+        try {
+            WebUI.takeScreenshot(screenshotFolder + "/START_PAGE.png")
+        } catch (Exception ignored) {
+        }
+
+        String reportFolder = RunConfiguration.getReportFolder()
+        if (reportFolder != null) {
+            try {
+                WebUI.takeScreenshot(reportFolder + "/START_PAGE.png")
+            } catch (Exception ignored) {
+            }
+        }
+    }
 }

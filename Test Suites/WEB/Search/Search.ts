@@ -15,14 +15,14 @@
       <guid>12db737a-f6c2-4aa7-bafe-5b82150a2036</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/WEB/Search/Positive/Positive - Ensure search results are displayed successfully</testCaseId>
+      <testCaseId>Test Cases/WEB/Search/Smoke Test/Positive/Positive - Ensure search results are displayed successfully</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
       <guid>3414b5b5-7400-4683-94e5-84b2e0098771</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/WEB/Search/Positive/Positive - Ensure user can search products successfully</testCaseId>
+      <testCaseId>Test Cases/WEB/Search/Smoke Test/Positive/Positive - Ensure user can search products successfully</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
 </TestSuiteEntity>

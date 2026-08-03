@@ -1,14 +1,11 @@
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import static com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords.*
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
-import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
-import static com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords.*
 
 import com.kms.katalon.core.model.FailureHandling
 import com.kms.katalon.core.testobject.ConditionType
 import com.kms.katalon.core.testobject.TestObject
 
-import internal.GlobalVariable
 import internal.GlobalVariable
 
 import utils.DummyData
@@ -126,53 +123,37 @@ setText(
     findTestObject('WEB/Checkout/Guest/txt_Address'),
     "Automation Guest Address " + System.currentTimeMillis())
 
-// Province
+// --- Province ---
+waitForElementClickable(findTestObject('WEB/Checkout/Guest/ddl_Province'), 20)
+click(findTestObject('WEB/Checkout/Guest/ddl_Province'))
 
-waitForElementClickable(
-    findTestObject('WEB/Checkout/Guest/ddl_Province'),
-    20)
+waitForElementVisible(findTestObject('WEB/Checkout/Guest/opt_Province_Banten'), 10)
+delay(1)
+click(findTestObject('WEB/Checkout/Guest/opt_Province_Banten'))
 
-click(
-    findTestObject('WEB/Checkout/Guest/ddl_Province'))
+// --- City ---
+waitForElementClickable(findTestObject('WEB/Checkout/Guest/ddl_City'), 20)
+click(findTestObject('WEB/Checkout/Guest/ddl_City'))
 
-click(
-    findTestObject('WEB/Checkout/Guest/opt_Province_Banten'))
+waitForElementVisible(findTestObject('WEB/Checkout/Guest/opt_City_Tangerang'), 10)
+delay(1)
+click(findTestObject('WEB/Checkout/Guest/opt_City_Tangerang'))
 
-// City
+// --- District ---
+waitForElementClickable(findTestObject('WEB/Checkout/Guest/ddl_District'), 20)
+click(findTestObject('WEB/Checkout/Guest/ddl_District'))
 
-waitForElementClickable(
-    findTestObject('WEB/Checkout/Guest/ddl_City'),
-    20)
+waitForElementVisible(findTestObject('WEB/Checkout/Guest/opt_District_Larangan'), 10)
+delay(1)
+click(findTestObject('WEB/Checkout/Guest/opt_District_Larangan'))
 
-click(
-    findTestObject('WEB/Checkout/Guest/ddl_City'))
+// --- Postal Code ---
+waitForElementClickable(findTestObject('WEB/Checkout/Guest/ddl_PostalCode'), 20)
+click(findTestObject('WEB/Checkout/Guest/ddl_PostalCode'))
 
-click(
-    findTestObject('WEB/Checkout/Guest/opt_City_Tangerang'))
-
-// District
-
-waitForElementClickable(
-    findTestObject('WEB/Checkout/Guest/ddl_District'),
-    20)
-
-click(
-    findTestObject('WEB/Checkout/Guest/ddl_District'))
-
-click(
-    findTestObject('WEB/Checkout/Guest/opt_District_Larangan'))
-
-// Postal Code
-
-waitForElementClickable(
-    findTestObject('WEB/Checkout/Guest/ddl_PostalCode'),
-    20)
-
-click(
-    findTestObject('WEB/Checkout/Guest/ddl_PostalCode'))
-
-click(
-    findTestObject('WEB/Checkout/Guest/opt_PostalCode'))
+waitForElementVisible(findTestObject('WEB/Checkout/Guest/opt_PostalCode'), 10)
+delay(1)
+click(findTestObject('WEB/Checkout/Guest/opt_PostalCode'))
 
 // Save Address
 
@@ -257,14 +238,14 @@ enhancedClick(
 
 println("VERIFY SUCCESS PAGE")
 
-//switchToWindowIndex(1)
+switchToWindowIndex(1)
 
 waitForElementVisible(
-    findTestObject('WEB/Checkout/Success/lbl_OrderSuccess'),
+    findTestObject('Object Repository/WEB/Checkout/Checkout Success/lbl_OrderSuccess'),
     30)
 
 verifyElementVisible(
-    findTestObject('WEB/Checkout/Success/lbl_OrderSuccess'))
+    findTestObject('Object Repository/WEB/Checkout/Checkout Success/lbl_OrderSuccess'))
 
 verifyTextPresent(
     "Your order has been placed successfully.",

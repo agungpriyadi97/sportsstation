@@ -22,27 +22,20 @@ import internal.GlobalVariable
 
 class MailSubject {
 
-    static final String REGISTRATION =
-        "Verification code"
+    static final String REGISTRATION = "Verification code"
 
-    static final String FORGOT_PASSWORD =
-        "Forgot Password"
+    static final String FORGOT_PASSWORD = "Forgot Password"
 
-    static final String TRACK_ORDER =
-        "Thank You For Order at Sportsstation.id, please Confirm Your Email"
+    // Cukup ambil kata kunci unik untuk Track Order
+    static final String TRACK_ORDER = "Confirm Your Email"
 
-    static final String ORDER_CONFIRMATION =
-        "Your SportsStation.ID order confirmation"
+    static final String ORDER_CONFIRMATION = "Your SportsStation.ID order confirmation"
 
-    static final String AWAITING_PAYMENT =
-        "Awaiting Payment"
+    static final String AWAITING_PAYMENT = "Awaiting Payment"
 
-    static final String ORDER_PAID =
-        "Order Paid"
+    static final String ORDER_PAID = "Order Paid"
 
-    static final String SHIPPED =
-        "Shipped"
+    static final String SHIPPED = "Shipped"
 
-    static final String DELIVERED =
-        "Delivered"
+    static final String DELIVERED = "Delivered"
 }

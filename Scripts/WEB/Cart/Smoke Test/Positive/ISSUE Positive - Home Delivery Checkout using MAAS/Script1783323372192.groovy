@@ -181,11 +181,11 @@ enhancedClick(
 switchToWindowIndex(1)
 
 waitForElementVisible(
-	findTestObject('WEB/Checkout/Success/lbl_OrderSuccess'),
+	findTestObject('WEB/Checkout/Success/lbl_OrderPlacedSuccessfully'),
 	30)
 
 verifyElementVisible(
-	findTestObject('WEB/Checkout/Success/lbl_OrderSuccess'))
+	findTestObject('WEB/Checkout/Success/lbl_OrderPlacedSuccessfully'))
 
 verifyTextPresent(
 	"Your order has been placed successfully.",

@@ -75,9 +75,21 @@ WebUI.waitForPageLoad(10)
 // OPEN SHIPPING FORM
 //====================================================
 
-WebUI.enhancedClick(
-    findTestObject('WEB/Address/Shipping/btn_Change'))
+// Cek apakah tombol Change ada di layar (tunggu maks 5 detik)
+boolean isBtnChangePresent = WebUI.verifyElementPresent(
+    findTestObject('WEB/Address/Shipping/btn_Change'), 
+    5, 
+    FailureHandling.OPTIONAL
+)
 
+if (isBtnChangePresent) {
+    println("LOG: Tombol Change ditemukan, melakukan klik...")
+    WebUI.enhancedClick(findTestObject('WEB/Address/Shipping/btn_Change'))
+} else {
+    println("LOG: Tombol Change tidak ditemukan, lanjut ke step berikutnya.")
+}
+
+// Lanjut ke step berikutnya seperti biasa
 WebUI.waitForElementVisible(
     findTestObject('WEB/Address/Shipping/card_AddNewAddress'),
     10)

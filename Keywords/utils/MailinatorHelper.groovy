@@ -49,6 +49,9 @@ class MailinatorHelper {
 			driver.switchTo().window(
 				driver.windowHandles.last())
 		}
+		
+		// Memaksa resolusi layar ke Desktop untuk mencegah Mailinator berubah ke tampilan Mobile di mode Headless
+		WebUI.setViewPortSize(1920, 1080)
 
 		driver.get(MAILINATOR_URL + inbox)
 
@@ -77,10 +80,11 @@ class MailinatorHelper {
 
 			TestObject email = new TestObject()
 
+			// Mengambil baris PERTAMA (terbaru) yang mengandung subjek tersebut
 			email.addProperty(
 				"xpath",
 				ConditionType.EQUALS,
-				"//td[contains(normalize-space(.),\"${subject}\")]")
+				"(//td[contains(translate(normalize-space(.), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '${subject.toLowerCase()}')])[1]")
 
 			if(WebUI.verifyElementPresent(
 				email,
@@ -181,6 +185,66 @@ class MailinatorHelper {
 		switchToApplication()
 
 		return otp
+	}
+
+	//====================================================
+	// WAIT FOR ORDER PAID EMAIL
+	//====================================================
+
+	@Keyword
+	void waitForOrderPaidEmail(String inbox) {
+		
+		String subject = "order confirmation"
+
+		openLatestEmailBySubject(
+			inbox,
+			subject)
+
+		WebUI.switchToDefaultContent()
+
+		WebUI.waitForElementPresent(
+			findTestObject("WEB/Mailinator/iframe_EmailBody"),
+			20)
+
+		WebUI.switchToFrame(
+			findTestObject("WEB/Mailinator/iframe_EmailBody"),
+			20)
+
+		WebUI.waitForElementVisible(
+			findTestObject("WEB/Mailinator/htmlMessageFrame"),
+			20)
+			
+		println("Berhasil masuk ke dalam body email order paid.")
+	}
+
+	//====================================================
+	// WAIT FOR ORDER CONFIRMATION EMAIL (AWAITING PAYMENT)
+	//====================================================
+
+	@Keyword
+	void waitForOrderConfirmation(String inbox) {
+		
+		String subject = "order confirmation"
+
+		openLatestEmailBySubject(
+			inbox,
+			subject)
+
+		WebUI.switchToDefaultContent()
+
+		WebUI.waitForElementPresent(
+			findTestObject("WEB/Mailinator/iframe_EmailBody"),
+			20)
+
+		WebUI.switchToFrame(
+			findTestObject("WEB/Mailinator/iframe_EmailBody"),
+			20)
+
+		WebUI.waitForElementVisible(
+			findTestObject("WEB/Mailinator/htmlMessageFrame"),
+			20)
+			
+		println("Berhasil masuk ke dalam body email order confirmation.")
 	}
 
 	//====================================================

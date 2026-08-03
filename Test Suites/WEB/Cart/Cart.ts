@@ -18,11 +18,4 @@
       <testCaseId>Test Cases/WEB/Cart/Smoke Test/Positive/Positive - User can Add Product to Cart</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
-   <testCaseLink>
-      <guid>571adca3-5fe9-4668-a0f1-7e1d4acf140e</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/WEB/Checkout/Smoke Test/Positive/Positive - Buy Again</testCaseId>
-      <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
-   </testCaseLink>
 </TestSuiteEntity>

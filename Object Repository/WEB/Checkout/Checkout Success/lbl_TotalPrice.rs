@@ -7,11 +7,10 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//span[normalize-space()='Total Price']/following::span[1]</value>
+         <value>//div[contains(@class, 'payment-info')]//span[normalize-space()='Total Price']/following-sibling::span</value>
       </entry>
       <entry>
          <key>BASIC</key>
-         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

@@ -7,11 +7,10 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>(//li[contains(@class,'el-select-dropdown__item')])[last()]</value>
+         <value>(//div[contains(@class, 'el-select-dropdown') and not(contains(@style, 'display: none'))]//li[contains(@class, 'el-select-dropdown__item')])[last()]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

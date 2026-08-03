@@ -10,8 +10,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[contains(@class,'el-form-item__error')&#xd;
-and contains(text(),'Passwords must be 6 to 20 characters')]</value>
+         <value>//div[contains(@class, 'el-form-item__error') and contains(normalize-space(), 'Password must be 6-16 characters')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

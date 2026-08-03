@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Tamu Melakukan Pembelian Lagi Pada Menu Track Order</description>
+   <name>Positive - Guest Buy Again</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>d15666de-80de-47ba-86d1-fb816784ddbb</testCaseGuid>
+</TestCaseEntity>

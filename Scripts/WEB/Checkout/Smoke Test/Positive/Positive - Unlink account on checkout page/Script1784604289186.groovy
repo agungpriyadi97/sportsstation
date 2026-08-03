@@ -1,0 +1,177 @@
+import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
+import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
+import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
+import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
+import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
+import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
+import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
+import com.kms.katalon.core.model.FailureHandling as FailureHandling
+import com.kms.katalon.core.testcase.TestCase as TestCase
+import com.kms.katalon.core.testdata.TestData as TestData
+import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
+import com.kms.katalon.core.testobject.TestObject as TestObject
+import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
+import internal.GlobalVariable as GlobalVariable
+import org.openqa.selenium.Keys as Keys
+
+import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+import static com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords.*
+import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+import static com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords.*
+import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
+import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+import static com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords.*
+
+import com.kms.katalon.core.model.FailureHandling
+import com.kms.katalon.core.testobject.ConditionType
+import com.kms.katalon.core.testobject.TestObject
+
+import internal.GlobalVariable
+import internal.GlobalVariable
+
+import utils.DummyData
+import utils.ProductHelper
+
+//====================================================
+// INITIALIZE
+//====================================================
+
+ProductHelper product = new ProductHelper()
+
+println("======================================")
+println("TEST CASE : POSITIVE - UNLINK MAPCLUB")
+println("======================================")
+
+///====================================================
+// LOGIN
+//====================================================
+
+callTestCase(
+	findTestCase(
+	'WEB/Authentication/Login/Smoke Test/Positive/Positive - Ensure user can sign in successfully with valid credentials'),
+	[:],
+	FailureHandling.STOP_ON_FAILURE
+)
+
+//====================================================
+// CLOSE POPUP
+//====================================================
+
+CustomKeywords.'utils.CommonHelper.closeAllPopup'()
+
+//====================================================
+// OPEN PRODUCT PDP
+//====================================================
+
+navigateToUrl(
+	"https://staging.sportsstation.id/pdp/Converse-Chuck-70-Ox-Men's-Sneakers-Navy/SP220620159143"
+)
+
+product.waitUntilReady()
+
+CustomKeywords.'utils.CommonHelper.closeAllPopup'()
+
+product.verifyPDP()
+
+//====================================================
+// ADD PRODUCT TO CART
+//====================================================
+
+println("ADD PRODUCT TO CART")
+
+product.addProductToCart()
+
+product.verifySuccessToast()
+
+product.openCart()
+
+product.verifyCartPage()
+
+//====================================================
+// OPEN CHECKOUT
+//====================================================
+
+println("OPEN CHECKOUT")
+
+waitForElementClickable(
+	findTestObject('WEB/Cart/btn_Checkout'),
+	20)
+
+scrollToElement(
+	findTestObject('WEB/Cart/btn_Checkout'),
+	5)
+
+enhancedClick(
+	findTestObject('WEB/Cart/btn_Checkout'))
+
+waitForPageLoad(20)
+
+
+//====================================================
+// VERIFY LINKED ACCOUNT
+//====================================================
+
+verifyElementVisible(
+	findTestObject("Object Repository/WEB/Account/AccountSetting/lbl_LinkedAccount"))
+
+verifyElementVisible(
+	findTestObject("Object Repository/WEB/Account/AccountSetting/btn_Unlink"))
+
+println("LINKED ACCOUNT VERIFIED")
+
+//====================================================
+// CLICK UNLINK
+//====================================================
+
+enhancedClick(
+	findTestObject("Object Repository/WEB/Account/AccountSetting/btn_Unlink"))
+
+println("CLICK UNLINK")
+//====================================================
+// VERIFY UNLINK DIALOG
+//====================================================
+
+verifyElementVisible(
+	findTestObject("Object Repository/WEB/Account/AccountSetting/dialog_Unlink"))
+
+verifyElementVisible(
+	findTestObject("Object Repository/WEB/Account/AccountSetting/lbl_UnlinkConfirmation"))
+
+verifyTextPresent(
+	"Are you sure to unlink the MAPCLUB account?",
+	false)
+
+verifyElementVisible(
+	findTestObject("Object Repository/WEB/Account/AccountSetting/btn_No"))
+
+verifyElementVisible(
+	findTestObject("Object Repository/WEB/Account/AccountSetting/btn_Yes"))
+
+println("UNLINK CONFIRMATION VERIFIED")
+
+//====================================================
+// CLICK YES
+//====================================================
+
+enhancedClick(
+	findTestObject("Object Repository/WEB/Account/AccountSetting/btn_Yes"))
+
+println("CLICK YES")
+
+waitForPageLoad(20)
+
+//====================================================
+// VERIFY UNLINK SUCCESS
+//====================================================
+//
+//verifyElementVisible(
+//	findTestObject("WEB/AccountSetting/btn_Link"))
+
+println("ACCOUNT SUCCESSFULLY UNLINKED")
+
+println("======================================")
+println("UNLINK MAPCLUB SUCCESS")
+println("======================================")

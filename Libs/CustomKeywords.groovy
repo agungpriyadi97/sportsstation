@@ -50,6 +50,20 @@ def static "utils.MailinatorHelper.getOTPBySubject"(
 }
 
 
+def static "utils.MailinatorHelper.waitForOrderPaidEmail"(
+    	String inbox	) {
+    (new utils.MailinatorHelper()).waitForOrderPaidEmail(
+        	inbox)
+}
+
+
+def static "utils.MailinatorHelper.waitForOrderConfirmation"(
+    	String inbox	) {
+    (new utils.MailinatorHelper()).waitForOrderConfirmation(
+        	inbox)
+}
+
+
 def static "utils.MailinatorHelper.switchToApplication"() {
     (new utils.MailinatorHelper()).switchToApplication()
 }

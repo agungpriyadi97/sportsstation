@@ -184,9 +184,9 @@ enhancedClick(findTestObject('WEB/Cart/btn_Checkout'))
 //====================================================
 switchToWindowIndex(1)
 
-waitForElementVisible(findTestObject('WEB/Checkout/Success/lbl_OrderSuccess'), 30)
+waitForElementVisible(findTestObject('WEB/Checkout/Success/lbl_OrderPlacedSuccessfully'), 30)
 
-verifyElementVisible(findTestObject('WEB/Checkout/Success/lbl_OrderSuccess'))
+verifyElementVisible(findTestObject('WEB/Checkout/Success/lbl_OrderPlacedSuccessfully'))
 
 verifyTextPresent('Your order has been placed successfully.', false)
 
