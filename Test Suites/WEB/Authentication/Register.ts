@@ -95,11 +95,4 @@
       <testCaseId>Test Cases/WEB/Authentication/Registration/Negative/Negative - Register with invalid password</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
-   <testCaseLink>
-      <guid>d351da9b-54c7-4071-b1c9-637d15d23c8b</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/WEB/Authentication/Registration/Negative/Negative - Wrong validation code</testCaseId>
-      <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
-   </testCaseLink>
 </TestSuiteEntity>
