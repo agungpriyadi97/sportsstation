@@ -16,23 +16,23 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
-
-import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
-import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-import internal.GlobalVariable
-import utils.DummyData
+import utils.DummyData as DummyData
 
 Map data = CustomKeywords.'utils.DummyData.generateRegistrationData'()
 
 CustomKeywords.'utils.RegistrationHelper.openRegistration'()
+
 CustomKeywords.'utils.RegistrationHelper.verifyMobile'(data.mobilePhone)
 
-// Gunakan email terdaftar
-WebUI.setText(findTestObject('WEB/Registration/txt_Email'), GlobalVariable.RegisteredEmail)
+// Gunakan email terdaftar agungpriyadi88@mailinator.com
+WebUI.waitForElementVisible(findTestObject('WEB/Registration/txt_Email'), 20)
+
+WebUI.setText(findTestObject('WEB/Registration/txt_Email'), 'agungpriyadi88@mailinator.com')
+
 WebUI.click(findTestObject('WEB/Registration/btn_SendValidationCode'))
 
-// Verifikasi pesan error email terdaftar
-WebUI.waitForElementVisible(
-	findTestObject('WEB/Registration/lbl_FormErrorMessage', [('text') : 'Email has been registered']), 10)
-WebUI.verifyElementVisible(
-	findTestObject('WEB/Registration/lbl_FormErrorMessage', [('text') : 'Email has been registered']))
+// Verifikasi pesan error email/akun sudah terdaftar menggunakan XPath dinamis
+WebUI.waitForElementVisible(findTestObject('WEB/Registration/lbl_ToastErrorMessageEmail'), 10)
+
+WebUI.verifyElementVisible(findTestObject('WEB/Registration/lbl_ToastErrorMessageEmail'))
+
