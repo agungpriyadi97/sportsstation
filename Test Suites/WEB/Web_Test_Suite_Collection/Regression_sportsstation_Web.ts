@@ -12,7 +12,7 @@
             <groupName>Web Desktop</groupName>
             <profileName>Development</profileName>
             <requireConfigurationData>false</requireConfigurationData>
-            <runConfigurationId>Chrome</runConfigurationId>
+            <runConfigurationId>Firefox (headless)</runConfigurationId>
          </configuration>
          <runEnabled>true</runEnabled>
          <testSuiteEntity>Test Suites/WEB/Authentication/Register</testSuiteEntity>
@@ -22,7 +22,7 @@
             <groupName>Web Desktop</groupName>
             <profileName>Development</profileName>
             <requireConfigurationData>false</requireConfigurationData>
-            <runConfigurationId>Chrome</runConfigurationId>
+            <runConfigurationId>Firefox (headless)</runConfigurationId>
          </configuration>
          <runEnabled>true</runEnabled>
          <testSuiteEntity>Test Suites/WEB/Authentication/Login</testSuiteEntity>
@@ -32,7 +32,7 @@
             <groupName>Web Desktop</groupName>
             <profileName>Development</profileName>
             <requireConfigurationData>false</requireConfigurationData>
-            <runConfigurationId>Chrome</runConfigurationId>
+            <runConfigurationId>Firefox (headless)</runConfigurationId>
          </configuration>
          <runEnabled>true</runEnabled>
          <testSuiteEntity>Test Suites/WEB/Authentication/Password</testSuiteEntity>
@@ -42,7 +42,17 @@
             <groupName>Web Desktop</groupName>
             <profileName>Development</profileName>
             <requireConfigurationData>false</requireConfigurationData>
-            <runConfigurationId>Chrome</runConfigurationId>
+            <runConfigurationId>Firefox (headless)</runConfigurationId>
+         </configuration>
+         <runEnabled>true</runEnabled>
+         <testSuiteEntity>Test Suites/WEB/Checkout/Checkout</testSuiteEntity>
+      </TestSuiteRunConfiguration>
+      <TestSuiteRunConfiguration>
+         <configuration>
+            <groupName>Web Desktop</groupName>
+            <profileName>Development</profileName>
+            <requireConfigurationData>false</requireConfigurationData>
+            <runConfigurationId>Firefox (headless)</runConfigurationId>
          </configuration>
          <runEnabled>true</runEnabled>
          <testSuiteEntity>Test Suites/WEB/Home/Home</testSuiteEntity>
@@ -52,17 +62,7 @@
             <groupName>Web Desktop</groupName>
             <profileName>Development</profileName>
             <requireConfigurationData>false</requireConfigurationData>
-            <runConfigurationId>Chrome</runConfigurationId>
-         </configuration>
-         <runEnabled>true</runEnabled>
-         <testSuiteEntity>Test Suites/WEB/Footer/Footer</testSuiteEntity>
-      </TestSuiteRunConfiguration>
-      <TestSuiteRunConfiguration>
-         <configuration>
-            <groupName>Web Desktop</groupName>
-            <profileName>Development</profileName>
-            <requireConfigurationData>false</requireConfigurationData>
-            <runConfigurationId>Chrome</runConfigurationId>
+            <runConfigurationId>Firefox (headless)</runConfigurationId>
          </configuration>
          <runEnabled>true</runEnabled>
          <testSuiteEntity>Test Suites/WEB/Search/Search</testSuiteEntity>
@@ -72,17 +72,17 @@
             <groupName>Web Desktop</groupName>
             <profileName>Development</profileName>
             <requireConfigurationData>false</requireConfigurationData>
-            <runConfigurationId>Chrome</runConfigurationId>
+            <runConfigurationId>Firefox (headless)</runConfigurationId>
          </configuration>
          <runEnabled>true</runEnabled>
-         <testSuiteEntity>Test Suites/WEB/Account/Account Address</testSuiteEntity>
+         <testSuiteEntity>Test Suites/WEB/Footer/Footer</testSuiteEntity>
       </TestSuiteRunConfiguration>
       <TestSuiteRunConfiguration>
          <configuration>
             <groupName>Web Desktop</groupName>
             <profileName>Development</profileName>
             <requireConfigurationData>false</requireConfigurationData>
-            <runConfigurationId>Chrome</runConfigurationId>
+            <runConfigurationId>Firefox (headless)</runConfigurationId>
          </configuration>
          <runEnabled>true</runEnabled>
          <testSuiteEntity>Test Suites/WEB/Product/Product</testSuiteEntity>
@@ -92,7 +92,7 @@
             <groupName>Web Desktop</groupName>
             <profileName>Development</profileName>
             <requireConfigurationData>false</requireConfigurationData>
-            <runConfigurationId>Chrome</runConfigurationId>
+            <runConfigurationId>Firefox (headless)</runConfigurationId>
          </configuration>
          <runEnabled>true</runEnabled>
          <testSuiteEntity>Test Suites/WEB/My Order/Order</testSuiteEntity>
@@ -102,7 +102,7 @@
             <groupName>Web Desktop</groupName>
             <profileName>Development</profileName>
             <requireConfigurationData>false</requireConfigurationData>
-            <runConfigurationId>Chrome</runConfigurationId>
+            <runConfigurationId>Firefox (headless)</runConfigurationId>
          </configuration>
          <runEnabled>true</runEnabled>
          <testSuiteEntity>Test Suites/WEB/Cart/Cart</testSuiteEntity>
@@ -112,10 +112,10 @@
             <groupName>Web Desktop</groupName>
             <profileName>Development</profileName>
             <requireConfigurationData>false</requireConfigurationData>
-            <runConfigurationId>Chrome</runConfigurationId>
+            <runConfigurationId>Firefox (headless)</runConfigurationId>
          </configuration>
          <runEnabled>true</runEnabled>
-         <testSuiteEntity>Test Suites/WEB/Checkout/Checkout</testSuiteEntity>
+         <testSuiteEntity>Test Suites/WEB/Account/Account Address</testSuiteEntity>
       </TestSuiteRunConfiguration>
    </testSuiteRunConfigurations>
 </TestSuiteCollectionEntity>
