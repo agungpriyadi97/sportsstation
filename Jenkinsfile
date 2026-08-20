@@ -95,6 +95,7 @@ Contoh override manual:
                     taskkill /F /IM geckodriver.exe /T 2>nul || exit 0
                     taskkill /F /IM chrome.exe /T 2>nul || exit 0
                     taskkill /F /IM firefox.exe /T 2>nul || exit 0
+                    timeout /t 2 /nobreak >nul 2>&1 || exit 0
                     if exist "C:\\Users\\AgungPriyadi\\.katalon\\packages\\KS-11.1.3\\config\\.metadata\\.lock" del /f /q "C:\\Users\\AgungPriyadi\\.katalon\\packages\\KS-11.1.3\\config\\.metadata\\.lock" 2>nul || exit 0
                     '''
 
@@ -173,10 +174,15 @@ Contoh override manual:
                 }
             }
             steps {
-                catchError(buildResult: 'UNSTABLE', stageResult: 'UNSTABLE') {
-                    script {
-                        def cmd = "\"${env.KATALON_EXE}\" -clean -noSplash -runMode=console -projectPath=\"%WORKSPACE%\\${env.PROJECT_FILE}\" -retry=0 -apiKey=\"${env.KATALON_API_KEY}\" -orgID=\"${env.KATALON_ORG_ID}\" ${env.ARG_TYPE}=\"${env.FINAL_PATH}\" -executionProfile=\"${env.TARGET_PROFILE}\" -browserType=\"Chrome (headless)\" --config -webui.autoUpdateDrivers=true -webui.chrome.args=\"--disable-blink-features=AutomationControlled --disable-dev-shm-usage --disable-gpu --no-sandbox --window-size=1920,1080\""
-                        bat cmd
+                script {
+                    def browserArg = (env.ARG_TYPE == "-testSuiteCollectionPath") ? "" : "-browserType=\"Chrome (headless)\""
+                    def cmd = "\"${env.KATALON_EXE}\" -clean -noSplash -runMode=console -projectPath=\"%WORKSPACE%\\${env.PROJECT_FILE}\" -retry=0 -apiKey=\"${env.KATALON_API_KEY}\" -orgID=\"${env.KATALON_ORG_ID}\" ${env.ARG_TYPE}=\"${env.FINAL_PATH}\" -executionProfile=\"${env.TARGET_PROFILE}\" ${browserArg} --config -webui.autoUpdateDrivers=true -webui.chrome.args=\"--disable-blink-features=AutomationControlled --disable-dev-shm-usage --disable-gpu --no-sandbox --window-size=1920,1080\""
+                    
+                    // Eksekusi aman tanpa mematikan pipeline
+                    def exitCode = bat(script: cmd, returnStatus: true)
+                    echo "Chrome Execution Finished with Exit Code: ${exitCode}"
+                    if (exitCode != 0) {
+                        currentBuild.result = 'UNSTABLE'
                     }
                 }
 
@@ -223,10 +229,15 @@ Contoh override manual:
                 }
             }
             steps {
-                catchError(buildResult: 'UNSTABLE', stageResult: 'UNSTABLE') {
-                    script {
-                        def cmd = "\"${env.KATALON_EXE}\" -clean -noSplash -runMode=console -projectPath=\"%WORKSPACE%\\${env.PROJECT_FILE}\" -retry=0 -apiKey=\"${env.KATALON_API_KEY}\" -orgID=\"${env.KATALON_ORG_ID}\" ${env.ARG_TYPE}=\"${env.FINAL_PATH}\" -executionProfile=\"${env.TARGET_PROFILE}\" -browserType=\"Firefox (headless)\" --config -webui.autoUpdateDrivers=true"
-                        bat cmd
+                script {
+                    def browserArg = (env.ARG_TYPE == "-testSuiteCollectionPath") ? "" : "-browserType=\"Firefox (headless)\""
+                    def cmd = "\"${env.KATALON_EXE}\" -clean -noSplash -runMode=console -projectPath=\"%WORKSPACE%\\${env.PROJECT_FILE}\" -retry=0 -apiKey=\"${env.KATALON_API_KEY}\" -orgID=\"${env.KATALON_ORG_ID}\" ${env.ARG_TYPE}=\"${env.FINAL_PATH}\" -executionProfile=\"${env.TARGET_PROFILE}\" ${browserArg} --config -webui.autoUpdateDrivers=true"
+                    
+                    // Eksekusi aman tanpa mematikan pipeline
+                    def exitCode = bat(script: cmd, returnStatus: true)
+                    echo "Firefox Execution Finished with Exit Code: ${exitCode}"
+                    if (exitCode != 0) {
+                        currentBuild.result = 'UNSTABLE'
                     }
                 }
 
@@ -390,11 +401,13 @@ Contoh override manual:
                     Set-Content -Path 'error_log.txt' -Value (\$errs -join ([Environment]::NewLine + '---' + [Environment]::NewLine)); \
                     \$jsonPayload = @{ projectName = '${env.PROJECT_NAME}'; jobName = '${env.JOB_NAME}'; buildUrl = '${env.BUILD_URL}'; buildNumber = [int]${env.BUILD_NUMBER}; testCases = \$tcList } | ConvertTo-Json -Depth 5; \
                     Set-Content -Path 'failed_tests.json' -Value \$jsonPayload; \
+                    if (Test-Path 'Failure_Report.zip') { \
+                        curl.exe -X POST \"http://localhost:5678/webhook/jenkins-report\" -F \"chat_id=8122375919\" -F \"file=@Failure_Report.zip\" -F \"error_log=@error_log.txt\"; \
+                    } else { \
+                        curl.exe -X POST \"http://localhost:5678/webhook/jenkins-report\" -F \"chat_id=8122375919\" -F \"error_log=@error_log.txt\"; \
+                    }; \
+                    Invoke-RestMethod -Uri '${env.N8N_SHEETS_WEBHOOK}' -Method Post -ContentType 'application/json' -InFile 'failed_tests.json'; \
                 "
-
-                curl.exe -X POST "http://localhost:5678/webhook/jenkins-report" -F "chat_id=8122375919" -F "file=@Failure_Report.zip" -F "error_log=@error_log.txt"
-
-                powershell -NoProfile -ExecutionPolicy Bypass -Command "Invoke-RestMethod -Uri '${env.N8N_SHEETS_WEBHOOK}' -Method Post -ContentType 'application/json' -InFile 'failed_tests.json'"
                 """
             }
         }
@@ -454,11 +467,13 @@ Contoh override manual:
                     Set-Content -Path 'error_log.txt' -Value (\$errs -join ([Environment]::NewLine + '---' + [Environment]::NewLine)); \
                     \$jsonPayload = @{ projectName = '${env.PROJECT_NAME}'; jobName = '${env.JOB_NAME}'; buildUrl = '${env.BUILD_URL}'; buildNumber = [int]${env.BUILD_NUMBER}; testCases = \$tcList } | ConvertTo-Json -Depth 5; \
                     Set-Content -Path 'failed_tests.json' -Value \$jsonPayload; \
+                    if (Test-Path 'Failure_Report.zip') { \
+                        curl.exe -X POST \"http://localhost:5678/webhook/jenkins-report\" -F \"chat_id=8122375919\" -F \"file=@Failure_Report.zip\" -F \"error_log=@error_log.txt\"; \
+                    } else { \
+                        curl.exe -X POST \"http://localhost:5678/webhook/jenkins-report\" -F \"chat_id=8122375919\" -F \"error_log=@error_log.txt\"; \
+                    }; \
+                    Invoke-RestMethod -Uri '${env.N8N_SHEETS_WEBHOOK}' -Method Post -ContentType 'application/json' -InFile 'failed_tests.json'; \
                 "
-
-                curl.exe -X POST "http://localhost:5678/webhook/jenkins-report" -F "chat_id=8122375919" -F "file=@Failure_Report.zip" -F "error_log=@error_log.txt"
-
-                powershell -NoProfile -ExecutionPolicy Bypass -Command "Invoke-RestMethod -Uri '${env.N8N_SHEETS_WEBHOOK}' -Method Post -ContentType 'application/json' -InFile 'failed_tests.json'"
                 """
             }
         }
