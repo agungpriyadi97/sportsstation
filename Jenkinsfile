@@ -15,7 +15,7 @@ pipeline {
                 'Chrome (headless)',
                 'Firefox (headless)'
             ],
-            description: 'Pilih Browser'
+            description: 'Pilih Browser (Both = Menjalankan Chrome lalu Firefox)'
         )
 
         choice(
@@ -33,29 +33,34 @@ pipeline {
         string(
             name: 'ENV',
             defaultValue: 'staging',
-            description: 'Target Environment'
+            description: 'Target Environment dari Telegram (dev, qa, uat, prod, staging)'
         )
 
         string(
             name: 'SUITE',
-            defaultValue: 'Test Suites/WEB/Web_Test_Suite_Collection/Regression_sportsstation_Web',
-            description: 'Nama Test Suite / Collection'
+            defaultValue: 'Test Suites/WEB/Web_Test_Suite_Collection/Regression_Digiboxvn_Web',
+            description: 'Nama Test Suite / Collection dari Telegram'
         )
 
         string(
             name: 'TEST_PATH',
             defaultValue: '',
-            description: 'Override Manual (Kosongkan jika menggunakan SUITE)'
+            description: '''
+Kosong = Gunakan parameter SUITE / Default Test Suite Collection
+
+Contoh override manual:
+-testSuiteCollectionPath=Test Suites/WEB/Web_Test_Suite_Collection/Regression_Digiboxvn_Web
+'''
         )
     }
 
     environment {
-        PROJECT_NAME = 'Sportsstation'
-        PROJECT_FILE = 'sportsstation.prj'
-        PROJECT_FOLDER = 'Sportsstation'
+        PROJECT_NAME = 'Digibox-vn'
+        PROJECT_FILE = 'digibox-vn.prj'
+        PROJECT_FOLDER = 'Digibox.vn'
         ONEDRIVE_ATTACHMENTS = 'C:\\Users\\AgungPriyadi\\OneDrive - (G)Tech Digital\\Attachments'
         USERPROFILE = 'C:\\Users\\AgungPriyadi'
-        DEFAULT_TEST = 'Test Suites/WEB/Web_Test_Suite_Collection/Regression_sportsstation_Web'
+        DEFAULT_TEST = 'Test Suites/WEB/Web_Test_Suite_Collection/Regression_Digiboxvn_Web'
         KATALON_EXE = 'C:\\Users\\AgungPriyadi\\.katalon\\packages\\KS-11.1.3\\katalonc.exe'
         KATALON_API_KEY = credentials('katalon-api-key')
         KATALON_ORG_ID = '2078893'
@@ -81,6 +86,7 @@ pipeline {
         stage('Prepare') {
             steps {
                 script {
+                    // Bersihkan semua proses Katalon, Java, dan Web Driver
                     bat '''
                     taskkill /F /IM katalon.exe /T 2>nul || exit 0
                     taskkill /F /IM katalonc.exe /T 2>nul || exit 0
@@ -108,6 +114,7 @@ pipeline {
                     "
                     '''
 
+                    // Mapping Execution Profile
                     if (params.ENV?.trim()) {
                         def envInput = params.ENV.toLowerCase()
                         if (envInput == 'prod' || envInput == 'production') {
@@ -123,6 +130,7 @@ pipeline {
                         env.TARGET_PROFILE = params.PROFILE ?: 'Development'
                     }
 
+                    // Mapping Target Test Suite / Collection
                     if (params.TEST_PATH?.trim()) {
                         def value = params.TEST_PATH.split("=")
                         env.ARG_TYPE = value[0]
@@ -143,22 +151,18 @@ pipeline {
                     if (!params.TEST_PATH?.trim()) {
                         if (env.FINAL_PATH.contains("Collection") || env.FINAL_PATH.contains("Web_Test_Suite_Collection")) {
                             env.ARG_TYPE = "-testSuiteCollectionPath"
-                            env.IS_COLLECTION = "true"
                         } else {
                             env.ARG_TYPE = "-testSuitePath"
-                            env.IS_COLLECTION = "false"
                         }
-                    } else {
-                        env.IS_COLLECTION = env.ARG_TYPE.contains("Collection") ? "true" : "false"
                     }
 
                     echo "====================================="
-                    echo "PROJECT       : ${env.PROJECT_FILE}"
-                    echo "PROFILE       : ${env.TARGET_PROFILE}"
-                    echo "BROWSER       : ${params.BROWSER}"
-                    echo "IS_COLLECTION : ${env.IS_COLLECTION}"
-                    echo "ARGTYPE       : ${env.ARG_TYPE}"
-                    echo "PATH          : ${env.FINAL_PATH}"
+                    echo "PROJECT : ${env.PROJECT_FILE}"
+                    echo "PROFILE : ${env.TARGET_PROFILE}"
+                    echo "BROWSER : ${params.BROWSER}"
+                    echo "ARGTYPE : ${env.ARG_TYPE}"
+                    echo "PATH    : ${env.FINAL_PATH}"
+                    echo "ORG ID  : ${env.KATALON_ORG_ID}"
                     echo "====================================="
                 }
             }
@@ -173,116 +177,110 @@ pipeline {
                 }
             }
             steps {
-                script {
-                    echo "--- STARTING CHROME EXECUTION ---"
-                    def browserArg = (env.IS_COLLECTION == "true") ? "" : "-browserType=\"Chrome (headless)\""
-                    def cmd = "\"${env.KATALON_EXE}\" -clean -noSplash -runMode=console -projectPath=\"%WORKSPACE%\\${env.PROJECT_FILE}\" -retry=0 -apiKey=\"${env.KATALON_API_KEY}\" -orgID=\"${env.KATALON_ORG_ID}\" ${env.ARG_TYPE}=\"${env.FINAL_PATH}\" -executionProfile=\"${env.TARGET_PROFILE}\" ${browserArg} --config -webui.autoUpdateDrivers=true -webui.chrome.args=\"--disable-blink-features=AutomationControlled --disable-dev-shm-usage --disable-gpu --no-sandbox --window-size=1920,1080\""
-                    
-                    def exitCode = bat(script: cmd, returnStatus: true)
-                    echo "Chrome Execution Finished with Exit Code: ${exitCode}"
-
-                    // Salin HTML Chrome ke OneDrive & Arsipkan
-                    bat(script: """
-                    powershell -NoProfile -ExecutionPolicy Bypass -Command "\
-                        \$ErrorActionPreference = 'SilentlyContinue'; \
-                        try { \
-                            \$dateStr = (Get-Date).ToString('dd-MM-yyyy'); \
-                            \$dest = Join-Path (Join-Path 'C:\\Users\\AgungPriyadi\\OneDrive - (G)Tech Digital\\Attachments\\${env.PROJECT_FOLDER}' \$dateStr) 'Chrome Headless'; \
-                            if (-not (Test-Path \$dest)) { New-Item -ItemType Directory -Path \$dest -Force | Out-Null }; \
-                            if (Test-Path 'Reports') { \
-                                Get-ChildItem -Path 'Reports' -Filter '*.html' -Recurse -ErrorAction SilentlyContinue | ForEach-Object { \
-                                    \$curr = \$_.Directory; \
-                                    \$modName = ''; \
-                                    while (\$curr -and \$curr.Name -ne 'Reports' -and \$curr.FullName -ne \$env:WORKSPACE) { \
-                                        if (\$curr.Name -notmatch '^\\d{8}_\\d{6}\$' -and \$curr.Name -ne 'Test Suites') { \$modName = \$curr.Name; break }; \
-                                        \$curr = \$curr.Parent \
-                                    }; \
-                                    if (-not \$modName) { \$modName = if ('${params.SUITE}') { (Split-Path '${params.SUITE}' -Leaf) } else { 'Test_Report' } }; \
-                                    \$destFile = Join-Path \$dest (\$modName + '.html'); \
-                                    Copy-Item -Path \$_.FullName -Destination \$destFile -Force -ErrorAction SilentlyContinue; \
-                                    Write-Host ('Copied Chrome HTML: ' + \$modName + '.html') \
-                                }; \
-                                New-Item -ItemType Directory -Path 'Reports_Archive\\Chrome' -Force | Out-Null; \
-                                Copy-Item -Path 'Reports\\*' -Destination 'Reports_Archive\\Chrome' -Recurse -Force -ErrorAction SilentlyContinue; \
-                                Remove-Item -Path 'Reports' -Recurse -Force -ErrorAction SilentlyContinue; \
-                            } \
-                        } catch { Write-Host ('Handled Chrome Copy Notice: ' + \$_.Exception.Message) } \
-                    "
-                    """, returnStatus: true)
-
-                    bat '''
-                    taskkill /F /IM katalonc.exe /T 2>nul || exit 0
-                    taskkill /F /IM java.exe /T 2>nul || exit 0
-                    taskkill /F /IM javaw.exe /T 2>nul || exit 0
-                    taskkill /F /IM chromedriver.exe /T 2>nul || exit 0
-                    taskkill /F /IM chrome.exe /T 2>nul || exit 0
-                    timeout /t 2 /nobreak >nul 2>&1 || exit 0
-                    if exist "C:\\Users\\AgungPriyadi\\.katalon\\packages\\KS-11.1.3\\config\\.metadata\\.lock" del /f /q "C:\\Users\\AgungPriyadi\\.katalon\\packages\\KS-11.1.3\\config\\.metadata\\.lock" 2>nul || exit 0
-                    '''
+                catchError(buildResult: 'SUCCESS', stageResult: 'UNSTABLE') {
+                    script {
+                        def browserArg = env.ARG_TYPE.contains("Collection") ? "" : "-browserType=\"Chrome (headless)\""
+                        def cmd = "\"${env.KATALON_EXE}\" -clean -noSplash -runMode=console -projectPath=\"%WORKSPACE%\\${env.PROJECT_FILE}\" -retry=0 -apiKey=\"${env.KATALON_API_KEY}\" -orgID=\"${env.KATALON_ORG_ID}\" ${env.ARG_TYPE}=\"${env.FINAL_PATH}\" -executionProfile=\"${env.TARGET_PROFILE}\" ${browserArg} --config -webui.autoUpdateDrivers=true -webui.chrome.args=\"--disable-blink-features=AutomationControlled --disable-dev-shm-usage --disable-gpu --no-sandbox --window-size=1920,1080\""
+                        bat cmd
+                    }
                 }
+
+                // Salin report HTML Chrome ke OneDrive & Pindahkan ke Archive
+                bat """
+                powershell -NoProfile -ExecutionPolicy Bypass -Command "\
+                    \$ErrorActionPreference = 'SilentlyContinue'; \
+                    try { \
+                        \$dateStr = (Get-Date).ToString('dd-MM-yyyy'); \
+                        \$dest = Join-Path (Join-Path 'C:\\Users\\AgungPriyadi\\OneDrive - (G)Tech Digital\\Attachments\\${env.PROJECT_FOLDER}' \$dateStr) 'Chrome Headless'; \
+                        if (-not (Test-Path \$dest)) { New-Item -ItemType Directory -Path \$dest -Force | Out-Null }; \
+                        if (Test-Path 'Reports') { \
+                            Get-ChildItem -Path 'Reports' -Filter '*.html' -Recurse -ErrorAction SilentlyContinue | ForEach-Object { \
+                                \$curr = \$_.Directory; \
+                                \$modName = ''; \
+                                while (\$curr -and \$curr.Name -ne 'Reports' -and \$curr.FullName -ne \$env:WORKSPACE) { \
+                                    if (\$curr.Name -notmatch '^\\d{8}_\\d{6}\$' -and \$curr.Name -ne 'Test Suites') { \$modName = \$curr.Name; break }; \
+                                    \$curr = \$curr.Parent \
+                                }; \
+                                if (-not \$modName) { \$modName = if ('${params.SUITE}') { (Split-Path '${params.SUITE}' -Leaf) } else { 'Test_Report' } }; \
+                                \$destFile = Join-Path \$dest (\$modName + '.html'); \
+                                Copy-Item -Path \$_.FullName -Destination \$destFile -Force -ErrorAction SilentlyContinue; \
+                                Write-Host ('Copied Chrome HTML: ' + \$modName + '.html') \
+                            }; \
+                            New-Item -ItemType Directory -Path 'Reports_Archive\\Chrome' -Force | Out-Null; \
+                            Copy-Item -Path 'Reports\\*' -Destination 'Reports_Archive\\Chrome' -Recurse -Force -ErrorAction SilentlyContinue; \
+                            Remove-Item -Path 'Reports' -Recurse -Force -ErrorAction SilentlyContinue; \
+                        } \
+                    } catch { Write-Host ('Error Chrome Copy: ' + \$_.Exception.Message) } \
+                "
+                """
+
+                bat '''
+                taskkill /F /IM katalonc.exe /T 2>nul || exit 0
+                taskkill /F /IM java.exe /T 2>nul || exit 0
+                taskkill /F /IM javaw.exe /T 2>nul || exit 0
+                taskkill /F /IM chromedriver.exe /T 2>nul || exit 0
+                taskkill /F /IM chrome.exe /T 2>nul || exit 0
+                timeout /t 2 /nobreak >nul 2>&1 || exit 0
+                if exist "C:\\Users\\AgungPriyadi\\.katalon\\packages\\KS-11.1.3\\config\\.metadata\\.lock" del /f /q "C:\\Users\\AgungPriyadi\\.katalon\\packages\\KS-11.1.3\\config\\.metadata\\.lock" 2>nul || exit 0
+                '''
             }
         }
 
         stage('Run Firefox') {
             when {
-                // Firefox hanya dijalankan jika user memilih Firefox / Both DAN targetnya adalah Test Suite biasa (bukan TSC Chrome)
-                allOf {
-                    anyOf {
-                        expression { params.BROWSER == 'Firefox (headless)' }
-                        expression { params.BROWSER == 'Firefox' }
-                        expression { params.BROWSER == 'Both' && env.IS_COLLECTION != "true" }
-                    }
+                anyOf {
+                    expression { params.BROWSER == 'Firefox (headless)' }
+                    expression { params.BROWSER == 'Firefox' }
+                    expression { params.BROWSER == 'Both' }
                 }
             }
             steps {
-                script {
-                    echo "--- STARTING FIREFOX EXECUTION ---"
-                    bat '''
-                    if exist "C:\\Users\\AgungPriyadi\\.katalon\\packages\\KS-11.1.3\\config\\.metadata\\.lock" del /f /q "C:\\Users\\AgungPriyadi\\.katalon\\packages\\KS-11.1.3\\config\\.metadata\\.lock" 2>nul || exit 0
-                    '''
-
-                    def cmd = "\"${env.KATALON_EXE}\" -clean -noSplash -runMode=console -projectPath=\"%WORKSPACE%\\${env.PROJECT_FILE}\" -retry=0 -apiKey=\"${env.KATALON_API_KEY}\" -orgID=\"${env.KATALON_ORG_ID}\" -testSuitePath=\"${env.FINAL_PATH}\" -executionProfile=\"${env.TARGET_PROFILE}\" -browserType=\"Firefox (headless)\" --config -webui.autoUpdateDrivers=true"
-                    
-                    def exitCode = bat(script: cmd, returnStatus: true)
-                    echo "Firefox Execution Finished with Exit Code: ${exitCode}"
-
-                    // Salin HTML Firefox ke OneDrive & Arsipkan
-                    bat(script: """
-                    powershell -NoProfile -ExecutionPolicy Bypass -Command "\
-                        \$ErrorActionPreference = 'SilentlyContinue'; \
-                        try { \
-                            \$dateStr = (Get-Date).ToString('dd-MM-yyyy'); \
-                            \$dest = Join-Path (Join-Path 'C:\\Users\\AgungPriyadi\\OneDrive - (G)Tech Digital\\Attachments\\${env.PROJECT_FOLDER}' \$dateStr) 'Firefox Headless'; \
-                            if (-not (Test-Path \$dest)) { New-Item -ItemType Directory -Path \$dest -Force | Out-Null }; \
-                            if (Test-Path 'Reports') { \
-                                Get-ChildItem -Path 'Reports' -Filter '*.html' -Recurse -ErrorAction SilentlyContinue | ForEach-Object { \
-                                    \$curr = \$_.Directory; \
-                                    \$modName = ''; \
-                                    while (\$curr -and \$curr.Name -ne 'Reports' -and \$curr.FullName -ne \$env:WORKSPACE) { \
-                                        if (\$curr.Name -notmatch '^\\d{8}_\\d{6}\$' -and \$curr.Name -ne 'Test Suites') { \$modName = \$curr.Name; break }; \
-                                        \$curr = \$curr.Parent \
-                                    }; \
-                                    if (-not \$modName) { \$modName = if ('${params.SUITE}') { (Split-Path '${params.SUITE}' -Leaf) } else { 'Test_Report' } }; \
-                                    \$destFile = Join-Path \$dest (\$modName + '.html'); \
-                                    Copy-Item -Path \$_.FullName -Destination \$destFile -Force -ErrorAction SilentlyContinue; \
-                                    Write-Host ('Copied Firefox HTML: ' + \$modName + '.html') \
-                                }; \
-                                New-Item -ItemType Directory -Path 'Reports_Archive\\Firefox' -Force | Out-Null; \
-                                Copy-Item -Path 'Reports\\*' -Destination 'Reports_Archive\\Firefox' -Recurse -Force -ErrorAction SilentlyContinue; \
-                                Remove-Item -Path 'Reports' -Recurse -Force -ErrorAction SilentlyContinue; \
-                            } \
-                        } catch { Write-Host ('Handled Firefox Copy Notice: ' + \$_.Exception.Message) } \
-                    "
-                    """, returnStatus: true)
-
-                    bat '''
-                    taskkill /F /IM katalonc.exe /T 2>nul || exit 0
-                    taskkill /F /IM java.exe /T 2>nul || exit 0
-                    taskkill /F /IM javaw.exe /T 2>nul || exit 0
-                    taskkill /F /IM geckodriver.exe /T 2>nul || exit 0
-                    taskkill /F /IM firefox.exe /T 2>nul || exit 0
-                    '''
+                catchError(buildResult: 'SUCCESS', stageResult: 'UNSTABLE') {
+                    script {
+                        def browserArg = env.ARG_TYPE.contains("Collection") ? "" : "-browserType=\"Firefox (headless)\""
+                        def cmd = "\"${env.KATALON_EXE}\" -clean -noSplash -runMode=console -projectPath=\"%WORKSPACE%\\${env.PROJECT_FILE}\" -retry=0 -apiKey=\"${env.KATALON_API_KEY}\" -orgID=\"${env.KATALON_ORG_ID}\" ${env.ARG_TYPE}=\"${env.FINAL_PATH}\" -executionProfile=\"${env.TARGET_PROFILE}\" ${browserArg} --config -webui.autoUpdateDrivers=true"
+                        bat cmd
+                    }
                 }
+
+                // Salin report HTML Firefox ke OneDrive & Pindahkan ke Archive
+                bat """
+                powershell -NoProfile -ExecutionPolicy Bypass -Command "\
+                    \$ErrorActionPreference = 'SilentlyContinue'; \
+                    try { \
+                        \$dateStr = (Get-Date).ToString('dd-MM-yyyy'); \
+                        \$dest = Join-Path (Join-Path 'C:\\Users\\AgungPriyadi\\OneDrive - (G)Tech Digital\\Attachments\\${env.PROJECT_FOLDER}' \$dateStr) 'Firefox Headless'; \
+                        if (-not (Test-Path \$dest)) { New-Item -ItemType Directory -Path \$dest -Force | Out-Null }; \
+                        if (Test-Path 'Reports') { \
+                            Get-ChildItem -Path 'Reports' -Filter '*.html' -Recurse -ErrorAction SilentlyContinue | ForEach-Object { \
+                                \$curr = \$_.Directory; \
+                                \$modName = ''; \
+                                while (\$curr -and \$curr.Name -ne 'Reports' -and \$curr.FullName -ne \$env:WORKSPACE) { \
+                                    if (\$curr.Name -notmatch '^\\d{8}_\\d{6}\$' -and \$curr.Name -ne 'Test Suites') { \$modName = \$curr.Name; break }; \
+                                    \$curr = \$curr.Parent \
+                                }; \
+                                if (-not \$modName) { \$modName = if ('${params.SUITE}') { (Split-Path '${params.SUITE}' -Leaf) } else { 'Test_Report' } }; \
+                                \$destFile = Join-Path \$dest (\$modName + '.html'); \
+                                Copy-Item -Path \$_.FullName -Destination \$destFile -Force -ErrorAction SilentlyContinue; \
+                                Write-Host ('Copied Firefox HTML: ' + \$modName + '.html') \
+                            }; \
+                            New-Item -ItemType Directory -Path 'Reports_Archive\\Firefox' -Force | Out-Null; \
+                            Copy-Item -Path 'Reports\\*' -Destination 'Reports_Archive\\Firefox' -Recurse -Force -ErrorAction SilentlyContinue; \
+                            Remove-Item -Path 'Reports' -Recurse -Force -ErrorAction SilentlyContinue; \
+                        } \
+                    } catch { Write-Host ('Error Firefox Copy: ' + \$_.Exception.Message) } \
+                "
+                """
+
+                bat '''
+                taskkill /F /IM katalonc.exe /T 2>nul || exit 0
+                taskkill /F /IM java.exe /T 2>nul || exit 0
+                taskkill /F /IM javaw.exe /T 2>nul || exit 0
+                taskkill /F /IM geckodriver.exe /T 2>nul || exit 0
+                taskkill /F /IM firefox.exe /T 2>nul || exit 0
+                timeout /t 2 /nobreak >nul 2>&1 || exit 0
+                if exist "C:\\Users\\AgungPriyadi\\.katalon\\packages\\KS-11.1.3\\config\\.metadata\\.lock" del /f /q "C:\\Users\\AgungPriyadi\\.katalon\\packages\\KS-11.1.3\\config\\.metadata\\.lock" 2>nul || exit 0
+                '''
             }
         }
     }
@@ -291,7 +289,7 @@ pipeline {
 
         always {
             script {
-                // Kembalikan semua file Reports dari Archive
+                // Kembalikan semua file Reports dari Archive agar Post Actions membaca total hasil kedua browser
                 bat '''
                 powershell -NoProfile -ExecutionPolicy Bypass -Command "\
                     $ErrorActionPreference = 'SilentlyContinue'; \
@@ -312,6 +310,8 @@ pipeline {
                     testResults: 'Reports/**/JUnit_Report.xml, Reports/**/*.xml'
                 )
 
+                def currentStatus = currentBuild.currentResult ?: 'UNKNOWN'
+                
                 bat """
                 powershell -NoProfile -ExecutionPolicy Bypass -Command "\
                     \$ErrorActionPreference = 'SilentlyContinue'; \
@@ -332,12 +332,11 @@ pipeline {
                             } \
                         } \
                     }; \
-                    \$finalStatus = if (\$f -gt 0) { 'FAILURE' } else { 'SUCCESS' }; \
                     \$body = @{ \
                         job = '${env.JOB_NAME}'; \
                         projectName = '${env.PROJECT_NAME}'; \
                         buildNumber = [int]${env.BUILD_NUMBER}; \
-                        status = \$finalStatus; \
+                        status = '${currentStatus}'; \
                         phase = 'COMPLETED'; \
                         passed = \$p; \
                         failed = \$f; \
@@ -348,34 +347,22 @@ pipeline {
                     Write-Host 'SUCCESS: Finished Webhook sent to n8n' \
                 "
                 """
+            }
 
+            echo ""
+            echo "======================================"
+            echo "Automation Finished"
+            echo "======================================"
+        }
+
+        unstable {
+            echo "Automation UNSTABLE - Preparing Compact Zip, AI Error Log & Sending to Google Sheets..."
+            script {
                 bat """
                 powershell -NoProfile -ExecutionPolicy Bypass -Command "\
                     \$ErrorActionPreference = 'SilentlyContinue'; \
-                    \$errs = @(); \
-                    \$tcList = @(); \
-                    \$i = 1; \
-                    \$xmlFiles = Get-ChildItem -Path 'Reports' -Filter '*.xml' -Recurse -ErrorAction SilentlyContinue | Where-Object { \$_.Name -ne 'TESTS-TestSuites.xml' }; \
-                    if (\$xmlFiles) { \
-                        \$xmlFiles | ForEach-Object { \
-                            [xml]\$x = Get-Content \$_.FullName; \
-                            foreach(\$ts in \$x.SelectNodes('//testsuite')){ \
-                                \$tsName = \$ts.name; \
-                                foreach(\$tc in \$ts.SelectNodes('.//testcase[failure or error]')){ \
-                                    \$node = if(\$tc.failure){\$tc.failure}else{\$tc.error}; \
-                                    \$msg = \$node.message; \
-                                    if([string]::IsNullOrWhiteSpace(\$msg)){ \$msg = \$node.innerText }; \
-                                    if([string]::IsNullOrWhiteSpace(\$msg)){ \$msg = \$tc.'system-err' }; \
-                                    if([string]::IsNullOrWhiteSpace(\$msg)){ \$msg = 'No detailed error message found in XML.' }; \
-                                    \$errs += ('[Test Case]: ' + \$tc.name + [Environment]::NewLine + '[Error]: ' + \$msg); \
-                                    \$tcList += @{ number = [string]\$i; testSuiteName = \$tsName; testCaseName = [string]\$tc.name; status = 'failed'; errorMessage = [string]\$msg; reportUrl = '${env.BUILD_URL}' }; \
-                                    \$i++ \
-                                } \
-                            } \
-                        } \
-                    }; \
-                    if (\$tcList.Count -gt 0) { \
-                        \$tempZip = Join-Path \$env:TEMP 'Sportsstation_Failures'; \
+                    try { \
+                        \$tempZip = Join-Path \$env:TEMP 'DigiboxVN_Failures'; \
                         if (Test-Path \$tempZip) { Remove-Item \$tempZip -Recurse -Force -ErrorAction SilentlyContinue }; \
                         New-Item -ItemType Directory -Path (Join-Path \$tempZip 'Reports') -Force | Out-Null; \
                         Get-ChildItem -Path 'Reports' -Recurse -File -ErrorAction SilentlyContinue | Where-Object { \$_.Extension -in '.html', '.xml', '.log', '.properties' } | ForEach-Object { \
@@ -394,20 +381,114 @@ pipeline {
                         if (Test-Path 'Failure_Report.zip') { Remove-Item 'Failure_Report.zip' -Force -ErrorAction SilentlyContinue }; \
                         Compress-Archive -Path (Join-Path \$tempZip '*') -DestinationPath 'Failure_Report.zip' -CompressionLevel Optimal -Force -ErrorAction SilentlyContinue; \
                         Remove-Item \$tempZip -Recurse -Force -ErrorAction SilentlyContinue; \
-                        Set-Content -Path 'error_log.txt' -Value (\$errs -join ([Environment]::NewLine + '---' + [Environment]::NewLine)); \
-                        \$jsonPayload = @{ projectName = '${env.PROJECT_NAME}'; jobName = '${env.JOB_NAME}'; buildUrl = '${env.BUILD_URL}'; buildNumber = [int]${env.BUILD_NUMBER}; testCases = \$tcList } | ConvertTo-Json -Depth 5; \
-                        Set-Content -Path 'failed_tests.json' -Value \$jsonPayload; \
+                    } catch { Write-Host ('Error creating zip: ' + \$_.Exception.Message) }; \
+                    \$errs = @(); \
+                    \$tcList = @(); \
+                    \$i = 1; \
+                    \$latestFolder = Get-ChildItem -Path 'Reports' -Directory -Recurse -ErrorAction SilentlyContinue | Where-Object { \$_.Name -match '^\\d{8}_\\d{6}\$' } | Sort-Object LastWriteTime -Descending | Select-Object -First 1; \
+                    \$searchRoot = if (\$latestFolder) { \$latestFolder.FullName } else { 'Reports' }; \
+                    \$xmlFiles = Get-ChildItem -Path \$searchRoot -Filter '*.xml' -Recurse -ErrorAction SilentlyContinue | Where-Object { \$_.Name -ne 'TESTS-TestSuites.xml' }; \
+                    if (\$xmlFiles) { \
+                        \$xmlFiles | ForEach-Object { \
+                            [xml]\$x = Get-Content \$_.FullName; \
+                            foreach(\$ts in \$x.SelectNodes('//testsuite')){ \
+                                \$tsName = \$ts.name; \
+                                foreach(\$tc in \$ts.SelectNodes('.//testcase[failure or error]')){ \
+                                    \$node = if(\$tc.failure){\$tc.failure}else{\$tc.error}; \
+                                    \$msg = \$node.message; \
+                                    if([string]::IsNullOrWhiteSpace(\$msg)){ \$msg = \$node.innerText }; \
+                                    if([string]::IsNullOrWhiteSpace(\$msg)){ \$msg = \$tc.'system-err' }; \
+                                    if([string]::IsNullOrWhiteSpace(\$msg)){ \$msg = 'No detailed error message found in XML.' }; \
+                                    \$errs += ('[Test Case]: ' + \$tc.name + [Environment]::NewLine + '[Error]: ' + \$msg); \
+                                    \$tcList += @{ number = [string]\$i; testSuiteName = \$tsName; testCaseName = [string]\$tc.name; status = 'failed'; errorMessage = [string]\$msg; reportUrl = '${env.BUILD_URL}' }; \
+                                    \$i++ \
+                                } \
+                            } \
+                        } \
+                    }; \
+                    if (\$errs.Count -eq 0) { \$errs += 'No detailed XML stacktrace found.' }; \
+                    Set-Content -Path 'error_log.txt' -Value (\$errs -join ([Environment]::NewLine + '---' + [Environment]::NewLine)); \
+                    \$jsonPayload = @{ projectName = '${env.PROJECT_NAME}'; jobName = '${env.JOB_NAME}'; buildUrl = '${env.BUILD_URL}'; buildNumber = [int]${env.BUILD_NUMBER}; testCases = \$tcList } | ConvertTo-Json -Depth 5; \
+                    Set-Content -Path 'failed_tests.json' -Value \$jsonPayload; \
+                    if (Test-Path 'Failure_Report.zip') { \
                         curl.exe -X POST \"http://localhost:5678/webhook/jenkins-report\" -F \"chat_id=8122375919\" -F \"file=@Failure_Report.zip\" -F \"error_log=@error_log.txt\"; \
-                        Invoke-RestMethod -Uri '${env.N8N_SHEETS_WEBHOOK}' -Method Post -ContentType 'application/json' -InFile 'failed_tests.json'; \
-                    } \
+                    } else { \
+                        curl.exe -X POST \"http://localhost:5678/webhook/jenkins-report\" -F \"chat_id=8122375919\" -F \"error_log=@error_log.txt\"; \
+                    }; \
+                    if ((Get-Content 'failed_tests.json' | ConvertFrom-Json).testCases.Count -gt 0) { \
+                        Invoke-RestMethod -Uri '${env.N8N_SHEETS_WEBHOOK}' -Method Post -ContentType 'application/json' -InFile 'failed_tests.json' \
+                    }; \
                 "
                 """
             }
+        }
 
-            echo ""
-            echo "======================================"
-            echo "Automation Finished"
-            echo "======================================"
+        failure {
+            echo "Automation FAILED - Preparing Compact Zip, AI Error Log & Sending to Google Sheets..."
+            script {
+                bat """
+                powershell -NoProfile -ExecutionPolicy Bypass -Command "\
+                    \$ErrorActionPreference = 'SilentlyContinue'; \
+                    try { \
+                        \$tempZip = Join-Path \$env:TEMP 'DigiboxVN_Failures'; \
+                        if (Test-Path \$tempZip) { Remove-Item \$tempZip -Recurse -Force -ErrorAction SilentlyContinue }; \
+                        New-Item -ItemType Directory -Path (Join-Path \$tempZip 'Reports') -Force | Out-Null; \
+                        Get-ChildItem -Path 'Reports' -Recurse -File -ErrorAction SilentlyContinue | Where-Object { \$_.Extension -in '.html', '.xml', '.log', '.properties' } | ForEach-Object { \
+                            \$rel = \$_.FullName.Substring((Get-Item 'Reports').FullName.Length); \
+                            \$targetFile = Join-Path (Join-Path \$tempZip 'Reports') \$rel; \
+                            \$targetDir = Split-Path \$targetFile -Parent; \
+                            if (-not (Test-Path \$targetDir)) { New-Item -ItemType Directory -Path \$targetDir -Force | Out-Null }; \
+                            Copy-Item -Path \$_.FullName -Destination \$targetFile -Force -ErrorAction SilentlyContinue; \
+                        }; \
+                        if (Test-Path 'Screenshot') { \
+                            New-Item -ItemType Directory -Path (Join-Path \$tempZip 'Screenshot') -Force | Out-Null; \
+                            Get-ChildItem -Path 'Screenshot' -Filter '*.png' -Recurse -ErrorAction SilentlyContinue | Sort-Object LastWriteTime -Descending | Select-Object -First 10 | ForEach-Object { \
+                                Copy-Item -Path \$_.FullName -Destination (Join-Path \$tempZip 'Screenshot') -Force -ErrorAction SilentlyContinue; \
+                            }; \
+                        }; \
+                        if (Test-Path 'Failure_Report.zip') { Remove-Item 'Failure_Report.zip' -Force -ErrorAction SilentlyContinue }; \
+                        Compress-Archive -Path (Join-Path \$tempZip '*') -DestinationPath 'Failure_Report.zip' -CompressionLevel Optimal -Force -ErrorAction SilentlyContinue; \
+                        Remove-Item \$tempZip -Recurse -Force -ErrorAction SilentlyContinue; \
+                    } catch { Write-Host ('Error creating zip: ' + \$_.Exception.Message) }; \
+                    \$errs = @(); \
+                    \$tcList = @(); \
+                    \$i = 1; \
+                    \$latestFolder = Get-ChildItem -Path 'Reports' -Directory -Recurse -ErrorAction SilentlyContinue | Where-Object { \$_.Name -match '^\\d{8}_\\d{6}\$' } | Sort-Object LastWriteTime -Descending | Select-Object -First 1; \
+                    \$searchRoot = if (\$latestFolder) { \$latestFolder.FullName } else { 'Reports' }; \
+                    \$xmlFiles = Get-ChildItem -Path \$searchRoot -Filter '*.xml' -Recurse -ErrorAction SilentlyContinue | Where-Object { \$_.Name -ne 'TESTS-TestSuites.xml' }; \
+                    if (\$xmlFiles) { \
+                        \$xmlFiles | ForEach-Object { \
+                            [xml]\$x = Get-Content \$_.FullName; \
+                            foreach(\$ts in \$x.SelectNodes('//testsuite')){ \
+                                \$tsName = \$ts.name; \
+                                foreach(\$tc in \$ts.SelectNodes('.//testcase[failure or error]')){ \
+                                    \$node = if(\$tc.failure){\$tc.failure}else{\$tc.error}; \
+                                    \$msg = \$node.message; \
+                                    if([string]::IsNullOrWhiteSpace(\$msg)){ \$msg = \$node.innerText }; \
+                                    if([string]::IsNullOrWhiteSpace(\$msg)){ \$msg = \$tc.'system-err' }; \
+                                    if([string]::IsNullOrWhiteSpace(\$msg)){ \$msg = 'No detailed error message found in XML.' }; \
+                                    \$errs += ('[Test Case]: ' + \$tc.name + [Environment]::NewLine + '[Error]: ' + \$msg); \
+                                    \$tcList += @{ number = [string]\$i; testSuiteName = \$tsName; testCaseName = [string]\$tc.name; status = 'failed'; errorMessage = [string]\$msg; reportUrl = '${env.BUILD_URL}' }; \
+                                    \$i++ \
+                                } \
+                            } \
+                        } \
+                    }; \
+                    if (\$errs.Count -eq 0) { \$errs += 'No detailed XML stacktrace found.' }; \
+                    Set-Content -Path 'error_log.txt' -Value (\$errs -join ([Environment]::NewLine + '---' + [Environment]::NewLine)); \
+                    \$jsonPayload = @{ projectName = '${env.PROJECT_NAME}'; jobName = '${env.JOB_NAME}'; buildUrl = '${env.BUILD_URL}'; buildNumber = [int]${env.BUILD_NUMBER}; testCases = \$tcList } | ConvertTo-Json -Depth 5; \
+                    Set-Content -Path 'failed_tests.json' -Value \$jsonPayload; \
+                    if (Test-Path 'Failure_Report.zip') { \
+                        curl.exe -X POST \"http://localhost:5678/webhook/jenkins-report\" -F \"chat_id=8122375919\" -F \"file=@Failure_Report.zip\" -F \"error_log=@error_log.txt\"; \
+                    } else { \
+                        curl.exe -X POST \"http://localhost:5678/webhook/jenkins-report\" -F \"chat_id=8122375919\" -F \"error_log=@error_log.txt\"; \
+                    }; \
+                    if ((Get-Content 'failed_tests.json' | ConvertFrom-Json).testCases.Count -gt 0) { \
+                        Invoke-RestMethod -Uri '${env.N8N_SHEETS_WEBHOOK}' -Method Post -ContentType 'application/json' -InFile 'failed_tests.json' \
+                    }; \
+                "
+                """
+            }
         }
     }
 
