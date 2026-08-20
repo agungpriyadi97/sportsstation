@@ -86,7 +86,6 @@ Contoh override manual:
         stage('Prepare') {
             steps {
                 script {
-                    // Bersihkan semua proses Katalon, Java, dan Driver di background
                     bat '''
                     taskkill /F /IM katalon.exe /T 2>nul || exit 0
                     taskkill /F /IM katalonc.exe /T 2>nul || exit 0
@@ -101,18 +100,18 @@ Contoh override manual:
 
                     bat '''
                     powershell -NoProfile -ExecutionPolicy Bypass -Command "\
-                        if (Test-Path 'Reports') { Remove-Item -Path 'Reports' -Recurse -Force -ErrorAction SilentlyContinue }; \
-                        if (Test-Path 'Reports_Archive') { Remove-Item -Path 'Reports_Archive' -Recurse -Force -ErrorAction SilentlyContinue }; \
-                        if (Test-Path 'Screenshot') { Remove-Item -Path 'Screenshot' -Recurse -Force -ErrorAction SilentlyContinue }; \
-                        if (Test-Path 'summary.json') { Remove-Item 'summary.json' -Force -ErrorAction SilentlyContinue }; \
-                        if (Test-Path 'test_results.json') { Remove-Item 'test_results.json' -Force -ErrorAction SilentlyContinue }; \
-                        if (Test-Path 'failed_tests.json') { Remove-Item 'failed_tests.json' -Force -ErrorAction SilentlyContinue }; \
-                        if (Test-Path 'error_log.txt') { Remove-Item 'error_log.txt' -Force -ErrorAction SilentlyContinue }; \
-                        if (Test-Path 'Failure_Report.zip') { Remove-Item 'Failure_Report.zip' -Force -ErrorAction SilentlyContinue }; \
+                        $ErrorActionPreference = 'SilentlyContinue'; \
+                        if (Test-Path 'Reports') { Remove-Item -Path 'Reports' -Recurse -Force }; \
+                        if (Test-Path 'Reports_Archive') { Remove-Item -Path 'Reports_Archive' -Recurse -Force }; \
+                        if (Test-Path 'Screenshot') { Remove-Item -Path 'Screenshot' -Recurse -Force }; \
+                        if (Test-Path 'summary.json') { Remove-Item 'summary.json' -Force }; \
+                        if (Test-Path 'test_results.json') { Remove-Item 'test_results.json' -Force }; \
+                        if (Test-Path 'failed_tests.json') { Remove-Item 'failed_tests.json' -Force }; \
+                        if (Test-Path 'error_log.txt') { Remove-Item 'error_log.txt' -Force }; \
+                        if (Test-Path 'Failure_Report.zip') { Remove-Item 'Failure_Report.zip' -Force }; \
                     "
                     '''
 
-                    // Mapping Execution Profile
                     if (params.ENV?.trim()) {
                         def envInput = params.ENV.toLowerCase()
                         if (envInput == 'prod' || envInput == 'production') {
@@ -128,7 +127,6 @@ Contoh override manual:
                         env.TARGET_PROFILE = params.PROFILE ?: 'Development'
                     }
 
-                    // Mapping Target Test Suite / Collection
                     if (params.TEST_PATH?.trim()) {
                         def value = params.TEST_PATH.split("=")
                         env.ARG_TYPE = value[0]
@@ -175,16 +173,17 @@ Contoh override manual:
                 }
             }
             steps {
-                catchError(buildResult: 'SUCCESS', stageResult: 'UNSTABLE') {
+                catchError(buildResult: 'UNSTABLE', stageResult: 'UNSTABLE') {
                     script {
                         def cmd = "\"${env.KATALON_EXE}\" -clean -noSplash -runMode=console -projectPath=\"%WORKSPACE%\\${env.PROJECT_FILE}\" -retry=0 -apiKey=\"${env.KATALON_API_KEY}\" -orgID=\"${env.KATALON_ORG_ID}\" ${env.ARG_TYPE}=\"${env.FINAL_PATH}\" -executionProfile=\"${env.TARGET_PROFILE}\" -browserType=\"Chrome (headless)\" --config -webui.autoUpdateDrivers=true -webui.chrome.args=\"--disable-blink-features=AutomationControlled --disable-dev-shm-usage --disable-gpu --no-sandbox --window-size=1920,1080\""
                         bat cmd
                     }
                 }
 
-                // Salin report HTML Chrome ke OneDrive & Pindahkan ke Archive
+                // Salin HTML Chrome ke OneDrive & Arsipkan
                 bat """
                 powershell -NoProfile -ExecutionPolicy Bypass -Command "\
+                    \$ErrorActionPreference = 'SilentlyContinue'; \
                     try { \
                         \$dateStr = (Get-Date).ToString('dd-MM-yyyy'); \
                         \$dest = Join-Path (Join-Path 'C:\\Users\\AgungPriyadi\\OneDrive - (G)Tech Digital\\Attachments\\${env.PROJECT_FOLDER}' \$dateStr) 'Chrome Headless'; \
@@ -198,13 +197,13 @@ Contoh override manual:
                             }; \
                             if (-not \$modName) { \$modName = if ('${params.SUITE}') { (Split-Path '${params.SUITE}' -Leaf) } else { 'Test_Report' } }; \
                             \$destFile = Join-Path \$dest (\$modName + '.html'); \
-                            Copy-Item -Path \$_.FullName -Destination \$destFile -Force; \
+                            Copy-Item -Path \$_.FullName -Destination \$destFile -Force -ErrorAction SilentlyContinue; \
                             Write-Host ('Copied Chrome HTML: ' + \$modName + '.html') \
                         }; \
                         New-Item -ItemType Directory -Path 'Reports_Archive\\Chrome' -Force | Out-Null; \
-                        Copy-Item -Path 'Reports\\*' -Destination 'Reports_Archive\\Chrome' -Recurse -Force; \
+                        Copy-Item -Path 'Reports\\*' -Destination 'Reports_Archive\\Chrome' -Recurse -Force -ErrorAction SilentlyContinue; \
                         Remove-Item -Path 'Reports' -Recurse -Force -ErrorAction SilentlyContinue; \
-                    } catch { Write-Host ('Error Chrome Copy: ' + \$_.Exception.Message) } \
+                    } catch { Write-Host ('Handled Chrome Copy Notice: ' + \$_.Exception.Message) } \
                 "
                 """
 
@@ -224,16 +223,17 @@ Contoh override manual:
                 }
             }
             steps {
-                catchError(buildResult: 'SUCCESS', stageResult: 'UNSTABLE') {
+                catchError(buildResult: 'UNSTABLE', stageResult: 'UNSTABLE') {
                     script {
                         def cmd = "\"${env.KATALON_EXE}\" -clean -noSplash -runMode=console -projectPath=\"%WORKSPACE%\\${env.PROJECT_FILE}\" -retry=0 -apiKey=\"${env.KATALON_API_KEY}\" -orgID=\"${env.KATALON_ORG_ID}\" ${env.ARG_TYPE}=\"${env.FINAL_PATH}\" -executionProfile=\"${env.TARGET_PROFILE}\" -browserType=\"Firefox (headless)\" --config -webui.autoUpdateDrivers=true"
                         bat cmd
                     }
                 }
 
-                // Salin report HTML Firefox ke OneDrive & Pindahkan ke Archive
+                // Salin HTML Firefox ke OneDrive & Arsipkan
                 bat """
                 powershell -NoProfile -ExecutionPolicy Bypass -Command "\
+                    \$ErrorActionPreference = 'SilentlyContinue'; \
                     try { \
                         \$dateStr = (Get-Date).ToString('dd-MM-yyyy'); \
                         \$dest = Join-Path (Join-Path 'C:\\Users\\AgungPriyadi\\OneDrive - (G)Tech Digital\\Attachments\\${env.PROJECT_FOLDER}' \$dateStr) 'Firefox Headless'; \
@@ -247,13 +247,13 @@ Contoh override manual:
                             }; \
                             if (-not \$modName) { \$modName = if ('${params.SUITE}') { (Split-Path '${params.SUITE}' -Leaf) } else { 'Test_Report' } }; \
                             \$destFile = Join-Path \$dest (\$modName + '.html'); \
-                            Copy-Item -Path \$_.FullName -Destination \$destFile -Force; \
+                            Copy-Item -Path \$_.FullName -Destination \$destFile -Force -ErrorAction SilentlyContinue; \
                             Write-Host ('Copied Firefox HTML: ' + \$modName + '.html') \
                         }; \
                         New-Item -ItemType Directory -Path 'Reports_Archive\\Firefox' -Force | Out-Null; \
-                        Copy-Item -Path 'Reports\\*' -Destination 'Reports_Archive\\Firefox' -Recurse -Force; \
+                        Copy-Item -Path 'Reports\\*' -Destination 'Reports_Archive\\Firefox' -Recurse -Force -ErrorAction SilentlyContinue; \
                         Remove-Item -Path 'Reports' -Recurse -Force -ErrorAction SilentlyContinue; \
-                    } catch { Write-Host ('Error Firefox Copy: ' + \$_.Exception.Message) } \
+                    } catch { Write-Host ('Handled Firefox Copy Notice: ' + \$_.Exception.Message) } \
                 "
                 """
 
@@ -269,9 +269,10 @@ Contoh override manual:
 
         always {
             script {
-                // Kembalikan semua file Reports dari Archive agar Post Actions (JUnit, Webhook, Summary) membaca total hasil kedua browser
+                // Kembalikan semua file Reports dari Archive agar Post Actions membaca total hasil kedua browser
                 bat '''
                 powershell -NoProfile -ExecutionPolicy Bypass -Command "\
+                    $ErrorActionPreference = 'SilentlyContinue'; \
                     if (Test-Path 'Reports_Archive') { \
                         New-Item -ItemType Directory -Path 'Reports' -Force | Out-Null; \
                         Copy-Item -Path 'Reports_Archive\\*' -Destination 'Reports' -Recurse -Force -ErrorAction SilentlyContinue \
@@ -293,6 +294,7 @@ Contoh override manual:
                 
                 bat """
                 powershell -NoProfile -ExecutionPolicy Bypass -Command "\
+                    \$ErrorActionPreference = 'SilentlyContinue'; \
                     \$p=0; \$f=0; \$s=0; \
                     \$xmlFiles = Get-ChildItem -Path 'Reports' -Filter 'JUnit_Report.xml' -Recurse -ErrorAction SilentlyContinue; \
                     if (-not \$xmlFiles) { \$xmlFiles = Get-ChildItem -Path 'Reports' -Filter '*.xml' -Recurse -ErrorAction SilentlyContinue | Where-Object { \$_.Name -ne 'TESTS-TestSuites.xml' } }; \
@@ -338,6 +340,7 @@ Contoh override manual:
             script {
                 bat """
                 powershell -NoProfile -ExecutionPolicy Bypass -Command "\
+                    \$ErrorActionPreference = 'SilentlyContinue'; \
                     try { \
                         \$tempZip = Join-Path \$env:TEMP 'Sportsstation_Failures'; \
                         if (Test-Path \$tempZip) { Remove-Item \$tempZip -Recurse -Force -ErrorAction SilentlyContinue }; \
@@ -347,22 +350,22 @@ Contoh override manual:
                             \$targetFile = Join-Path (Join-Path \$tempZip 'Reports') \$rel; \
                             \$targetDir = Split-Path \$targetFile -Parent; \
                             if (-not (Test-Path \$targetDir)) { New-Item -ItemType Directory -Path \$targetDir -Force | Out-Null }; \
-                            Copy-Item -Path \$_.FullName -Destination \$targetFile -Force; \
+                            Copy-Item -Path \$_.FullName -Destination \$targetFile -Force -ErrorAction SilentlyContinue; \
                         }; \
                         if (Test-Path 'Screenshot') { \
                             New-Item -ItemType Directory -Path (Join-Path \$tempZip 'Screenshot') -Force | Out-Null; \
                             Get-ChildItem -Path 'Screenshot' -Filter '*.png' -Recurse -ErrorAction SilentlyContinue | Sort-Object LastWriteTime -Descending | Select-Object -First 10 | ForEach-Object { \
-                                Copy-Item -Path \$_.FullName -Destination (Join-Path \$tempZip 'Screenshot') -Force; \
+                                Copy-Item -Path \$_.FullName -Destination (Join-Path \$tempZip 'Screenshot') -Force -ErrorAction SilentlyContinue; \
                             }; \
                         }; \
                         if (Test-Path 'Failure_Report.zip') { Remove-Item 'Failure_Report.zip' -Force -ErrorAction SilentlyContinue }; \
                         Compress-Archive -Path (Join-Path \$tempZip '*') -DestinationPath 'Failure_Report.zip' -CompressionLevel Optimal -Force -ErrorAction SilentlyContinue; \
                         Remove-Item \$tempZip -Recurse -Force -ErrorAction SilentlyContinue; \
-                    } catch { Write-Host ('Error creating zip: ' + \$_.Exception.Message) }; \
+                    } catch { Write-Host ('Notice creating zip: ' + \$_.Exception.Message) }; \
                     \$errs = @(); \
                     \$tcList = @(); \
                     \$i = 1; \
-                    \$latestFolder = Get-ChildItem -Path 'Reports' -Directory -Recurse | Where-Object { \$_.Name -match '^\\d{8}_\\d{6}\$' } | Sort-Object LastWriteTime -Descending | Select-Object -First 1; \
+                    \$latestFolder = Get-ChildItem -Path 'Reports' -Directory -Recurse -ErrorAction SilentlyContinue | Where-Object { \$_.Name -match '^\\d{8}_\\d{6}\$' } | Sort-Object LastWriteTime -Descending | Select-Object -First 1; \
                     \$searchRoot = if (\$latestFolder) { \$latestFolder.FullName } else { 'Reports' }; \
                     \$xmlFiles = Get-ChildItem -Path \$searchRoot -Filter '*.xml' -Recurse -ErrorAction SilentlyContinue | Where-Object { \$_.Name -ne 'TESTS-TestSuites.xml' }; \
                     if (\$xmlFiles) { \
@@ -401,6 +404,7 @@ Contoh override manual:
             script {
                 bat """
                 powershell -NoProfile -ExecutionPolicy Bypass -Command "\
+                    \$ErrorActionPreference = 'SilentlyContinue'; \
                     try { \
                         \$tempZip = Join-Path \$env:TEMP 'Sportsstation_Failures'; \
                         if (Test-Path \$tempZip) { Remove-Item \$tempZip -Recurse -Force -ErrorAction SilentlyContinue }; \
@@ -410,22 +414,22 @@ Contoh override manual:
                             \$targetFile = Join-Path (Join-Path \$tempZip 'Reports') \$rel; \
                             \$targetDir = Split-Path \$targetFile -Parent; \
                             if (-not (Test-Path \$targetDir)) { New-Item -ItemType Directory -Path \$targetDir -Force | Out-Null }; \
-                            Copy-Item -Path \$_.FullName -Destination \$targetFile -Force; \
+                            Copy-Item -Path \$_.FullName -Destination \$targetFile -Force -ErrorAction SilentlyContinue; \
                         }; \
                         if (Test-Path 'Screenshot') { \
                             New-Item -ItemType Directory -Path (Join-Path \$tempZip 'Screenshot') -Force | Out-Null; \
                             Get-ChildItem -Path 'Screenshot' -Filter '*.png' -Recurse -ErrorAction SilentlyContinue | Sort-Object LastWriteTime -Descending | Select-Object -First 10 | ForEach-Object { \
-                                Copy-Item -Path \$_.FullName -Destination (Join-Path \$tempZip 'Screenshot') -Force; \
+                                Copy-Item -Path \$_.FullName -Destination (Join-Path \$tempZip 'Screenshot') -Force -ErrorAction SilentlyContinue; \
                             }; \
                         }; \
                         if (Test-Path 'Failure_Report.zip') { Remove-Item 'Failure_Report.zip' -Force -ErrorAction SilentlyContinue }; \
                         Compress-Archive -Path (Join-Path \$tempZip '*') -DestinationPath 'Failure_Report.zip' -CompressionLevel Optimal -Force -ErrorAction SilentlyContinue; \
                         Remove-Item \$tempZip -Recurse -Force -ErrorAction SilentlyContinue; \
-                    } catch { Write-Host ('Error creating zip: ' + \$_.Exception.Message) }; \
+                    } catch { Write-Host ('Notice creating zip: ' + \$_.Exception.Message) }; \
                     \$errs = @(); \
                     \$tcList = @(); \
                     \$i = 1; \
-                    \$latestFolder = Get-ChildItem -Path 'Reports' -Directory -Recurse | Where-Object { \$_.Name -match '^\\d{8}_\\d{6}\$' } | Sort-Object LastWriteTime -Descending | Select-Object -First 1; \
+                    \$latestFolder = Get-ChildItem -Path 'Reports' -Directory -Recurse -ErrorAction SilentlyContinue | Where-Object { \$_.Name -match '^\\d{8}_\\d{6}\$' } | Sort-Object LastWriteTime -Descending | Select-Object -First 1; \
                     \$searchRoot = if (\$latestFolder) { \$latestFolder.FullName } else { 'Reports' }; \
                     \$xmlFiles = Get-ChildItem -Path \$searchRoot -Filter '*.xml' -Recurse -ErrorAction SilentlyContinue | Where-Object { \$_.Name -ne 'TESTS-TestSuites.xml' }; \
                     if (\$xmlFiles) { \
