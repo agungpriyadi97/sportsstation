@@ -15,7 +15,7 @@ pipeline {
                 'Chrome (headless)',
                 'Firefox (headless)'
             ],
-            description: 'Pilih Browser (Both = Menjalankan Chrome lalu Firefox)'
+            description: 'Pilih Browser'
         )
 
         choice(
@@ -33,24 +33,19 @@ pipeline {
         string(
             name: 'ENV',
             defaultValue: 'staging',
-            description: 'Target Environment dari Telegram (dev, qa, uat, prod, staging)'
+            description: 'Target Environment'
         )
 
         string(
             name: 'SUITE',
             defaultValue: 'Test Suites/WEB/Web_Test_Suite_Collection/Regression_sportsstation_Web',
-            description: 'Nama Test Suite / Collection dari Telegram'
+            description: 'Nama Test Suite / Collection'
         )
 
         string(
             name: 'TEST_PATH',
             defaultValue: '',
-            description: '''
-Kosong = Gunakan parameter SUITE / Default Test Suite Collection
-
-Contoh override manual:
--testSuiteCollectionPath=Test Suites/WEB/Web_Test_Suite_Collection/Regression_sportsstation_Web
-'''
+            description: 'Override Manual (Kosongkan jika menggunakan SUITE)'
         )
     }
 
@@ -95,7 +90,7 @@ Contoh override manual:
                     taskkill /F /IM geckodriver.exe /T 2>nul || exit 0
                     taskkill /F /IM chrome.exe /T 2>nul || exit 0
                     taskkill /F /IM firefox.exe /T 2>nul || exit 0
-                    timeout /t 3 /nobreak >nul 2>&1 || exit 0
+                    timeout /t 2 /nobreak >nul 2>&1 || exit 0
                     if exist "C:\\Users\\AgungPriyadi\\.katalon\\packages\\KS-11.1.3\\config\\.metadata\\.lock" del /f /q "C:\\Users\\AgungPriyadi\\.katalon\\packages\\KS-11.1.3\\config\\.metadata\\.lock" 2>nul || exit 0
                     '''
 
@@ -148,18 +143,22 @@ Contoh override manual:
                     if (!params.TEST_PATH?.trim()) {
                         if (env.FINAL_PATH.contains("Collection") || env.FINAL_PATH.contains("Web_Test_Suite_Collection")) {
                             env.ARG_TYPE = "-testSuiteCollectionPath"
+                            env.IS_COLLECTION = "true"
                         } else {
                             env.ARG_TYPE = "-testSuitePath"
+                            env.IS_COLLECTION = "false"
                         }
+                    } else {
+                        env.IS_COLLECTION = env.ARG_TYPE.contains("Collection") ? "true" : "false"
                     }
 
                     echo "====================================="
-                    echo "PROJECT : ${env.PROJECT_FILE}"
-                    echo "PROFILE : ${env.TARGET_PROFILE}"
-                    echo "BROWSER : ${params.BROWSER}"
-                    echo "ARGTYPE : ${env.ARG_TYPE}"
-                    echo "PATH    : ${env.FINAL_PATH}"
-                    echo "ORG ID  : ${env.KATALON_ORG_ID}"
+                    echo "PROJECT       : ${env.PROJECT_FILE}"
+                    echo "PROFILE       : ${env.TARGET_PROFILE}"
+                    echo "BROWSER       : ${params.BROWSER}"
+                    echo "IS_COLLECTION : ${env.IS_COLLECTION}"
+                    echo "ARGTYPE       : ${env.ARG_TYPE}"
+                    echo "PATH          : ${env.FINAL_PATH}"
                     echo "====================================="
                 }
             }
@@ -176,7 +175,8 @@ Contoh override manual:
             steps {
                 script {
                     echo "--- STARTING CHROME EXECUTION ---"
-                    def cmd = "\"${env.KATALON_EXE}\" -clean -noSplash -runMode=console -projectPath=\"%WORKSPACE%\\${env.PROJECT_FILE}\" -retry=0 -apiKey=\"${env.KATALON_API_KEY}\" -orgID=\"${env.KATALON_ORG_ID}\" ${env.ARG_TYPE}=\"${env.FINAL_PATH}\" -executionProfile=\"${env.TARGET_PROFILE}\" -browserType=\"Chrome (headless)\" --config -webui.autoUpdateDrivers=true -webui.chrome.args=\"--disable-blink-features=AutomationControlled --disable-dev-shm-usage --disable-gpu --no-sandbox --window-size=1920,1080\""
+                    def browserArg = (env.IS_COLLECTION == "true") ? "" : "-browserType=\"Chrome (headless)\""
+                    def cmd = "\"${env.KATALON_EXE}\" -clean -noSplash -runMode=console -projectPath=\"%WORKSPACE%\\${env.PROJECT_FILE}\" -retry=0 -apiKey=\"${env.KATALON_API_KEY}\" -orgID=\"${env.KATALON_ORG_ID}\" ${env.ARG_TYPE}=\"${env.FINAL_PATH}\" -executionProfile=\"${env.TARGET_PROFILE}\" ${browserArg} --config -webui.autoUpdateDrivers=true -webui.chrome.args=\"--disable-blink-features=AutomationControlled --disable-dev-shm-usage --disable-gpu --no-sandbox --window-size=1920,1080\""
                     
                     def exitCode = bat(script: cmd, returnStatus: true)
                     echo "Chrome Execution Finished with Exit Code: ${exitCode}"
@@ -210,14 +210,13 @@ Contoh override manual:
                     "
                     """, returnStatus: true)
 
-                    // Bersihkan proses Java & Lock agar sesi Firefox siap jalan
                     bat '''
                     taskkill /F /IM katalonc.exe /T 2>nul || exit 0
                     taskkill /F /IM java.exe /T 2>nul || exit 0
                     taskkill /F /IM javaw.exe /T 2>nul || exit 0
                     taskkill /F /IM chromedriver.exe /T 2>nul || exit 0
                     taskkill /F /IM chrome.exe /T 2>nul || exit 0
-                    timeout /t 3 /nobreak >nul 2>&1 || exit 0
+                    timeout /t 2 /nobreak >nul 2>&1 || exit 0
                     if exist "C:\\Users\\AgungPriyadi\\.katalon\\packages\\KS-11.1.3\\config\\.metadata\\.lock" del /f /q "C:\\Users\\AgungPriyadi\\.katalon\\packages\\KS-11.1.3\\config\\.metadata\\.lock" 2>nul || exit 0
                     '''
                 }
@@ -226,10 +225,13 @@ Contoh override manual:
 
         stage('Run Firefox') {
             when {
-                anyOf {
-                    expression { params.BROWSER == 'Firefox (headless)' }
-                    expression { params.BROWSER == 'Firefox' }
-                    expression { params.BROWSER == 'Both' }
+                // Firefox hanya dijalankan jika user memilih Firefox / Both DAN targetnya adalah Test Suite biasa (bukan TSC Chrome)
+                allOf {
+                    anyOf {
+                        expression { params.BROWSER == 'Firefox (headless)' }
+                        expression { params.BROWSER == 'Firefox' }
+                        expression { params.BROWSER == 'Both' && env.IS_COLLECTION != "true" }
+                    }
                 }
             }
             steps {
@@ -239,7 +241,7 @@ Contoh override manual:
                     if exist "C:\\Users\\AgungPriyadi\\.katalon\\packages\\KS-11.1.3\\config\\.metadata\\.lock" del /f /q "C:\\Users\\AgungPriyadi\\.katalon\\packages\\KS-11.1.3\\config\\.metadata\\.lock" 2>nul || exit 0
                     '''
 
-                    def cmd = "\"${env.KATALON_EXE}\" -clean -noSplash -runMode=console -projectPath=\"%WORKSPACE%\\${env.PROJECT_FILE}\" -retry=0 -apiKey=\"${env.KATALON_API_KEY}\" -orgID=\"${env.KATALON_ORG_ID}\" ${env.ARG_TYPE}=\"${env.FINAL_PATH}\" -executionProfile=\"${env.TARGET_PROFILE}\" -browserType=\"Firefox (headless)\" --config -webui.autoUpdateDrivers=true"
+                    def cmd = "\"${env.KATALON_EXE}\" -clean -noSplash -runMode=console -projectPath=\"%WORKSPACE%\\${env.PROJECT_FILE}\" -retry=0 -apiKey=\"${env.KATALON_API_KEY}\" -orgID=\"${env.KATALON_ORG_ID}\" -testSuitePath=\"${env.FINAL_PATH}\" -executionProfile=\"${env.TARGET_PROFILE}\" -browserType=\"Firefox (headless)\" --config -webui.autoUpdateDrivers=true"
                     
                     def exitCode = bat(script: cmd, returnStatus: true)
                     echo "Firefox Execution Finished with Exit Code: ${exitCode}"
@@ -347,7 +349,6 @@ Contoh override manual:
                 "
                 """
 
-                // Pengiriman Failure Report & Google Sheets jika ada error
                 bat """
                 powershell -NoProfile -ExecutionPolicy Bypass -Command "\
                     \$ErrorActionPreference = 'SilentlyContinue'; \
