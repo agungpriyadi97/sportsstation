@@ -15,7 +15,7 @@ pipeline {
                 'Chrome (headless)',
                 'Firefox (headless)'
             ],
-            description: 'Pilih Browser (Both = Menjalankan Chrome lalu Firefox)'
+            description: 'Pilih Browser'
         )
 
         choice(
@@ -33,24 +33,19 @@ pipeline {
         string(
             name: 'ENV',
             defaultValue: 'staging',
-            description: 'Target Environment dari Telegram (dev, qa, uat, prod, staging)'
+            description: 'Target Environment dari Telegram'
         )
 
         string(
             name: 'SUITE',
             defaultValue: 'Test Suites/WEB/Web_Test_Suite_Collection/Regression_sportsstation_Web',
-            description: 'Nama Test Suite / Collection dari Telegram'
+            description: 'Nama Test Suite / Collection'
         )
 
         string(
             name: 'TEST_PATH',
             defaultValue: '',
-            description: '''
-Kosong = Gunakan parameter SUITE / Default Test Suite Collection
-
-Contoh override manual:
--testSuiteCollectionPath=Test Suites/WEB/Web_Test_Suite_Collection/Regression_sportsstation_Web
-'''
+            description: 'Override Manual (Kosongkan jika menggunakan SUITE)'
         )
     }
 
@@ -148,18 +143,22 @@ Contoh override manual:
                     if (!params.TEST_PATH?.trim()) {
                         if (env.FINAL_PATH.contains("Collection") || env.FINAL_PATH.contains("Web_Test_Suite_Collection")) {
                             env.ARG_TYPE = "-testSuiteCollectionPath"
+                            env.IS_COLLECTION = "true"
                         } else {
                             env.ARG_TYPE = "-testSuitePath"
+                            env.IS_COLLECTION = "false"
                         }
+                    } else {
+                        env.IS_COLLECTION = env.ARG_TYPE.contains("Collection") ? "true" : "false"
                     }
 
                     echo "====================================="
-                    echo "PROJECT : ${env.PROJECT_FILE}"
-                    echo "PROFILE : ${env.TARGET_PROFILE}"
-                    echo "BROWSER : ${params.BROWSER}"
-                    echo "ARGTYPE : ${env.ARG_TYPE}"
-                    echo "PATH    : ${env.FINAL_PATH}"
-                    echo "ORG ID  : ${env.KATALON_ORG_ID}"
+                    echo "PROJECT       : ${env.PROJECT_FILE}"
+                    echo "PROFILE       : ${env.TARGET_PROFILE}"
+                    echo "BROWSER       : ${params.BROWSER}"
+                    echo "IS_COLLECTION : ${env.IS_COLLECTION}"
+                    echo "ARGTYPE       : ${env.ARG_TYPE}"
+                    echo "PATH          : ${env.FINAL_PATH}"
                     echo "====================================="
                 }
             }
@@ -176,7 +175,9 @@ Contoh override manual:
             steps {
                 script {
                     echo "--- STARTING CHROME EXECUTION ---"
-                    def cmd = "\"${env.KATALON_EXE}\" -clean -noSplash -runMode=console -projectPath=\"%WORKSPACE%\\${env.PROJECT_FILE}\" -retry=0 -apiKey=\"${env.KATALON_API_KEY}\" -orgID=\"${env.KATALON_ORG_ID}\" ${env.ARG_TYPE}=\"${env.FINAL_PATH}\" -executionProfile=\"${env.TARGET_PROFILE}\" -browserType=\"Chrome (headless)\" --config -webui.autoUpdateDrivers=true -webui.chrome.args=\"--disable-blink-features=AutomationControlled --disable-dev-shm-usage --disable-gpu --no-sandbox --window-size=1920,1080\""
+                    // Jangan pasang -browserType jika yang dijalankan adalah Collection
+                    def browserArg = (env.IS_COLLECTION == "true") ? "" : "-browserType=\"Chrome (headless)\""
+                    def cmd = "\"${env.KATALON_EXE}\" -clean -noSplash -runMode=console -projectPath=\"%WORKSPACE%\\${env.PROJECT_FILE}\" -retry=0 -apiKey=\"${env.KATALON_API_KEY}\" -orgID=\"${env.KATALON_ORG_ID}\" ${env.ARG_TYPE}=\"${env.FINAL_PATH}\" -executionProfile=\"${env.TARGET_PROFILE}\" ${browserArg} --config -webui.autoUpdateDrivers=true -webui.chrome.args=\"--disable-blink-features=AutomationControlled --disable-dev-shm-usage --disable-gpu --no-sandbox --window-size=1920,1080\""
                     
                     def exitCode = bat(script: cmd, returnStatus: true)
                     echo "Chrome Finished with Exit Code: ${exitCode}"
@@ -228,10 +229,14 @@ Contoh override manual:
 
         stage('Run Firefox') {
             when {
-                anyOf {
-                    expression { params.BROWSER == 'Firefox (headless)' }
-                    expression { params.BROWSER == 'Firefox' }
-                    expression { params.BROWSER == 'Both' }
+                // Firefox hanya jalan jika user memilih Firefox / Both DAN targetnya BUKAN Collection yang sudah dikunci Chrome
+                allOf {
+                    anyOf {
+                        expression { params.BROWSER == 'Firefox (headless)' }
+                        expression { params.BROWSER == 'Firefox' }
+                        expression { params.BROWSER == 'Both' }
+                    }
+                    expression { env.IS_COLLECTION != "true" }
                 }
             }
             steps {
