@@ -95,7 +95,7 @@ Contoh override manual:
                     taskkill /F /IM geckodriver.exe /T 2>nul || exit 0
                     taskkill /F /IM chrome.exe /T 2>nul || exit 0
                     taskkill /F /IM firefox.exe /T 2>nul || exit 0
-                    timeout /t 2 /nobreak >nul 2>&1 || exit 0
+                    timeout /t 3 /nobreak >nul 2>&1 || exit 0
                     if exist "C:\\Users\\AgungPriyadi\\.katalon\\packages\\KS-11.1.3\\config\\.metadata\\.lock" del /f /q "C:\\Users\\AgungPriyadi\\.katalon\\packages\\KS-11.1.3\\config\\.metadata\\.lock" 2>nul || exit 0
                     '''
 
@@ -176,8 +176,7 @@ Contoh override manual:
             steps {
                 script {
                     echo "--- STARTING CHROME EXECUTION ---"
-                    def browserArg = (env.ARG_TYPE == "-testSuiteCollectionPath") ? "" : "-browserType=\"Chrome (headless)\""
-                    def cmd = "\"${env.KATALON_EXE}\" -clean -noSplash -runMode=console -projectPath=\"%WORKSPACE%\\${env.PROJECT_FILE}\" -retry=0 -apiKey=\"${env.KATALON_API_KEY}\" -orgID=\"${env.KATALON_ORG_ID}\" ${env.ARG_TYPE}=\"${env.FINAL_PATH}\" -executionProfile=\"${env.TARGET_PROFILE}\" ${browserArg} --config -webui.autoUpdateDrivers=true -webui.chrome.args=\"--disable-blink-features=AutomationControlled --disable-dev-shm-usage --disable-gpu --no-sandbox --window-size=1920,1080\""
+                    def cmd = "\"${env.KATALON_EXE}\" -clean -noSplash -runMode=console -projectPath=\"%WORKSPACE%\\${env.PROJECT_FILE}\" -retry=0 -apiKey=\"${env.KATALON_API_KEY}\" -orgID=\"${env.KATALON_ORG_ID}\" ${env.ARG_TYPE}=\"${env.FINAL_PATH}\" -executionProfile=\"${env.TARGET_PROFILE}\" -browserType=\"Chrome (headless)\" --config -webui.autoUpdateDrivers=true -webui.chrome.args=\"--disable-blink-features=AutomationControlled --disable-dev-shm-usage --disable-gpu --no-sandbox --window-size=1920,1080\""
                     
                     def exitCode = bat(script: cmd, returnStatus: true)
                     echo "Chrome Execution Finished with Exit Code: ${exitCode}"
@@ -211,7 +210,7 @@ Contoh override manual:
                     "
                     """, returnStatus: true)
 
-                    // Bersihkan total proses Java & Lock agar Firefox siap jalan bersih
+                    // Bersihkan proses Java & Lock agar sesi Firefox siap jalan
                     bat '''
                     taskkill /F /IM katalonc.exe /T 2>nul || exit 0
                     taskkill /F /IM java.exe /T 2>nul || exit 0
@@ -236,13 +235,11 @@ Contoh override manual:
             steps {
                 script {
                     echo "--- STARTING FIREFOX EXECUTION ---"
-                    // Pastikan environment lock bersih sebelum start
                     bat '''
                     if exist "C:\\Users\\AgungPriyadi\\.katalon\\packages\\KS-11.1.3\\config\\.metadata\\.lock" del /f /q "C:\\Users\\AgungPriyadi\\.katalon\\packages\\KS-11.1.3\\config\\.metadata\\.lock" 2>nul || exit 0
                     '''
 
-                    def browserArg = (env.ARG_TYPE == "-testSuiteCollectionPath") ? "" : "-browserType=\"Firefox (headless)\""
-                    def cmd = "\"${env.KATALON_EXE}\" -clean -noSplash -runMode=console -projectPath=\"%WORKSPACE%\\${env.PROJECT_FILE}\" -retry=0 -apiKey=\"${env.KATALON_API_KEY}\" -orgID=\"${env.KATALON_ORG_ID}\" ${env.ARG_TYPE}=\"${env.FINAL_PATH}\" -executionProfile=\"${env.TARGET_PROFILE}\" ${browserArg} --config -webui.autoUpdateDrivers=true"
+                    def cmd = "\"${env.KATALON_EXE}\" -clean -noSplash -runMode=console -projectPath=\"%WORKSPACE%\\${env.PROJECT_FILE}\" -retry=0 -apiKey=\"${env.KATALON_API_KEY}\" -orgID=\"${env.KATALON_ORG_ID}\" ${env.ARG_TYPE}=\"${env.FINAL_PATH}\" -executionProfile=\"${env.TARGET_PROFILE}\" -browserType=\"Firefox (headless)\" --config -webui.autoUpdateDrivers=true"
                     
                     def exitCode = bat(script: cmd, returnStatus: true)
                     echo "Firefox Execution Finished with Exit Code: ${exitCode}"
@@ -292,7 +289,7 @@ Contoh override manual:
 
         always {
             script {
-                // Kembalikan semua file Reports dari Archive agar Post Actions membaca total hasil kedua browser
+                // Kembalikan semua file Reports dari Archive
                 bat '''
                 powershell -NoProfile -ExecutionPolicy Bypass -Command "\
                     $ErrorActionPreference = 'SilentlyContinue'; \
@@ -350,7 +347,7 @@ Contoh override manual:
                 "
                 """
 
-                // Trigger pengiriman Failure Report & Google Sheets jika terdapat test case yang gagal
+                // Pengiriman Failure Report & Google Sheets jika ada error
                 bat """
                 powershell -NoProfile -ExecutionPolicy Bypass -Command "\
                     \$ErrorActionPreference = 'SilentlyContinue'; \
