@@ -148,13 +148,9 @@ Contoh override manual:
                     if (!params.TEST_PATH?.trim()) {
                         if (env.FINAL_PATH.contains("Collection") || env.FINAL_PATH.contains("Web_Test_Suite_Collection")) {
                             env.ARG_TYPE = "-testSuiteCollectionPath"
-                            env.IS_COLLECTION = "true"
                         } else {
                             env.ARG_TYPE = "-testSuitePath"
-                            env.IS_COLLECTION = "false"
                         }
-                    } else {
-                        env.IS_COLLECTION = env.ARG_TYPE.contains("Collection") ? "true" : "false"
                     }
 
                     echo "====================================="
@@ -180,8 +176,7 @@ Contoh override manual:
             steps {
                 script {
                     echo "--- STARTING CHROME EXECUTION ---"
-                    def browserArg = (env.IS_COLLECTION == "true") ? "" : "-browserType=\"Chrome (headless)\""
-                    def cmd = "\"${env.KATALON_EXE}\" -clean -noSplash -runMode=console -projectPath=\"%WORKSPACE%\\${env.PROJECT_FILE}\" -retry=0 -apiKey=\"${env.KATALON_API_KEY}\" -orgID=\"${env.KATALON_ORG_ID}\" ${env.ARG_TYPE}=\"${env.FINAL_PATH}\" -executionProfile=\"${env.TARGET_PROFILE}\" ${browserArg} --config -webui.autoUpdateDrivers=true -webui.chrome.args=\"--disable-blink-features=AutomationControlled --disable-dev-shm-usage --disable-gpu --no-sandbox --window-size=1920,1080\""
+                    def cmd = "\"${env.KATALON_EXE}\" -clean -noSplash -runMode=console -projectPath=\"%WORKSPACE%\\${env.PROJECT_FILE}\" -retry=0 -apiKey=\"${env.KATALON_API_KEY}\" -orgID=\"${env.KATALON_ORG_ID}\" ${env.ARG_TYPE}=\"${env.FINAL_PATH}\" -executionProfile=\"${env.TARGET_PROFILE}\" -browserType=\"Chrome (headless)\" --config -webui.autoUpdateDrivers=true -webui.chrome.args=\"--disable-blink-features=AutomationControlled --disable-dev-shm-usage --disable-gpu --no-sandbox --window-size=1920,1080\""
                     
                     def exitCode = bat(script: cmd, returnStatus: true)
                     echo "Chrome Finished with Exit Code: ${exitCode}"
@@ -242,8 +237,7 @@ Contoh override manual:
             steps {
                 script {
                     echo "--- STARTING FIREFOX EXECUTION ---"
-                    def browserArg = (env.IS_COLLECTION == "true") ? "" : "-browserType=\"Firefox (headless)\""
-                    def cmd = "\"${env.KATALON_EXE}\" -clean -noSplash -runMode=console -projectPath=\"%WORKSPACE%\\${env.PROJECT_FILE}\" -retry=0 -apiKey=\"${env.KATALON_API_KEY}\" -orgID=\"${env.KATALON_ORG_ID}\" ${env.ARG_TYPE}=\"${env.FINAL_PATH}\" -executionProfile=\"${env.TARGET_PROFILE}\" ${browserArg} --config -webui.autoUpdateDrivers=true"
+                    def cmd = "\"${env.KATALON_EXE}\" -clean -noSplash -runMode=console -projectPath=\"%WORKSPACE%\\${env.PROJECT_FILE}\" -retry=0 -apiKey=\"${env.KATALON_API_KEY}\" -orgID=\"${env.KATALON_ORG_ID}\" ${env.ARG_TYPE}=\"${env.FINAL_PATH}\" -executionProfile=\"${env.TARGET_PROFILE}\" -browserType=\"Firefox (headless)\" --config -webui.autoUpdateDrivers=true"
                     
                     def exitCode = bat(script: cmd, returnStatus: true)
                     echo "Firefox Finished with Exit Code: ${exitCode}"
@@ -298,7 +292,6 @@ Contoh override manual:
 
         always {
             script {
-                // Kembalikan semua file Reports dari Archive
                 bat '''
                 powershell -NoProfile -ExecutionPolicy Bypass -Command "\
                     $ErrorActionPreference = 'SilentlyContinue'; \
@@ -362,9 +355,7 @@ Contoh override manual:
                     \$errs = @(); \
                     \$tcList = @(); \
                     \$i = 1; \
-                    \$latestFolder = Get-ChildItem -Path 'Reports' -Directory -Recurse -ErrorAction SilentlyContinue | Where-Object { \$_.Name -match '^\\d{8}_\\d{6}\$' } | Sort-Object LastWriteTime -Descending | Select-Object -First 1; \
-                    \$searchRoot = if (\$latestFolder) { \$latestFolder.FullName } else { 'Reports' }; \
-                    \$xmlFiles = Get-ChildItem -Path \$searchRoot -Filter '*.xml' -Recurse -ErrorAction SilentlyContinue | Where-Object { \$_.Name -ne 'TESTS-TestSuites.xml' }; \
+                    \$xmlFiles = Get-ChildItem -Path 'Reports' -Filter '*.xml' -Recurse -ErrorAction SilentlyContinue | Where-Object { \$_.Name -ne 'TESTS-TestSuites.xml' }; \
                     if (\$xmlFiles) { \
                         \$xmlFiles | ForEach-Object { \
                             [xml]\$x = Get-Content \$_.FullName; \
